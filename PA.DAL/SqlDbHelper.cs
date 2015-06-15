@@ -13,7 +13,7 @@ namespace PA.DAL
     
     class SqlDbHelper
     {
-        private const string CONN_STRING = ConfigurationManager.
+        private readonly static string CONN_STRING = ConfigurationManager.
                 ConnectionStrings["performanceDbConnectionString"].ToString();
 
         public SqlDbHelper()

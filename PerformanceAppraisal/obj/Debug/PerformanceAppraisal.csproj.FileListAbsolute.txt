@@ -9,3 +9,7 @@ c:\users\mingsho\documents\visual studio 2012\Projects\PerformanceAppraisal\Perf
 c:\users\mingsho\documents\visual studio 2012\Projects\PerformanceAppraisal\PerformanceAppraisal\bin\EntityFramework.xml
 c:\users\mingsho\documents\visual studio 2012\Projects\PerformanceAppraisal\PerformanceAppraisal\bin\EntityFramework.SqlServer.xml
 c:\users\mingsho\documents\visual studio 2012\Projects\PerformanceAppraisal\PerformanceAppraisal\bin\System.Web.Providers.xml
+C:\Users\Mingsho\documents\visual studio 2012\Projects\PerformanceAppraisal\PerformanceAppraisal\bin\PA.BLL.dll
+C:\Users\Mingsho\documents\visual studio 2012\Projects\PerformanceAppraisal\PerformanceAppraisal\bin\PA.DAL.dll
+C:\Users\Mingsho\documents\visual studio 2012\Projects\PerformanceAppraisal\PerformanceAppraisal\bin\PA.BLL.pdb
+C:\Users\Mingsho\documents\visual studio 2012\Projects\PerformanceAppraisal\PerformanceAppraisal\bin\PA.DAL.pdb

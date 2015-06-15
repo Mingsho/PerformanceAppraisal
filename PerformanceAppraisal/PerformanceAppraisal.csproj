@@ -66,6 +66,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\AddDepartment.aspx" />
     <Content Include="Admin\AdminIndex.aspx" />
     <Content Include="Admin\CreateUserAccount.aspx" />
     <Content Include="Authentication.aspx" />
@@ -92,6 +93,13 @@
     <Content Include="Scripts\jquery-2.1.4.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\AddDepartment.aspx.cs">
+      <DependentUpon>AddDepartment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddDepartment.aspx.designer.cs">
+      <DependentUpon>AddDepartment.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\AdminIndex.aspx.cs">
       <DependentUpon>AdminIndex.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -133,6 +141,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="MasterPages\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PA.BLL\PA.BLL.csproj">
+      <Project>{dd833e6f-bc7b-4ae5-b6cb-d1b50c1f523c}</Project>
+      <Name>PA.BLL</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

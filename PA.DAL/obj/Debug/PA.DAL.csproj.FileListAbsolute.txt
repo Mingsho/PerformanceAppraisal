@@ -1,0 +1,5 @@
+C:\Users\Mingsho\documents\visual studio 2012\Projects\PerformanceAppraisal\PA.DAL\bin\Debug\PA.DAL.dll.config
+C:\Users\Mingsho\documents\visual studio 2012\Projects\PerformanceAppraisal\PA.DAL\bin\Debug\PA.DAL.dll
+C:\Users\Mingsho\documents\visual studio 2012\Projects\PerformanceAppraisal\PA.DAL\bin\Debug\PA.DAL.pdb
+C:\Users\Mingsho\documents\visual studio 2012\Projects\PerformanceAppraisal\PA.DAL\obj\Debug\PA.DAL.dll
+C:\Users\Mingsho\documents\visual studio 2012\Projects\PerformanceAppraisal\PA.DAL\obj\Debug\PA.DAL.pdb
