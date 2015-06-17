@@ -68,6 +68,7 @@
   <ItemGroup>
     <Content Include="Admin\AddDepartment.aspx" />
     <Content Include="Admin\AdminIndex.aspx" />
+    <Content Include="Admin\CreateEmployee.aspx" />
     <Content Include="Admin\CreateUserAccount.aspx" />
     <Content Include="Authentication.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -107,6 +108,13 @@
     <Compile Include="Admin\AdminIndex.aspx.designer.cs">
       <DependentUpon>AdminIndex.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\CreateEmployee.aspx.cs">
+      <DependentUpon>CreateEmployee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CreateEmployee.aspx.designer.cs">
+      <DependentUpon>CreateEmployee.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\CreateUserAccount.aspx.cs">
       <DependentUpon>CreateUserAccount.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -140,6 +148,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Themes\Theme1\" />
     <Folder Include="MasterPages\" />
   </ItemGroup>
   <ItemGroup>
