@@ -14,7 +14,7 @@ namespace PA.BLL
         CASUAL, PERMANENT, INTERN
     }
 
-    class EmployeeBLL
+    public class EmployeeBLL
     {
         private tbl_EmployeeTableAdapter employeeTableAdapter = null;
 
