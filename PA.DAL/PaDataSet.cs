@@ -4,9 +4,10 @@
     public partial class PaDataSet {
     }
 }
-namespace PA.DAL {
+
+namespace PA.DAL.PaDataSetTableAdapters {
     
     
-    public partial class PaDataSet {
+    public partial class tbl_EmployeeTableAdapter {
     }
 }

@@ -9,7 +9,7 @@ using PA.DAL.PaDataSetTableAdapters;
 
 namespace PA.BLL
 {
-    enum EmployeeType
+    public enum EmployeeType
     {
         CASUAL, PERMANENT, INTERN
     }
@@ -32,6 +32,11 @@ namespace PA.BLL
         public PA.DAL.PaDataSet.tbl_EmployeeDataTable getEmployees()
         {
             return Adapter.GetData();
+        }
+
+        public PA.DAL.PaDataSet.tbl_EmployeeDataTable getEmployees(int nDepartmentID)
+        {
+            return Adapter.GetEmployeesByDepartmentID(nDepartmentID);
         }
 
         public bool addEmployee(string firstname, string middlename, string lastname,

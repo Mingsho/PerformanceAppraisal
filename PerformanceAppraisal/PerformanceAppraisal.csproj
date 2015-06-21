@@ -156,6 +156,10 @@
       <Project>{dd833e6f-bc7b-4ae5-b6cb-d1b50c1f523c}</Project>
       <Name>PA.BLL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PA.DAL\PA.DAL.csproj">
+      <Project>{125159fc-fd3e-442d-a928-ea4154e9e71f}</Project>
+      <Name>PA.DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

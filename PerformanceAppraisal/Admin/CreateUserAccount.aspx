@@ -9,9 +9,16 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        
-    
+        <asp:createuserwizard ID="createPaUserWizard"
+            runat="server" CompleteSuccessText="User account has been successfully created!">
+            <WizardSteps>
+                <asp:CreateUserWizardStep ID="CreateUserWizardStep1" runat="server"/>
+                <asp:CompleteWizardStep ID="CompleteWizardStep1" runat="server"/>
+            </WizardSteps>
+        </asp:createuserwizard>
+
     </div>
     </form>
 </body>
 </html>
+

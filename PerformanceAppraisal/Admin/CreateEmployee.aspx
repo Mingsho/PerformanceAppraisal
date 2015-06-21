@@ -91,6 +91,7 @@
         
         <asp:Label ID="lblEmployeetype"
             runat="server"
+            Text="Employee Type: "
             AssociatedControlID="dListEmpType"></asp:Label>
         <asp:DropDownList ID="dListEmpType"
             runat="server"

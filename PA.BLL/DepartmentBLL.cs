@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PA.DAL.PaDataSetTableAdapters;
+using PA.DAL;
 
 namespace PA.BLL
 {
@@ -21,7 +22,7 @@ namespace PA.BLL
             }
         }
 
-        public PA.DAL.PaDataSet.tbl_DepartmentDataTable getDepartments()
+        public PaDataSet.tbl_DepartmentDataTable getDepartments()
         {
             return Adapter.GetData();
         }
@@ -30,8 +31,8 @@ namespace PA.BLL
         {
             bool bRetVal = false;
 
-            PA.DAL.PaDataSet.tbl_DepartmentDataTable departments = new DAL.PaDataSet.tbl_DepartmentDataTable();
-            PA.DAL.PaDataSet.tbl_DepartmentRow department = departments.Newtbl_DepartmentRow();
+            PaDataSet.tbl_DepartmentDataTable departments = new PaDataSet.tbl_DepartmentDataTable();
+            PaDataSet.tbl_DepartmentRow department = departments.Newtbl_DepartmentRow();
 
             department.Departmentname = departmentName;
             department.Description = description;
