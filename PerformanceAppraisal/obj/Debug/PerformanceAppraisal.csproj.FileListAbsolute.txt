@@ -1,1 +1,15 @@
 C:\Users\Mingsho\documents\visual studio 2012\Projects\PerformanceAppraisal\PerformanceAppraisal\obj\Debug\PerformanceAppraisal.csprojResolveAssemblyReference.cache
+C:\Users\Mingsho\documents\visual studio 2012\Projects\PerformanceAppraisal\PerformanceAppraisal\bin\PerformanceAppraisal.dll
+C:\Users\Mingsho\documents\visual studio 2012\Projects\PerformanceAppraisal\PerformanceAppraisal\bin\PerformanceAppraisal.pdb
+C:\Users\Mingsho\documents\visual studio 2012\Projects\PerformanceAppraisal\PerformanceAppraisal\bin\EntityFramework.dll
+C:\Users\Mingsho\documents\visual studio 2012\Projects\PerformanceAppraisal\PerformanceAppraisal\bin\EntityFramework.SqlServer.dll
+C:\Users\Mingsho\documents\visual studio 2012\Projects\PerformanceAppraisal\PerformanceAppraisal\bin\PA.BLL.dll
+C:\Users\Mingsho\documents\visual studio 2012\Projects\PerformanceAppraisal\PerformanceAppraisal\bin\PA.DAL.dll
+C:\Users\Mingsho\documents\visual studio 2012\Projects\PerformanceAppraisal\PerformanceAppraisal\bin\System.Web.Providers.dll
+C:\Users\Mingsho\documents\visual studio 2012\Projects\PerformanceAppraisal\PerformanceAppraisal\bin\PA.BLL.pdb
+C:\Users\Mingsho\documents\visual studio 2012\Projects\PerformanceAppraisal\PerformanceAppraisal\bin\PA.DAL.pdb
+C:\Users\Mingsho\documents\visual studio 2012\Projects\PerformanceAppraisal\PerformanceAppraisal\bin\EntityFramework.xml
+C:\Users\Mingsho\documents\visual studio 2012\Projects\PerformanceAppraisal\PerformanceAppraisal\bin\EntityFramework.SqlServer.xml
+C:\Users\Mingsho\documents\visual studio 2012\Projects\PerformanceAppraisal\PerformanceAppraisal\bin\System.Web.Providers.xml
+C:\Users\Mingsho\documents\visual studio 2012\Projects\PerformanceAppraisal\PerformanceAppraisal\obj\Debug\PerformanceAppraisal.dll
+C:\Users\Mingsho\documents\visual studio 2012\Projects\PerformanceAppraisal\PerformanceAppraisal\obj\Debug\PerformanceAppraisal.pdb

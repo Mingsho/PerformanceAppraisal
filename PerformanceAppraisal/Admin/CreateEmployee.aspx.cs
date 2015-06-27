@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Drawing;
 using PA.BLL;
 
 namespace PerformanceAppraisal.Admin
@@ -125,7 +126,11 @@ namespace PerformanceAppraisal.Admin
 
         protected void btnUpload_Click(object sender, EventArgs e)
         {
+            int contentLength = txtProfilePic.PostedFile.ContentLength;
+            string contentType = txtProfilePic.PostedFile.ContentType;
+            string fileName = txtProfilePic.PostedFile.FileName;
 
+            Response.Write(fileName);
         }
     }
 }

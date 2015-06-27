@@ -42,8 +42,6 @@
                 Width="225px"
                 ImageUrl="~/Images/defaultProfileImage1.png" />
 
-
-
             <input id="txtProfilePic"
                 type="file"
                 name="file"
