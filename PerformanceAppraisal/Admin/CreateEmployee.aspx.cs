@@ -25,8 +25,12 @@ namespace PerformanceAppraisal.Admin
                 dListDepartment.DataSource = deptLogic.getDepartments();
                 dListDepartment.DataBind();
 
+                dListDepartment.Items.Insert(0, new ListItem("Configure Department Later", "-1"));
+
                 Array itemValues = System.Enum.GetValues(typeof(EmployeeType));
                 Array itemNames = System.Enum.GetNames(typeof(EmployeeType));
+
+                
 
                 for(int i=0; i<=itemNames.Length-1;i++)
                 {
@@ -35,15 +39,23 @@ namespace PerformanceAppraisal.Admin
                     dListEmpType.Items.Add(item);
                 }
 
+                dListEmpType.Items.Insert(0, new ListItem("Configure Employee Type Later", "-1"));
+
                 dListManager.DataSource = empLogic.getEmployees();
                 dListManager.DataTextField = "Firstname";
                 dListManager.DataValueField = "EmpID";
+                dListManager.Items.Insert(0, new ListItem("Configure Manager Later", "-1"));
 
                
             }
 
         }
 
+        /// <summary>
+        /// btnCreateEmployee OnClick eventhandler
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnCreateEmployee_Click(object sender, EventArgs e)
         {
             if(Page.IsValid)
@@ -56,21 +68,45 @@ namespace PerformanceAppraisal.Admin
                     employee.Firstname = txtFirstname.Text;
                     employee.Middlename = txtMiddlename.Text;
                     employee.Lastname = txtLastname.Text;
-                    employee.DateofBirth = DateTime.Parse(txtDateofbirth.Text);
+
+                    if (string.IsNullOrEmpty(txtDateofbirth.Text))
+                        employee.DateofBirth = null;
+                    else
+                        employee.DateofBirth = DateTime.Parse(txtDateofbirth.Text);
+
                     employee.HouseUnitNo = txtHouseno.Text;
                     employee.Streetname = txtStreetname.Text;
                     employee.Suburb = txtSuburb.Text;
                     employee.City = txtCity.Text;
-                    employee.Postcode = int.Parse(txtPostcode.Text);
+
+                    if (string.IsNullOrEmpty(txtPostcode.Text))
+                        employee.Postcode = null;
+                    else
+                        employee.Postcode = int.Parse(txtPostcode.Text);
+
                     employee.ContactNumber = txtContactnumber.Text;
                     employee.Email = txtEmail.Text;
                     employee.EmployeeType = dListEmpType.SelectedValue;
                     employee.StartDate = DateTime.Parse(txtStartdate.Text);
-                    employee.ManagerID = int.Parse(dListManager.SelectedValue.ToString());
-                    employee.DepartmentID = int.Parse(dListDepartment.SelectedValue.ToString());
+
+                    int nManagerId = int.Parse(dListManager.SelectedValue.ToString());
+
+                    if (nManagerId != -1)
+                        employee.ManagerID = int.Parse(dListManager.SelectedValue.ToString());
+                    else
+                        employee.ManagerID = null;
+
+                    int nDepartmentID=int.Parse(dListDepartment.SelectedValue.ToString());
+
+                    if(nDepartmentID!=-1)
+                        employee.DepartmentID = int.Parse(dListDepartment.SelectedValue.ToString());
+                    else
+                        employee.DepartmentID=null;
 
                     //store in session
                     Session["objEmployee"] = employee;
+
+                    Response.Redirect("~/Admin/CreateUserAccount.aspx");
  
                     
                 }
@@ -85,6 +121,11 @@ namespace PerformanceAppraisal.Admin
                 }
                 
             }
+        }
+
+        protected void btnUpload_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

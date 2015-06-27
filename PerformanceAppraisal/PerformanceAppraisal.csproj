@@ -45,6 +45,7 @@
       <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -58,7 +59,6 @@
       <HintPath>..\packages\Microsoft.AspNet.Providers.Core.2.0.0\lib\net40\System.Web.Providers.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
@@ -68,13 +68,17 @@
   <ItemGroup>
     <Content Include="Admin\AddDepartment.aspx" />
     <Content Include="Admin\AdminIndex.aspx" />
+    <Content Include="Admin\ChangePassword.aspx" />
     <Content Include="Admin\CreateEmployee.aspx" />
+    <Content Include="Admin\CreateEmployeePD.aspx" />
     <Content Include="Admin\CreateUserAccount.aspx" />
     <Content Include="Authentication.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Controls\UserprofileControl.ascx" />
+    <Content Include="ErrorPage.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -82,6 +86,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Images\defaultProfileImage1.png" />
+    <Content Include="MasterPages\AdminLayout.Master" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Icon.png" />
     <Content Include="Scripts\bootstrap.js" />
@@ -92,6 +98,7 @@
     <Content Include="UserPages\UserIndex.aspx" />
     <Content Include="Web.config" />
     <Content Include="Scripts\jquery-2.1.4.min.map" />
+    <Content Include="Web.sitemap" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin\AddDepartment.aspx.cs">
@@ -108,12 +115,26 @@
     <Compile Include="Admin\AdminIndex.aspx.designer.cs">
       <DependentUpon>AdminIndex.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\CreateEmployee.aspx.cs">
       <DependentUpon>CreateEmployee.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\CreateEmployee.aspx.designer.cs">
       <DependentUpon>CreateEmployee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\CreateEmployeePD.aspx.cs">
+      <DependentUpon>CreateEmployeePD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CreateEmployeePD.aspx.designer.cs">
+      <DependentUpon>CreateEmployeePD.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\CreateUserAccount.aspx.cs">
       <DependentUpon>CreateUserAccount.aspx</DependentUpon>
@@ -128,6 +149,27 @@
     </Compile>
     <Compile Include="Authentication.aspx.designer.cs">
       <DependentUpon>Authentication.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserprofileControl.ascx.cs">
+      <DependentUpon>UserprofileControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\UserprofileControl.ascx.designer.cs">
+      <DependentUpon>UserprofileControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorPage.aspx.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorPage.aspx.designer.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPages\AdminLayout.Master.cs">
+      <DependentUpon>AdminLayout.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\AdminLayout.Master.designer.cs">
+      <DependentUpon>AdminLayout.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserPages\UserIndex.aspx.cs">
@@ -149,7 +191,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Themes\Theme1\" />
-    <Folder Include="MasterPages\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PA.BLL\PA.BLL.csproj">
@@ -174,7 +215,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>34320</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:4318/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

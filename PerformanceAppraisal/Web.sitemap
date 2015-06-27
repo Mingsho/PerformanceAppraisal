@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  
+    <siteMapNode url="" title="Site Root"  description="Root node of the site">
+      
+      <siteMapNode url="~/Admin/AdminIndex.aspx" title="Admin Home" description="Admin dashboard page">
+        <siteMapNode url="~/Admin/AddDepartment.aspx" title="Add Department"  description="Create a new department" />
+        <siteMapNode url="~/Admin/CreateEmployee.aspx" title="Add Employee"  description="Create a new employee" />
+        <siteMapNode url="~/Admin/CreateUserAccount.aspx" title="Add User Account" description="Create a User account for user"/>
+      </siteMapNode>
+        
+    </siteMapNode>
+</siteMap>

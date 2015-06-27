@@ -7,10 +7,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PerformanceAppraisal.Admin {
+namespace PerformanceAppraisal.MasterPages {
     
     
-    public partial class AdminIndex {
+    public partial class AdminLayout {
+        
+        /// <summary>
+        /// head control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
         
         /// <summary>
         /// form1 control.
@@ -22,39 +31,21 @@ namespace PerformanceAppraisal.Admin {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// paSmDataSource control.
+        /// MainContent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SiteMapDataSource paSmDataSource;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
         
         /// <summary>
-        /// LoginName1 control.
+        /// EndContent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LoginName LoginName1;
-        
-        /// <summary>
-        /// LoginStatus1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LoginStatus LoginStatus1;
-        
-        /// <summary>
-        /// menuAdmin control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Menu menuAdmin;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder EndContent;
     }
 }

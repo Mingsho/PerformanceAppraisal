@@ -8,8 +8,16 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <asp:SiteMapDataSource ID="paSmDataSource"
+            runat="server" ShowStartingNode="false" />
     <div>
         <h1>This is the Admin Index Page</h1>
+        <asp:LoginName ID="LoginName1" runat="server" /><br />
+        <asp:LoginStatus ID="LoginStatus1" runat="server" /><br />
+        <asp:Menu ID="menuAdmin"
+            runat="server"
+            DataSourceID="paSmDataSource"></asp:Menu>
+            
     </div>
     </form>
 </body>

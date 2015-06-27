@@ -778,7 +778,6 @@ namespace PA.DAL {
                 this.columnEmail.MaxLength = 50;
                 this.columnEmployeeType.AllowDBNull = false;
                 this.columnEmployeeType.MaxLength = 20;
-                this.columnProfileImage.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1777,7 +1776,12 @@ namespace PA.DAL {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public byte[] ProfileImage {
                 get {
-                    return ((byte[])(this[this.tabletbl_Employee.ProfileImageColumn]));
+                    try {
+                        return ((byte[])(this[this.tabletbl_Employee.ProfileImageColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ProfileImage\' in table \'tbl_Employee\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tabletbl_Employee.ProfileImageColumn] = value;
@@ -1947,6 +1951,18 @@ namespace PA.DAL {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetDeptIDNull() {
                 this[this.tabletbl_Employee.DeptIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsProfileImageNull() {
+                return this.IsNull(this.tabletbl_Employee.ProfileImageColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetProfileImageNull() {
+                this[this.tabletbl_Employee.ProfileImageColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2513,7 +2529,10 @@ SELECT EmpID, Firstname, Middlename, Lastname, DateOfBirth, HouseUnitNo, Streetn
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT * FROM dbo.tbl_Employee WHERE DeptID = @DepartmentID";
+            this._commandCollection[1].CommandText = "SELECT City, ContactNumber, DateOfBirth, DeptID, Email, EmpID, EmployeeType, Firs" +
+                "tname, HouseUnitNo, Lastname, ManagerID, Middlename, Postcode, ProfileImage, Sta" +
+                "rtDate, Streetname, Suburb, UserAccountID FROM tbl_Employee WHERE (DeptID = @Dep" +
+                "artmentID)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DepartmentID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "DeptID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -2883,7 +2902,7 @@ SELECT EmpID, Firstname, Middlename, Lastname, DateOfBirth, HouseUnitNo, Streetn
                 this.Adapter.InsertCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
             if ((ProfileImage == null)) {
-                throw new global::System.ArgumentNullException("ProfileImage");
+                this.Adapter.InsertCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[16].Value = ((byte[])(ProfileImage));
@@ -3041,7 +3060,7 @@ SELECT EmpID, Firstname, Middlename, Lastname, DateOfBirth, HouseUnitNo, Streetn
                 this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
             if ((ProfileImage == null)) {
-                throw new global::System.ArgumentNullException("ProfileImage");
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[16].Value = ((byte[])(ProfileImage));

@@ -12,15 +12,22 @@ namespace PerformanceAppraisal
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            this.lgnUser.Focus();
         }
 
         protected void lgnUser_LoggedIn(object sender, EventArgs e)
         {
-           if(Roles.IsUserInRole(lgnUser.UserName, "SuperAdmin"))
-               Response.Redirect("~/Admin/AdminIndex.aspx");
-           else
-               Response.Redirect("~/UserPages/UserIndex.aspx");
+            string returnUrl = Request.QueryString["ReturnUrl"];
+
+            if (returnUrl == null)
+            {
+                if (Roles.IsUserInRole(lgnUser.UserName, "SuperAdmin"))
+                    Response.Redirect("~/Admin/AdminIndex.aspx");
+                else
+                    Response.Redirect("~/UserPages/UserIndex.aspx");
+            }
+            else
+                Response.Redirect(returnUrl);
             
         }
         

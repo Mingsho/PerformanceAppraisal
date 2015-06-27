@@ -10,7 +10,10 @@
     <form id="form1" runat="server">
     <div>
         <asp:createuserwizard ID="createPaUserWizard"
-            runat="server" CompleteSuccessText="User account has been successfully created!">
+            runat="server"
+            CompleteSuccessText="User account has been successfully created!"
+            LoginCreatedUser="false"
+            OnCreatedUser="createPaUserWizard_CreatedUser">
             <WizardSteps>
                 <asp:CreateUserWizardStep ID="CreateUserWizardStep1" runat="server"/>
                 <asp:CompleteWizardStep ID="CompleteWizardStep1" runat="server"/>

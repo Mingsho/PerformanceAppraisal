@@ -10,7 +10,10 @@
     <form id="form1" runat="server">
     <div>
         This is the User Index Page!!
-    </div>
+        <asp:LoginName ID="LoginName1" runat="server" />
+    
+        <asp:LoginStatus ID="LoginStatus1" runat="server" />
+        </div>
     </form>
 </body>
 </html>
