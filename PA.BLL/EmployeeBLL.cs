@@ -33,6 +33,9 @@ namespace PA.BLL
             }
         }
 
+        public static readonly string[] VALID_IMAGE_EXTENSIONS =
+            new string[4] { ".jpg", ".png", ".gif", ".jpeg" };
+
         public PA.DAL.PaDataSet.tbl_EmployeeDataTable getEmployees()
         {
             return Adapter.GetData();

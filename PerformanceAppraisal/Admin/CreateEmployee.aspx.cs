@@ -13,43 +13,43 @@ namespace PerformanceAppraisal.Admin
     {
         EmployeeBLL empLogic = new EmployeeBLL();
         DepartmentBLL deptLogic = new DepartmentBLL();
+        Employee employee;
 
         //Array enumNames = System.Enum.GetNames(typeof(EmployeeType));
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!Page.IsPostBack)
+            if (!Page.IsPostBack)
+                initializeComponents();
+
+           
+        }
+
+        private void initializeComponents()
+        {
+            dListDepartment.DataTextField = "Departmentname";
+            dListDepartment.DataValueField = "DepartmentID";
+            dListDepartment.DataSource = deptLogic.getDepartments();
+            dListDepartment.DataBind();
+
+            dListDepartment.Items.Insert(0, new ListItem("Configure Department Later", "-1"));
+
+            Array itemValues = System.Enum.GetValues(typeof(EmployeeType));
+            Array itemNames = System.Enum.GetNames(typeof(EmployeeType));
+
+            for (int i = 0; i <= itemNames.Length - 1; i++)
             {
-
-                dListDepartment.DataTextField = "Departmentname";
-                dListDepartment.DataValueField = "DepartmentID";
-                dListDepartment.DataSource = deptLogic.getDepartments();
-                dListDepartment.DataBind();
-
-                dListDepartment.Items.Insert(0, new ListItem("Configure Department Later", "-1"));
-
-                Array itemValues = System.Enum.GetValues(typeof(EmployeeType));
-                Array itemNames = System.Enum.GetNames(typeof(EmployeeType));
-
-                
-
-                for(int i=0; i<=itemNames.Length-1;i++)
-                {
-                    ListItem item = new ListItem(itemNames.GetValue(i).ToString(),
-                        itemValues.GetValue(i).ToString());
-                    dListEmpType.Items.Add(item);
-                }
-
-                dListEmpType.Items.Insert(0, new ListItem("Configure Employee Type Later", "-1"));
-
-                dListManager.DataSource = empLogic.getEmployees();
-                dListManager.DataTextField = "Firstname";
-                dListManager.DataValueField = "EmpID";
-                dListManager.Items.Insert(0, new ListItem("Configure Manager Later", "-1"));
-
-               
+                ListItem item = new ListItem(itemNames.GetValue(i).ToString(),
+                    itemValues.GetValue(i).ToString());
+                dListEmpType.Items.Add(item);
             }
 
+            dListEmpType.Items.Insert(0, new ListItem("Configure Employee Type Later", "-1"));
+
+            dListManager.DataSource = empLogic.getEmployees();
+            dListManager.DataTextField = "Firstname";
+            dListManager.DataValueField = "EmpID";
+            dListManager.Items.Insert(0, new ListItem("Configure Manager Later", "-1"));
         }
 
         /// <summary>
@@ -61,7 +61,7 @@ namespace PerformanceAppraisal.Admin
         {
             if(Page.IsValid)
             {
-                Employee employee = new Employee();
+                employee = new Employee();
 
                 try
                 {
@@ -126,11 +126,22 @@ namespace PerformanceAppraisal.Admin
 
         protected void btnUpload_Click(object sender, EventArgs e)
         {
-            int contentLength = txtProfilePic.PostedFile.ContentLength;
-            string contentType = txtProfilePic.PostedFile.ContentType;
-            string fileName = txtProfilePic.PostedFile.FileName;
+            //employee = new Employee();
 
-            Response.Write(fileName);
+            //if(!string.IsNullOrEmpty(txtProfilePic.PostedFile.FileName))
+            //{
+            //    int contentLength = txtProfilePic.PostedFile.ContentLength;
+            //    string contentType = txtProfilePic.PostedFile.ContentType;
+            //    string fileName = txtProfilePic.PostedFile.FileName;
+
+            //    switch(contentType.ToLower())
+            //    {
+            //        case "image/png":
+            //            employee.ProfileImage=empLogic.convertImageToByteArray(txtProfilePic.PostedFile.
+            //    }
+            //}
+            
+
         }
     }
 }
