@@ -5,32 +5,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-
+    <script type="text/javascript" src="~/Scripts/jquery-2.1.4.min.js">     </script>
     <script type="text/javascript">
-
-        function previewFile() {
-
-            var preview = document.querySelector('#<%=imgProfilePic.ClientID %>');
-            var file = document.querySelector('#<%= txtProfilePic.ClientID%>').files[0];
-            var reader = new FileReader();
-
-            reader.onloadend = function () {
-                preview.src = reader.result;
-
-            }
-
-            if (file) {
-
-                reader.readAsDataURL(file);
-            }
-            else
-                preview.src = "";
-        }
+        
+      
     </script>
 </head>
 <body>
     <form id="form1" runat="server">
-
+        <asp:ScriptManager ID="mainScriptManager"
+            runat="server"></asp:ScriptManager>
     <div>
         
         <fieldset>
@@ -40,18 +24,17 @@
                 runat="server"
                 Height="225px"
                 Width="225px"
-                ImageUrl="~/Images/defaultProfileImage1.png" />
+                ImageUrl="~/Images/defaultProfileImage1.png" /><br />
 
-            <input id="txtProfilePic"
-                type="file"
-                name="file"
-                onchange="previewFile()"
-                runat="server" />
+            <ajaxToolkit:AsyncFileUpload ID="fUploadProfilePic"
+                runat="server"
+                OnUploadedComplete="fUploadProfilePic_UploadedComplete"
+                OnClientUploadComplete="onFileUploadProfilePic" />
 
             <asp:Button ID="btnUpload"
                 runat="server"
                 Text="Upload"
-                OnClick="btnUpload_Click" />
+                OnClick="btnUpload_Click" /><br />
             <asp:Label ID="lblFirstname"
                 runat="server"
                 AssociatedControlID="txtFirstname"
@@ -162,5 +145,23 @@
            
     </div>
     </form>
+    <script type="text/javascript">
+
+        function getRandomNumber() {
+
+            var randomNumber = Math.random(10000);
+            return randomNumber;
+        }
+
+        function onFileUploadProfilePic(sender, args) {
+
+            var handlerPage = '<%= Page.ResolveClientUrl("~/Handlers/ImageHandler.ashx")%>';
+            var queryString = '?randomno=' + getRandomNumber();
+            var src = handlerPage + queryString;
+            var clientID = '<%= imgProfilePic.ClientID%>';
+            document.getElementById(clientID).setAttribute("src", src);
+        }
+
+    </script>
 </body>
 </html>

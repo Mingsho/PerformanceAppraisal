@@ -10,7 +10,8 @@
     </asp:ContentPlaceHolder>
 
     <%: System.Web.Optimization.Styles.Render("CoreStyles") %>
-    <%: System.Web.Optimization.Scripts.Render("CoreScripts")  %>
+    <link rel="stylesheet" href="../Content/bootstrap.min.css" />
+    
 </head>
 
 <body>
@@ -905,5 +906,7 @@
         </asp:ContentPlaceHolder>
     </div>
     </form>
+
+    <%: System.Web.Optimization.Scripts.Render("CoreScripts")  %>
 </body>
 </html>

@@ -22,6 +22,15 @@ namespace PerformanceAppraisal.Admin {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// mainScriptManager control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager mainScriptManager;
+        
+        /// <summary>
         /// imgProfilePic control.
         /// </summary>
         /// <remarks>
@@ -31,13 +40,13 @@ namespace PerformanceAppraisal.Admin {
         protected global::System.Web.UI.WebControls.Image imgProfilePic;
         
         /// <summary>
-        /// txtProfilePic control.
+        /// fUploadProfilePic control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputFile txtProfilePic;
+        protected global::AjaxControlToolkit.AsyncFileUpload fUploadProfilePic;
         
         /// <summary>
         /// btnUpload control.

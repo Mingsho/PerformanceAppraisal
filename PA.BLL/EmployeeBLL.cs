@@ -36,17 +36,19 @@ namespace PA.BLL
         public static readonly string[] VALID_IMAGE_EXTENSIONS =
             new string[4] { ".jpg", ".png", ".gif", ".jpeg" };
 
-        public PA.DAL.PaDataSet.tbl_EmployeeDataTable getEmployees()
+        public static readonly string STORED_IMAGE = "SessionImage";
+
+        public PA.DAL.PaDataSet.tbl_EmployeeDataTable GetEmployees()
         {
             return Adapter.GetData();
         }
 
-        public PA.DAL.PaDataSet.tbl_EmployeeDataTable getEmployees(int nDepartmentID)
+        public PA.DAL.PaDataSet.tbl_EmployeeDataTable GetEmployees(int nDepartmentID)
         {
             return Adapter.GetEmployeesByDepartmentID(nDepartmentID);
         }
 
-        public bool addEmployee(string firstname, string middlename, string lastname,
+        public bool AddEmployee(string firstname, string middlename, string lastname,
             DateTime? dateofbirth, string houseno, string streetname, string suburb,
             string city, int? postcode, string contactno, string email, string employeetype,
             DateTime? startdate, int? managerid, Guid? useraccountid, int? deptid,
@@ -100,7 +102,7 @@ namespace PA.BLL
             return bRetVal;
         }
 
-        public bool addEmployee(Employee employee)
+        public bool AddEmployee(Employee employee)
         {
             bool bRetVal = false;
 
@@ -158,32 +160,6 @@ namespace PA.BLL
             return bRetVal;
         }
 
-        /// <summary>
-        /// Method to convert the image to a stream of bytes.
-        /// </summary>
-        /// <param name="imgToConvert"></param>
-        /// <param name="imgImageFormat"></param>
-        /// <returns></returns>
-        public byte[] convertImageToByteArray(Image imgToConvert, ImageFormat imgImageFormat)
-        {
-            byte[] bytArray;
-
-            try
-            {
-                using (MemoryStream mStream= new MemoryStream())
-                {
-                    imgToConvert.Save(mStream, imgImageFormat);
-                    bytArray = mStream.ToArray();
-                }
-            }
-            catch (Exception)
-            {
-                
-                throw;
-            }
-            return bytArray;
-            
-        }
-
+        
     }
 }

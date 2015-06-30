@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Drawing;
 using PA.BLL;
 
+
 namespace PerformanceAppraisal.Admin
 {
     public partial class CreateEmployee : System.Web.UI.Page
@@ -46,7 +47,7 @@ namespace PerformanceAppraisal.Admin
 
             dListEmpType.Items.Insert(0, new ListItem("Configure Employee Type Later", "-1"));
 
-            dListManager.DataSource = empLogic.getEmployees();
+            dListManager.DataSource = empLogic.GetEmployees();
             dListManager.DataTextField = "Firstname";
             dListManager.DataValueField = "EmpID";
             dListManager.Items.Insert(0, new ListItem("Configure Manager Later", "-1"));
@@ -143,5 +144,24 @@ namespace PerformanceAppraisal.Admin
             
 
         }
+
+        protected void fUploadProfilePic_UploadedComplete(object sender,
+            AjaxControlToolkit.AsyncFileUploadEventArgs e)
+        {
+            if(fUploadProfilePic.PostedFile!=null)
+            {
+                HttpPostedFile file = fUploadProfilePic.PostedFile;
+
+                Utilities.ImageUtil imgUtil = new Utilities.ImageUtil();
+
+                byte[] data = imgUtil.ReadFile(file);
+
+                Session[EmployeeBLL.STORED_IMAGE] = data;
+                
+            }
+
+        }
+
+       
     }
 }

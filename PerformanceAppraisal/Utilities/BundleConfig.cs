@@ -17,7 +17,8 @@ namespace PerformanceAppraisal.Utilities
 
             //The core javascripts
             bundles.Add(new ScriptBundle("~/CoreScripts").Include("~/Scripts/jquery-{version}.js",
-                "~/Scripts/bootstrap.min.js"));
+                "~/Scripts/bootstrap.min.js",
+                "~/Scripts/modernizr-{version}.js"));
             
         }
     }

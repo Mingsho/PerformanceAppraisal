@@ -31,7 +31,7 @@ namespace PerformanceAppraisal.Admin
 
             employee.UserAccountID = userAccountID;
 
-            if (empLogic.addEmployee(employee))
+            if (empLogic.AddEmployee(employee))
                 Response.Write("User created Successfully!");
 
         }
