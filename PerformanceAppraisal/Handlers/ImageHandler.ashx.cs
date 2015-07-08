@@ -17,7 +17,7 @@ namespace PerformanceAppraisal.Handlers
         public void ProcessRequest(HttpContext context)
         {
             context.Response.Clear();
-
+            
             if(context.Session[EmployeeBLL.STORED_IMAGE]!=null)
             {
                 var storedImage = context.Session[EmployeeBLL.STORED_IMAGE] as byte[];

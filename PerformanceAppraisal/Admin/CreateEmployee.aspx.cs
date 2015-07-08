@@ -5,7 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Drawing;
+using AjaxControlToolkit;
 using PA.BLL;
+using PerformanceAppraisal.Utilities;
 
 
 namespace PerformanceAppraisal.Admin
@@ -16,14 +18,28 @@ namespace PerformanceAppraisal.Admin
         DepartmentBLL deptLogic = new DepartmentBLL();
         Employee employee;
 
-        //Array enumNames = System.Enum.GetNames(typeof(EmployeeType));
+        private const string userProfileImageUrl = "sessionImageUrl";
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
                 initializeComponents();
 
-           
+            
+
+            //if(Request.IsAjaxRequest())
+
+            if(CoreUtilities.IsAjaxRequest(this.Request))
+            {
+                if (Session["fUpload"] == null && fUploadProfilePic.HasFile)
+                    Session["fUpload"] = fUploadProfilePic;
+                else if (Session["fUpload"] != null && (!fUploadProfilePic.HasFile))
+                    fUploadProfilePic = (AsyncFileUpload)Session["fUpload"];
+                else if (fUploadProfilePic.HasFile)
+                    Session["fUpload"] = fUploadProfilePic;
+            }
+
+            
         }
 
         private void initializeComponents()
@@ -91,6 +107,11 @@ namespace PerformanceAppraisal.Admin
                     employee.EmployeeType = dListEmpType.SelectedValue;
                     employee.StartDate = DateTime.Parse(txtStartdate.Text);
 
+                    if (fUploadProfilePic.HasFile)
+                        employee.ProfileImage = ImageUtil.ReadFile(fUploadProfilePic.PostedFile);
+                    else
+                        employee.ProfileImage = null;
+
                     int nManagerId = int.Parse(dListManager.SelectedValue.ToString());
 
                     if (nManagerId != -1)
@@ -125,41 +146,29 @@ namespace PerformanceAppraisal.Admin
             }
         }
 
-        protected void btnUpload_Click(object sender, EventArgs e)
-        {
-            //employee = new Employee();
-
-            //if(!string.IsNullOrEmpty(txtProfilePic.PostedFile.FileName))
-            //{
-            //    int contentLength = txtProfilePic.PostedFile.ContentLength;
-            //    string contentType = txtProfilePic.PostedFile.ContentType;
-            //    string fileName = txtProfilePic.PostedFile.FileName;
-
-            //    switch(contentType.ToLower())
-            //    {
-            //        case "image/png":
-            //            employee.ProfileImage=empLogic.convertImageToByteArray(txtProfilePic.PostedFile.
-            //    }
-            //}
-            
-
-        }
-
+       
         protected void fUploadProfilePic_UploadedComplete(object sender,
             AjaxControlToolkit.AsyncFileUploadEventArgs e)
         {
+
             if(fUploadProfilePic.PostedFile!=null)
             {
                 HttpPostedFile file = fUploadProfilePic.PostedFile;
 
-                Utilities.ImageUtil imgUtil = new Utilities.ImageUtil();
+                byte[] data = Utilities.ImageUtil.ReadFile(file);
 
-                byte[] data = imgUtil.ReadFile(file);
-
+               //if(Utilities.ImageUtil.IsByteArrayValid(data))
                 Session[EmployeeBLL.STORED_IMAGE] = data;
+
+                //Session["fUpload"] = fUploadProfilePic;
                 
             }
 
+        }
+
+        protected void dListEmpType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
 
        

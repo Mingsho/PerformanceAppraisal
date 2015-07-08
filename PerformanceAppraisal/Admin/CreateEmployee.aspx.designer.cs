@@ -40,6 +40,15 @@ namespace PerformanceAppraisal.Admin {
         protected global::System.Web.UI.WebControls.Image imgProfilePic;
         
         /// <summary>
+        /// uPanelProfilePicUpload control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel uPanelProfilePicUpload;
+        
+        /// <summary>
         /// fUploadProfilePic control.
         /// </summary>
         /// <remarks>
@@ -47,15 +56,6 @@ namespace PerformanceAppraisal.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.AsyncFileUpload fUploadProfilePic;
-        
-        /// <summary>
-        /// btnUpload control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnUpload;
         
         /// <summary>
         /// lblFirstname control.

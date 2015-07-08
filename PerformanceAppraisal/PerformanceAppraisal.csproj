@@ -97,7 +97,6 @@
     <Content Include="Admin\AdminIndex.aspx" />
     <Content Include="Admin\ChangePassword.aspx" />
     <Content Include="Admin\CreateEmployee.aspx" />
-    <Content Include="Admin\CreateEmployeePD.aspx" />
     <Content Include="Admin\CreateUserAccount.aspx" />
     <Content Include="Authentication.aspx" />
     <Content Include="Content\bootstrap.css" />
@@ -166,13 +165,6 @@
     <Compile Include="Admin\CreateEmployee.aspx.designer.cs">
       <DependentUpon>CreateEmployee.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\CreateEmployeePD.aspx.cs">
-      <DependentUpon>CreateEmployeePD.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\CreateEmployeePD.aspx.designer.cs">
-      <DependentUpon>CreateEmployeePD.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Admin\CreateUserAccount.aspx.cs">
       <DependentUpon>CreateUserAccount.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -230,6 +222,7 @@
       <DependentUpon>UserIndex.aspx</DependentUpon>
     </Compile>
     <Compile Include="Utilities\BundleConfig.cs" />
+    <Compile Include="Utilities\CoreUtilities.cs" />
     <Compile Include="Utilities\ImageUtil.cs" />
   </ItemGroup>
   <ItemGroup>

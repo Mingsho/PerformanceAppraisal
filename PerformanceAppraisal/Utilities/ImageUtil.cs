@@ -8,7 +8,7 @@ namespace PerformanceAppraisal.Utilities
     public class ImageUtil
     {
 
-        public byte[] ReadFile(HttpPostedFile file)
+        public static byte[] ReadFile(HttpPostedFile file)
         {
             byte[] data = new Byte[file.ContentLength];
 
@@ -16,6 +16,19 @@ namespace PerformanceAppraisal.Utilities
 
             return data;
 
+        }
+
+        public static bool IsByteArrayValid(byte[] bytArr)
+        {
+            if (bytArr == null) return false;
+
+            
+            for(int i=0; i<bytArr.Length;i++)
+            {
+                if (bytArr[i] == 0) return false;   
+            }
+            
+            return true;
         }
     }
 }

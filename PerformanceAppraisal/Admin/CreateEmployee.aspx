@@ -15,6 +15,7 @@
     <form id="form1" runat="server">
         <asp:ScriptManager ID="mainScriptManager"
             runat="server"></asp:ScriptManager>
+      
     <div>
         
         <fieldset>
@@ -26,15 +27,21 @@
                 Width="225px"
                 ImageUrl="~/Images/defaultProfileImage1.png" /><br />
 
-            <ajaxToolkit:AsyncFileUpload ID="fUploadProfilePic"
-                runat="server"
-                OnUploadedComplete="fUploadProfilePic_UploadedComplete"
-                OnClientUploadComplete="onFileUploadProfilePic" />
 
-            <asp:Button ID="btnUpload"
-                runat="server"
-                Text="Upload"
-                OnClick="btnUpload_Click" /><br />
+            <asp:UpdatePanel ID="uPanelProfilePicUpload"
+                runat="server">
+
+                <ContentTemplate>
+                    <ajaxToolkit:AsyncFileUpload ID="fUploadProfilePic"
+                        runat="server"
+                        OnUploadedComplete="fUploadProfilePic_UploadedComplete"
+                        OnClientUploadComplete="onFileUploadProfilePic" UploaderStyle="Modern" />
+                </ContentTemplate>
+
+            </asp:UpdatePanel>
+
+            
+
             <asp:Label ID="lblFirstname"
                 runat="server"
                 AssociatedControlID="txtFirstname"
@@ -114,9 +121,11 @@
             runat="server"
             Text="Employee Type: "
             AssociatedControlID="dListEmpType"></asp:Label>
+          
         <asp:DropDownList ID="dListEmpType"
             runat="server"
-            AutoPostBack="true"></asp:DropDownList><br />
+            AutoPostBack="true"
+            OnSelectedIndexChanged="dListEmpType_SelectedIndexChanged"></asp:DropDownList><br />
         <asp:Label ID="lblStartDate"
             runat="server"
             Text="Employee StartDate: "
