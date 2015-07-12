@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.SessionState;
 using System.IO;
 using PA.BLL;
+using PerformanceAppraisal.Utilities;
 
 namespace PerformanceAppraisal.Handlers
 {
@@ -24,7 +25,7 @@ namespace PerformanceAppraisal.Handlers
 
                 if(storedImage!=null)
                 {
-                    System.Drawing.Image image = GetImage(storedImage);
+                    System.Drawing.Image image = ImageUtil.ConvertByteArrayToImage(storedImage);
 
                     if(image!=null)
                     {
@@ -36,11 +37,11 @@ namespace PerformanceAppraisal.Handlers
             
         }
 
-        private System.Drawing.Image GetImage(byte[] image)
-        {
-            var stream = new MemoryStream(image);
-            return System.Drawing.Image.FromStream(stream);
-        }
+        //private System.Drawing.Image GetImage(byte[] image)
+        //{
+        //    var stream = new MemoryStream(image);
+        //    return System.Drawing.Image.FromStream(stream);
+        //}
 
         public bool IsReusable
         {

@@ -14,9 +14,10 @@
         <h1>This is the Admin Index Page</h1>
         <asp:LoginName ID="LoginName1" runat="server" /><br />
         <asp:LoginStatus ID="LoginStatus1" runat="server" /><br />
-        <asp:Menu ID="menuAdmin"
+
+        <asp:TreeView ID="tView1"
             runat="server"
-            DataSourceID="paSmDataSource"></asp:Menu>
+            DataSourceID="paSmDataSource"></asp:TreeView>
             
     </div>
     </form>

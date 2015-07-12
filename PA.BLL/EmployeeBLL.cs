@@ -52,7 +52,7 @@ namespace PA.BLL
             DateTime? dateofbirth, string houseno, string streetname, string suburb,
             string city, int? postcode, string contactno, string email, string employeetype,
             DateTime? startdate, int? managerid, Guid? useraccountid, int? deptid,
-            byte[] profileImage)
+            byte[] profileImage, int nTitleID)
         {
             bool bRetVal = false;
 
@@ -91,6 +91,8 @@ namespace PA.BLL
             if (profileImage == null) employee.SetProfileImageNull();
             else
                 employee.ProfileImage = profileImage;
+
+            employee.TitleID = nTitleID;
 
             employees.Addtbl_EmployeeRow(employee);
 
@@ -149,6 +151,8 @@ namespace PA.BLL
             if (employee.ProfileImage == null) employeeRow.SetProfileImageNull();
             else
                 employeeRow.ProfileImage = employee.ProfileImage;
+
+            employeeRow.TitleID = employee.TitleID;
 
             employeeDtTable.Addtbl_EmployeeRow(employeeRow);
 

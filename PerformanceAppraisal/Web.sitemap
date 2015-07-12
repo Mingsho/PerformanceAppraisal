@@ -3,11 +3,17 @@
   
     <siteMapNode url="" title="Site Root"  description="Root node of the site">
       
-      <siteMapNode url="~/Admin/AdminIndex.aspx" title="Admin Home" description="Admin dashboard page">
-        <siteMapNode url="~/Admin/AddDepartment.aspx" title="Add Department"  description="Create a new department" />
-        <siteMapNode url="~/Admin/CreateEmployee.aspx" title="Add Employee"  description="Create a new employee" />
-        <siteMapNode url="~/Admin/CreateUserAccount.aspx" title="Add User Account" description="Create a User account for user"/>
+      <siteMapNode url="~/Admin/AdminIndex.aspx" title="Admin Home" description="Admin dashboard page"/>
+      
+      <siteMapNode url="" title="Users" description="User creation and management">
+        <siteMapNode url="~/Users/CreateEmployee.aspx" title="Create new employee" description="Create a new employee"/>
+        <siteMapNode url="~/Users/CreateTitle.aspx" title="Create Title" description="Create title/position for employees"/>
       </siteMapNode>
-        
+      
+      <siteMapNode url="" title="Department" description="Create and manage department">
+        <siteMapNode url="~/Department/AddDepartment.aspx" title="Add Department" />
+      </siteMapNode>
+      
     </siteMapNode>
+  
 </siteMap>

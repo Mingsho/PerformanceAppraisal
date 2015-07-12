@@ -28,6 +28,7 @@ namespace PA.BLL
         public Guid? UserAccountID { get; set; }
         public int? DepartmentID { get; set; }
         public byte[] ProfileImage { get; set; }
+        public int TitleID { get; set; }
 
 
     }

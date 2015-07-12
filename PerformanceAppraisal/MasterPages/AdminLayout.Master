@@ -10,7 +10,7 @@
     </asp:ContentPlaceHolder>
 
     <%: System.Web.Optimization.Styles.Render("CoreStyles") %>
-    <link rel="stylesheet" href="../Content/bootstrap.min.css" />
+    
     
 </head>
 
@@ -31,7 +31,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
+                    <a class="navbar-brand" href="#">SB Admin v2.0</a>
 
                 </div>
            

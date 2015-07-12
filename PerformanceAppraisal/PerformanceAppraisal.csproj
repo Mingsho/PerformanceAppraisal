@@ -93,11 +93,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Admin\AddDepartment.aspx" />
+    <Content Include="Department\AddDepartment.aspx" />
     <Content Include="Admin\AdminIndex.aspx" />
     <Content Include="Admin\ChangePassword.aspx" />
-    <Content Include="Admin\CreateEmployee.aspx" />
-    <Content Include="Admin\CreateUserAccount.aspx" />
+    <Content Include="Users\CreateEmployee.aspx" />
+    <Content Include="Users\CreateTitle.aspx" />
+    <Content Include="Users\CreateUserAccount.aspx" />
     <Content Include="Authentication.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -137,11 +138,11 @@
     <Content Include="Web.sitemap" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin\AddDepartment.aspx.cs">
+    <Compile Include="Department\AddDepartment.aspx.cs">
       <DependentUpon>AddDepartment.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\AddDepartment.aspx.designer.cs">
+    <Compile Include="Department\AddDepartment.aspx.designer.cs">
       <DependentUpon>AddDepartment.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\AdminIndex.aspx.cs">
@@ -158,18 +159,25 @@
     <Compile Include="Admin\ChangePassword.aspx.designer.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\CreateEmployee.aspx.cs">
+    <Compile Include="Users\CreateEmployee.aspx.cs">
       <DependentUpon>CreateEmployee.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\CreateEmployee.aspx.designer.cs">
+    <Compile Include="Users\CreateEmployee.aspx.designer.cs">
       <DependentUpon>CreateEmployee.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\CreateUserAccount.aspx.cs">
+    <Compile Include="Users\CreateTitle.aspx.cs">
+      <DependentUpon>CreateTitle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users\CreateTitle.aspx.designer.cs">
+      <DependentUpon>CreateTitle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Users\CreateUserAccount.aspx.cs">
       <DependentUpon>CreateUserAccount.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\CreateUserAccount.aspx.designer.cs">
+    <Compile Include="Users\CreateUserAccount.aspx.designer.cs">
       <DependentUpon>CreateUserAccount.aspx</DependentUpon>
     </Compile>
     <Compile Include="Authentication.aspx.cs">
@@ -224,6 +232,7 @@
     <Compile Include="Utilities\BundleConfig.cs" />
     <Compile Include="Utilities\CoreUtilities.cs" />
     <Compile Include="Utilities\ImageUtil.cs" />
+    <Compile Include="Utilities\UserProfile.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
