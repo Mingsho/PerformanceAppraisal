@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PA.BLL
+namespace PA.BLL.DTO
 {
     /// <summary>
     /// A simple Employee Business object

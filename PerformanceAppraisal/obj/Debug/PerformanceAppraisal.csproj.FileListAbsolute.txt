@@ -1,3 +1,4 @@
+C:\Users\Mingsho\documents\visual studio 2012\Projects\PerformanceAppraisal\PerformanceAppraisal\obj\Debug\PerformanceAppraisal.csprojResolveAssemblyReference.cache
 C:\Users\Mingsho\documents\visual studio 2012\Projects\PerformanceAppraisal\PerformanceAppraisal\bin\PerformanceAppraisal.dll
 C:\Users\Mingsho\documents\visual studio 2012\Projects\PerformanceAppraisal\PerformanceAppraisal\bin\PerformanceAppraisal.pdb
 C:\Users\Mingsho\documents\visual studio 2012\Projects\PerformanceAppraisal\PerformanceAppraisal\bin\AjaxControlToolkit.dll
@@ -19,6 +20,5 @@ C:\Users\Mingsho\documents\visual studio 2012\Projects\PerformanceAppraisal\Perf
 C:\Users\Mingsho\documents\visual studio 2012\Projects\PerformanceAppraisal\PerformanceAppraisal\bin\Newtonsoft.Json.xml
 C:\Users\Mingsho\documents\visual studio 2012\Projects\PerformanceAppraisal\PerformanceAppraisal\bin\System.Web.Optimization.xml
 C:\Users\Mingsho\documents\visual studio 2012\Projects\PerformanceAppraisal\PerformanceAppraisal\bin\System.Web.Providers.xml
-C:\Users\Mingsho\documents\visual studio 2012\Projects\PerformanceAppraisal\PerformanceAppraisal\obj\Debug\PerformanceAppraisal.csprojResolveAssemblyReference.cache
 C:\Users\Mingsho\documents\visual studio 2012\Projects\PerformanceAppraisal\PerformanceAppraisal\obj\Debug\PerformanceAppraisal.dll
 C:\Users\Mingsho\documents\visual studio 2012\Projects\PerformanceAppraisal\PerformanceAppraisal\obj\Debug\PerformanceAppraisal.pdb

@@ -12,12 +12,15 @@ namespace PerformanceAppraisal.Utilities
         {
             //The core css styles
             bundles.Add(new StyleBundle("~/CoreStyles").Include("~/Content/bootstrap.min.css",
+                "~/Content/metisMenu.min.css",
                 "~/Content/sb-admin-2.css",
                 "~/Content/font-awesome.min.css"));
 
             //The core javascripts
             bundles.Add(new ScriptBundle("~/CoreScripts").Include("~/Scripts/jquery-{version}.js",
                 "~/Scripts/bootstrap.min.js",
+                "~/Scripts/metisMenu.min.js",
+                "~/Scripts/sb-admin-2.js",
                 "~/Scripts/modernizr-{version}.js"));
             
         }

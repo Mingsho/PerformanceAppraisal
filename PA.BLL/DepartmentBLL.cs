@@ -22,7 +22,7 @@ namespace PA.BLL
             }
         }
 
-        public PaDataSet.tbl_DepartmentDataTable getDepartments()
+        public PaDataSet.tbl_DepartmentDataTable GetDepartments()
         {
             return Adapter.GetData();
         }

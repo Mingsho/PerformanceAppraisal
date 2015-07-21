@@ -42,16 +42,12 @@ namespace PerformanceAppraisal
                     }
                 }
 
+              
                 if (profile.RolePriority == "SuperAdmin")
                     Response.Redirect("~/Admin/AdminIndex.aspx");
                 else
-                    Response.Redirect("~/UserPages/UserIndex.aspx");
+                    Response.Redirect("UserControlTestPage.aspx");
                
-                
-                //if (Roles.IsUserInRole(lgnUser.UserName, "SuperAdmin"))
-                //    Response.Redirect("~/Admin/AdminIndex.aspx");
-                //else
-                //    Response.Redirect("~/UserPages/UserIndex.aspx");
             }
             else
                 Response.Redirect(returnUrl);

@@ -2,6 +2,9 @@
     
     
     public partial class PaDataSet {
+        partial class tbl_DutiesDataTable
+        {
+        }
     }
 }
 

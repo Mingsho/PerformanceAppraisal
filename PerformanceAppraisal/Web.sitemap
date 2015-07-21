@@ -8,10 +8,15 @@
       <siteMapNode url="" title="Users" description="User creation and management">
         <siteMapNode url="~/Users/CreateEmployee.aspx" title="Create new employee" description="Create a new employee"/>
         <siteMapNode url="~/Users/CreateTitle.aspx" title="Create Title" description="Create title/position for employees"/>
+        <siteMapNode url="~/Users/ListUsers.aspx" title="List Users" description="List all existing users"/>
       </siteMapNode>
       
       <siteMapNode url="" title="Department" description="Create and manage department">
         <siteMapNode url="~/Department/AddDepartment.aspx" title="Add Department" />
+      </siteMapNode>
+
+      <siteMapNode url="" title="Position Description" description="Create and manage employee position description">
+        <siteMapNode url="~/PositionDescription/TitleResponsibility.aspx" title="Add Responsibility"/>
       </siteMapNode>
       
     </siteMapNode>

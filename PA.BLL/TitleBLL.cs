@@ -3,8 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 using PA.DAL.PaDataSetTableAdapters;
 using PA.DAL;
+using PA.BLL.DTO;
+using System.Data;
+
 
 namespace PA.BLL
 {
@@ -22,11 +26,30 @@ namespace PA.BLL
             }
         }
 
-        public PaDataSet.tbl_TitleDataTable getTitles()
+        public PaDataSet.tbl_TitleDataTable GetTitles()
         {
             return Adapter.GetData();
         }
 
+        public Title GetTitleByID(int nTitleID)
+        {
+            PaDataSet.tbl_TitleDataTable titledtable = Adapter.GetDataByID(nTitleID);
+            Title title = new Title();
+
+            if(titledtable.Rows.Count > 0)
+            {
+                foreach(DataRow row in titledtable.Rows)
+                {
+                    title.TitleID = (int)row["TitleID"];
+                    title.JobTitle = (string)row["JobTitle"];
+                    title.TitlePurpose = (string)row["TitlePurpose"];
+                }
+            }
+
+            return title;
+        }
+            
+    
         public bool AddTitle(string strTitleName, string strTitlePurpose)
         {
             PaDataSet.tbl_TitleDataTable titles = new PaDataSet.tbl_TitleDataTable();

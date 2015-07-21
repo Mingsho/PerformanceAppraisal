@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Drawing;
 using AjaxControlToolkit;
 using PA.BLL;
+using PA.BLL.DTO;
 using PerformanceAppraisal.Utilities;
 
 
@@ -48,7 +49,7 @@ namespace PerformanceAppraisal.Users
         {
             dListDepartment.DataTextField = "Departmentname";
             dListDepartment.DataValueField = "DepartmentID";
-            dListDepartment.DataSource = deptLogic.getDepartments();
+            dListDepartment.DataSource = deptLogic.GetDepartments();
             dListDepartment.DataBind();
 
             dListDepartment.Items.Insert(0, new ListItem("Configure Department Later", "-1"));
@@ -71,7 +72,7 @@ namespace PerformanceAppraisal.Users
             dListManager.Items.Insert(0, new ListItem("Configure Manager Later", "-1"));
             dListManager.DataBind();
 
-            dListEmployeeTitle.DataSource = titleLogic.getTitles();
+            dListEmployeeTitle.DataSource = titleLogic.GetTitles();
             dListEmployeeTitle.DataTextField = "JobTitle";
             dListEmployeeTitle.DataValueField = "TitleID";
             dListEmployeeTitle.DataBind();

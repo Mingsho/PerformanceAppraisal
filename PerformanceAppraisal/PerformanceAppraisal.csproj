@@ -93,9 +93,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\metisMenu.min.css" />
     <Content Include="Department\AddDepartment.aspx" />
     <Content Include="Admin\AdminIndex.aspx" />
     <Content Include="Admin\ChangePassword.aspx" />
+    <Content Include="PositionDescription\TitleResponsibility.aspx" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\metisMenu.min.js" />
+    <Content Include="Scripts\sb-admin-2.js" />
+    <Content Include="UserControlTestPage.aspx" />
     <Content Include="Users\CreateEmployee.aspx" />
     <Content Include="Users\CreateTitle.aspx" />
     <Content Include="Users\CreateUserAccount.aspx" />
@@ -131,6 +137,7 @@
     <Content Include="Scripts\npm.js" />
     <Content Include="TestPage.aspx" />
     <Content Include="UserPages\UserIndex.aspx" />
+    <Content Include="Users\ListUsers.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -158,6 +165,20 @@
     </Compile>
     <Compile Include="Admin\ChangePassword.aspx.designer.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PositionDescription\TitleResponsibility.aspx.cs">
+      <DependentUpon>TitleResponsibility.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PositionDescription\TitleResponsibility.aspx.designer.cs">
+      <DependentUpon>TitleResponsibility.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlTestPage.aspx.cs">
+      <DependentUpon>UserControlTestPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControlTestPage.aspx.designer.cs">
+      <DependentUpon>UserControlTestPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Users\CreateEmployee.aspx.cs">
       <DependentUpon>CreateEmployee.aspx</DependentUpon>
@@ -229,6 +250,13 @@
     <Compile Include="UserPages\UserIndex.aspx.designer.cs">
       <DependentUpon>UserIndex.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Users\ListUsers.aspx.cs">
+      <DependentUpon>ListUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users\ListUsers.aspx.designer.cs">
+      <DependentUpon>ListUsers.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Utilities\BundleConfig.cs" />
     <Compile Include="Utilities\CoreUtilities.cs" />
     <Compile Include="Utilities\ImageUtil.cs" />
@@ -255,6 +283,9 @@
       <Project>{125159fc-fd3e-442d-a928-ea4154e9e71f}</Project>
       <Name>PA.DAL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

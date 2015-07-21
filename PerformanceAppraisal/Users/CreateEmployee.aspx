@@ -16,6 +16,9 @@
         <asp:ScriptManager ID="mainScriptManager"
             runat="server"
             EnablePartialRendering="true"></asp:ScriptManager>
+
+        <asp:LinkButton PostBackUrl="../Admin/AdminIndex.aspx" Text="Go Back"
+            runat="server"></asp:LinkButton>
       
     <div>
         

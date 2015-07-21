@@ -7,6 +7,8 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using PA.DAL.PaDataSetTableAdapters;
+using PA.BLL.DTO;
+using System.Data;
 
 
 
@@ -46,6 +48,29 @@ namespace PA.BLL
         public PA.DAL.PaDataSet.tbl_EmployeeDataTable GetEmployees(int nDepartmentID)
         {
             return Adapter.GetEmployeesByDepartmentID(nDepartmentID);
+        }
+
+        public int GetEmployeeID(string strUserAccountID)
+        {
+            int nEmployeeID=0;
+
+            PA.DAL.PaDataSet.tbl_EmployeeDataTable employeeDataTable = GetEmployees();
+
+            foreach(DataRow dtrow in employeeDataTable.Rows)
+            {
+                if(dtrow["UserAccountID"].ToString()== strUserAccountID)
+                {
+                    nEmployeeID = (int)dtrow["EmpID"];
+                    break;
+                }
+            }
+            return nEmployeeID;
+            
+        }
+
+        public PA.DAL.PaDataSet.tbl_EmployeeDataTable GetEmployeeByID(int nEmpID)
+        {
+            return Adapter.GetEmployeeByID(nEmpID);
         }
 
         public bool AddEmployee(string firstname, string middlename, string lastname,
