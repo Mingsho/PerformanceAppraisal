@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PerformanceAppraisal.Department
+namespace PerformanceAppraisal.PositionDescription
 {
     
     
-    public partial class AddDepartment {
+    public partial class CreateTitle {
         
         /// <summary>
         /// form1 control.
@@ -23,48 +23,57 @@ namespace PerformanceAppraisal.Department
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// lblDeptName control.
+        /// lblTitleName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDeptName;
+        protected global::System.Web.UI.WebControls.Label lblTitleName;
         
         /// <summary>
-        /// txtDeptName control.
+        /// txtTitleName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDeptName;
+        protected global::System.Web.UI.WebControls.TextBox txtTitleName;
         
         /// <summary>
-        /// lblDesc control.
+        /// rFieldValidator1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDesc;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rFieldValidator1;
         
         /// <summary>
-        /// txtDesc control.
+        /// lblTitlePurpose control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDesc;
+        protected global::System.Web.UI.WebControls.Label lblTitlePurpose;
         
         /// <summary>
-        /// btnAdd control.
+        /// txtTitlePurpose control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAdd;
+        protected global::System.Web.UI.WebControls.TextBox txtTitlePurpose;
+        
+        /// <summary>
+        /// btnCreateTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCreateTitle;
     }
 }

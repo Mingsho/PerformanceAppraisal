@@ -7,10 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PerformanceAppraisal.Admin {
+namespace PerformanceAppraisal.PositionDescription
+{
     
     
-    public partial class ChangePassword {
+    public partial class ListUsers {
         
         /// <summary>
         /// form1 control.
@@ -22,12 +23,30 @@ namespace PerformanceAppraisal.Admin {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Changepassword1 control.
+        /// lblSelectDepartment control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ChangePassword Changepassword1;
+        protected global::System.Web.UI.WebControls.Label lblSelectDepartment;
+        
+        /// <summary>
+        /// dListDepartment control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList dListDepartment;
+        
+        /// <summary>
+        /// grdEmployees control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grdEmployees;
     }
 }

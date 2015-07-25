@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CreateTitle.aspx.cs" Inherits="PerformanceAppraisal.Users.CreateTitle" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CreateTitle.aspx.cs" Inherits="PerformanceAppraisal.PositionDescription.CreateTitle" %>
 
 <!DOCTYPE html>
 

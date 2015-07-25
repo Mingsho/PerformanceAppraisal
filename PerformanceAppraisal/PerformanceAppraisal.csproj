@@ -94,17 +94,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\metisMenu.min.css" />
-    <Content Include="Department\AddDepartment.aspx" />
-    <Content Include="Admin\AdminIndex.aspx" />
-    <Content Include="Admin\ChangePassword.aspx" />
+    <Content Include="Administration\AddDepartment.aspx" />
+    <Content Include="Administration\AdminIndex.aspx" />
+    <Content Include="Page1.aspx" />
     <Content Include="PositionDescription\TitleResponsibility.aspx" />
     <Content Include="Scripts\jquery.min.js" />
     <Content Include="Scripts\metisMenu.min.js" />
     <Content Include="Scripts\sb-admin-2.js" />
     <Content Include="UserControlTestPage.aspx" />
-    <Content Include="Users\CreateEmployee.aspx" />
-    <Content Include="Users\CreateTitle.aspx" />
-    <Content Include="Users\CreateUserAccount.aspx" />
+    <Content Include="Administration\CreateEmployee.aspx" />
+    <Content Include="PositionDescription\CreateTitle.aspx" />
+    <Content Include="Administration\CreateUserAccount.aspx" />
     <Content Include="Authentication.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -127,6 +127,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="MasterPages\MainLayout.Master" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Icon.png" />
     <Content Include="Scripts\bootstrap.js" />
@@ -137,7 +138,7 @@
     <Content Include="Scripts\npm.js" />
     <Content Include="TestPage.aspx" />
     <Content Include="UserPages\UserIndex.aspx" />
-    <Content Include="Users\ListUsers.aspx" />
+    <Content Include="PositionDescription\ListUsers.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -145,26 +146,33 @@
     <Content Include="Web.sitemap" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Department\AddDepartment.aspx.cs">
+    <Compile Include="Administration\AddDepartment.aspx.cs">
       <DependentUpon>AddDepartment.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Department\AddDepartment.aspx.designer.cs">
+    <Compile Include="Administration\AddDepartment.aspx.designer.cs">
       <DependentUpon>AddDepartment.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\AdminIndex.aspx.cs">
+    <Compile Include="Administration\AdminIndex.aspx.cs">
       <DependentUpon>AdminIndex.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\AdminIndex.aspx.designer.cs">
+    <Compile Include="Administration\AdminIndex.aspx.designer.cs">
       <DependentUpon>AdminIndex.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\ChangePassword.aspx.cs">
-      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    <Compile Include="MasterPages\MainLayout.Master.cs">
+      <DependentUpon>MainLayout.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\ChangePassword.aspx.designer.cs">
-      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    <Compile Include="MasterPages\MainLayout.Master.designer.cs">
+      <DependentUpon>MainLayout.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Page1.aspx.cs">
+      <DependentUpon>Page1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page1.aspx.designer.cs">
+      <DependentUpon>Page1.aspx</DependentUpon>
     </Compile>
     <Compile Include="PositionDescription\TitleResponsibility.aspx.cs">
       <DependentUpon>TitleResponsibility.aspx</DependentUpon>
@@ -180,25 +188,25 @@
     <Compile Include="UserControlTestPage.aspx.designer.cs">
       <DependentUpon>UserControlTestPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Users\CreateEmployee.aspx.cs">
+    <Compile Include="Administration\CreateEmployee.aspx.cs">
       <DependentUpon>CreateEmployee.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Users\CreateEmployee.aspx.designer.cs">
+    <Compile Include="Administration\CreateEmployee.aspx.designer.cs">
       <DependentUpon>CreateEmployee.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Users\CreateTitle.aspx.cs">
+    <Compile Include="PositionDescription\CreateTitle.aspx.cs">
       <DependentUpon>CreateTitle.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Users\CreateTitle.aspx.designer.cs">
+    <Compile Include="PositionDescription\CreateTitle.aspx.designer.cs">
       <DependentUpon>CreateTitle.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Users\CreateUserAccount.aspx.cs">
+    <Compile Include="Administration\CreateUserAccount.aspx.cs">
       <DependentUpon>CreateUserAccount.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Users\CreateUserAccount.aspx.designer.cs">
+    <Compile Include="Administration\CreateUserAccount.aspx.designer.cs">
       <DependentUpon>CreateUserAccount.aspx</DependentUpon>
     </Compile>
     <Compile Include="Authentication.aspx.cs">
@@ -250,11 +258,11 @@
     <Compile Include="UserPages\UserIndex.aspx.designer.cs">
       <DependentUpon>UserIndex.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Users\ListUsers.aspx.cs">
+    <Compile Include="PositionDescription\ListUsers.aspx.cs">
       <DependentUpon>ListUsers.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Users\ListUsers.aspx.designer.cs">
+    <Compile Include="PositionDescription\ListUsers.aspx.designer.cs">
       <DependentUpon>ListUsers.aspx</DependentUpon>
     </Compile>
     <Compile Include="Utilities\BundleConfig.cs" />
@@ -273,6 +281,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Themes\DefaultTheme\" />
+    <Folder Include="Users\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PA.BLL\PA.BLL.csproj">

@@ -44,7 +44,7 @@ namespace PerformanceAppraisal
 
               
                 if (profile.RolePriority == "SuperAdmin")
-                    Response.Redirect("~/Admin/AdminIndex.aspx");
+                    Response.Redirect("~/Administration/AdminIndex.aspx");
                 else
                     Response.Redirect("UserControlTestPage.aspx");
                

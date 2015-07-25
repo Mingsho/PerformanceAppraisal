@@ -7,7 +7,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PerformanceAppraisal.Users {
+namespace PerformanceAppraisal.Administration
+{
     
     
     public partial class CreateEmployee {

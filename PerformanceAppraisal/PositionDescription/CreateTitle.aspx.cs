@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using PA.BLL;
 
-namespace PerformanceAppraisal.Users
+namespace PerformanceAppraisal.PositionDescription
 {
     public partial class CreateTitle : System.Web.UI.Page
     {

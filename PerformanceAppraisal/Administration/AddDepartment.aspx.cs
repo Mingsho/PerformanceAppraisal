@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using PA.BLL;
 
 
-namespace PerformanceAppraisal.Department
+namespace PerformanceAppraisal.Administration
 {
     public partial class AddDepartment : System.Web.UI.Page
     {

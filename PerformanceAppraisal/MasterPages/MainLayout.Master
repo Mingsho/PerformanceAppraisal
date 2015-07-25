@@ -1,0 +1,107 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MainLayout.master.cs" Inherits="PerformanceAppraisal.MasterPages.MainLayout" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title><%= Page.Title %></title>
+    <asp:ContentPlaceHolder ID="headContent" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <%: System.Web.Optimization.Styles.Render("~/CoreStyles") %>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <asp:SiteMapDataSource ID="mainSDataSource"
+            runat="server" ShowStartingNode="false" />
+
+        <div id="wrapper">
+
+            <!--Start Navigation-->
+            <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+
+                <!--Navigation header-->
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Administrator</a>
+                </div>
+
+                <div class="navbar-default sidebar" role="navigation">
+
+                    <div class="sidebar-nav navbar-collapse">
+
+                        <ul id="side-menu" class="nav in">
+
+                            <li class="sidebar-search">
+                                <div class="input-group custom-search-form">
+
+                                    <asp:TextBox ID="txtSearch"
+                                        runat="server"
+                                        CssClass="form-control"
+                                        placeholder="Search..."></asp:TextBox>
+
+                                    <span class="input-group-btn">
+                                        <button id="btnSrc"
+                                            runat="server"
+                                            class="btn btn-default"
+                                            type="button">
+
+                                            <i class="fa fa-search"></i>
+
+                                        </button>
+                                    </span>
+                                </div>
+                            </li>
+                            <asp:Repeater ID="sideBarMenu"
+                                runat="server" DataSourceID="mainSDataSource">
+
+                                <ItemTemplate>
+                                    <li>
+                                        <asp:HyperLink runat="server"
+                                            NavigateUrl='<%# Eval("Url") %>'><%# Eval("Title") %></asp:HyperLink>
+
+                                        <ul class="nav nav-second-level">
+                                        <asp:Repeater ID="sideBarChildNodeMenu"
+                                            runat="server"
+                                            DataSource='<%# ((SiteMapNode)Container.DataItem).ChildNodes %>'>
+
+                                            <ItemTemplate>
+                                                <li>
+                                                    <asp:HyperLink runat="server"
+                                                        NavigateUrl='<%# Eval("Url") %>'><%# Eval("Title") %></asp:HyperLink>
+                                                </li>
+                                            </ItemTemplate>
+                                        </asp:Repeater>
+                                        </ul>
+
+                                    </li>
+                                </ItemTemplate>
+
+                            </asp:Repeater>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div id="page-wrapper" style="min-height: 333px;">
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header"><asp:Label ID="lblPageHeader"
+                            runat="server"></asp:Label>
+                        </h1>
+                    </div>
+                </div>
+                <asp:ContentPlaceHolder ID="mainContent" runat="server">
+        
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </form>
+
+    <asp:ContentPlaceHolder ID="footerContent" runat="server">
+
+    </asp:ContentPlaceHolder>
+    <%: System.Web.Optimization.Scripts.Render("~/CoreScripts") %>
+</body>
+</html>

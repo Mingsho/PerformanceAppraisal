@@ -8,7 +8,7 @@ using PA.BLL;
 using PA.BLL.DTO;
 using System.Web.Security;
 
-namespace PerformanceAppraisal.Users
+namespace PerformanceAppraisal.Administration
 {
     public partial class CreateUserAccount : System.Web.UI.Page
     {

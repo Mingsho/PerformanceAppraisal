@@ -11,7 +11,7 @@ using PA.BLL.DTO;
 using PerformanceAppraisal.Utilities;
 
 
-namespace PerformanceAppraisal.Users
+namespace PerformanceAppraisal.Administration
 {
     public partial class CreateEmployee : System.Web.UI.Page
     {

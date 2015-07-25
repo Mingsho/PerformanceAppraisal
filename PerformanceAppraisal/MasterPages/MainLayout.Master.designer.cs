@@ -7,10 +7,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PerformanceAppraisal.Users {
+namespace PerformanceAppraisal.MasterPages {
     
     
-    public partial class CreateTitle {
+    public partial class MainLayout {
+        
+        /// <summary>
+        /// headContent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder headContent;
         
         /// <summary>
         /// form1 control.
@@ -22,57 +31,66 @@ namespace PerformanceAppraisal.Users {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// lblTitleName control.
+        /// mainSDataSource control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTitleName;
+        protected global::System.Web.UI.WebControls.SiteMapDataSource mainSDataSource;
         
         /// <summary>
-        /// txtTitleName control.
+        /// txtSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTitleName;
+        protected global::System.Web.UI.WebControls.TextBox txtSearch;
         
         /// <summary>
-        /// rFieldValidator1 control.
+        /// btnSrc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rFieldValidator1;
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnSrc;
         
         /// <summary>
-        /// lblTitlePurpose control.
+        /// sideBarMenu control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTitlePurpose;
+        protected global::System.Web.UI.WebControls.Repeater sideBarMenu;
         
         /// <summary>
-        /// txtTitlePurpose control.
+        /// lblPageHeader control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTitlePurpose;
+        protected global::System.Web.UI.WebControls.Label lblPageHeader;
         
         /// <summary>
-        /// btnCreateTitle control.
+        /// mainContent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCreateTitle;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder mainContent;
+        
+        /// <summary>
+        /// footerContent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder footerContent;
     }
 }

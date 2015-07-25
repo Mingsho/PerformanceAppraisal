@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AddDepartment.aspx.cs" Inherits="PerformanceAppraisal.Department.AddDepartment" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AddDepartment.aspx.cs" Inherits="PerformanceAppraisal.Administration.AddDepartment" %>
 
 <!DOCTYPE html>
 

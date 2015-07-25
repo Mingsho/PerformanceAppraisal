@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CreateUserAccount.aspx.cs" Inherits="PerformanceAppraisal.Users.CreateUserAccount" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CreateUserAccount.aspx.cs" Inherits="PerformanceAppraisal.Administration.CreateUserAccount" %>
 
 <!DOCTYPE html>
 

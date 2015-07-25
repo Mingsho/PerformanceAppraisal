@@ -3,19 +3,16 @@
   
     <siteMapNode url="" title="Site Root"  description="Root node of the site">
       
-      <siteMapNode url="~/Admin/AdminIndex.aspx" title="Admin Home" description="Admin dashboard page"/>
+      <siteMapNode url="~/Administration/AdminIndex.aspx" title="Dashboard" description="Admin dashboard"/>
       
-      <siteMapNode url="" title="Users" description="User creation and management">
-        <siteMapNode url="~/Users/CreateEmployee.aspx" title="Create new employee" description="Create a new employee"/>
-        <siteMapNode url="~/Users/CreateTitle.aspx" title="Create Title" description="Create title/position for employees"/>
-        <siteMapNode url="~/Users/ListUsers.aspx" title="List Users" description="List all existing users"/>
+      <siteMapNode url="" title="Administration" description="Administrative tasks">
+        <siteMapNode url="~/Administration/CreateEmployee.aspx" title="Create new employee" description="Create a new employee"/>
+        <siteMapNode url="~/Administration/AddDepartment.aspx" title="Create Department" description="Create a new department"/>
       </siteMapNode>
       
-      <siteMapNode url="" title="Department" description="Create and manage department">
-        <siteMapNode url="~/Department/AddDepartment.aspx" title="Add Department" />
-      </siteMapNode>
-
       <siteMapNode url="" title="Position Description" description="Create and manage employee position description">
+        <siteMapNode url="~/PositionDescription/CreateTitle.aspx" title="Create Title" description="Create title/position for employees"/>
+        <siteMapNode url="~/PositionDescription/ListUsers.aspx" title="List Users" description="List all existing users"/>
         <siteMapNode url="~/PositionDescription/TitleResponsibility.aspx" title="Add Responsibility"/>
       </siteMapNode>
       

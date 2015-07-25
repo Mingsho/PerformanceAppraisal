@@ -5,13 +5,16 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace PerformanceAppraisal.Admin
+namespace PerformanceAppraisal
 {
-    public partial class ChangePassword : System.Web.UI.Page
+    public partial class Page1 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(!Page.IsPostBack)
+            {
+                Master.PageHeading = "Test Page";
+            }
         }
     }
 }

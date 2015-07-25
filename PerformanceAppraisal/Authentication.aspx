@@ -75,5 +75,7 @@
         </asp:Login>
     </div>
     </form>
+
+    <%: System.Web.Optimization.Scripts.Render("CoreScripts") %>
 </body>
 </html>

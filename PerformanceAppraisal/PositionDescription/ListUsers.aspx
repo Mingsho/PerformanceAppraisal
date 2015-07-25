@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ListUsers.aspx.cs" Inherits="PerformanceAppraisal.Users.ListUsers" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ListUsers.aspx.cs" Inherits="PerformanceAppraisal.PositionDescription.ListUsers" %>
 
 <!DOCTYPE html>
 
