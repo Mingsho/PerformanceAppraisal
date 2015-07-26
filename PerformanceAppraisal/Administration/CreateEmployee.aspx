@@ -1,30 +1,9 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CreateEmployee.aspx.cs" Inherits="PerformanceAppraisal.Administration.CreateEmployee" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPages/MainLayout.Master" AutoEventWireup="true" CodeBehind="CreateEmployee.aspx.cs" Inherits="PerformanceAppraisal.Administration.CreateEmployee" %>
+<%@ MasterType VirtualPath="~/MasterPages/MainLayout.Master" %>
 
-<!DOCTYPE html>
+<asp:Content ID="childContent" ContentPlaceHolderID="mainContent" runat="server">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-    <script type="text/javascript" src="~/Scripts/jquery-2.1.4.min.js">     </script>
-    <script type="text/javascript">
-        
-      
-    </script>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <asp:ScriptManager ID="mainScriptManager"
-            runat="server"
-            EnablePartialRendering="true"></asp:ScriptManager>
-
-        <asp:LinkButton PostBackUrl="../Admin/AdminIndex.aspx" Text="Go Back"
-            runat="server"></asp:LinkButton>
-      
     <div>
-        
-        <fieldset>
-            <legend>Basic employee detail</legend>
-
             <asp:Image ID="imgProfilePic"
                 runat="server"
                 Height="225px"
@@ -63,11 +42,9 @@
                 Text="Date of Birth: "></asp:Label>
             <asp:TextBox ID="txtDateofbirth"
                 runat="server"></asp:TextBox><br />
-        </fieldset>
         
-        <fieldset>
-
-            <legend>Address and Contact details</legend>
+        
+       
 
             <asp:Label ID="lblHouseno"
                 runat="server"
@@ -112,21 +89,21 @@
             <asp:TextBox ID="txtEmail"
                 runat="server"></asp:TextBox><br />
 
-        </fieldset>
+       
 
         <asp:UpdatePanel ID="uPanelProfilePicUpload"
                 runat="server">
 
-                <ContentTemplate>
-                    <asp:Label ID="lblEmployeetype"
-                        runat="server"
-                        Text="Employee Type: "
-                        AssociatedControlID="dListEmpType"></asp:Label>
+            <ContentTemplate>
+                <asp:Label ID="lblEmployeetype"
+                    runat="server"
+                    Text="Employee Type: "
+                    AssociatedControlID="dListEmpType"></asp:Label>
           
-                    <asp:DropDownList ID="dListEmpType"
-                        runat="server"
-                        AutoPostBack="true"></asp:DropDownList><br />
-                </ContentTemplate>
+                <asp:DropDownList ID="dListEmpType"
+                    runat="server"
+                    AutoPostBack="true"></asp:DropDownList><br />
+            </ContentTemplate>
 
         </asp:UpdatePanel>
         
@@ -188,7 +165,11 @@
             OnClick="btnCreateEmployee_Click" />
            
     </div>
-    </form>
+
+</asp:Content>
+
+
+<asp:Content ID="childFooterContent" ContentPlaceHolderID="footerContent" runat="server">
     <script type="text/javascript">
 
         function getRandomNumber() {
@@ -207,5 +188,5 @@
         }
 
     </script>
-</body>
-</html>
+</asp:Content>
+

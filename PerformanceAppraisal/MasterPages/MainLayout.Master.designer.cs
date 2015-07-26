@@ -13,6 +13,15 @@ namespace PerformanceAppraisal.MasterPages {
     public partial class MainLayout {
         
         /// <summary>
+        /// pnlCoreStyles control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder pnlCoreStyles;
+        
+        /// <summary>
         /// headContent control.
         /// </summary>
         /// <remarks>
@@ -38,6 +47,15 @@ namespace PerformanceAppraisal.MasterPages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SiteMapDataSource mainSDataSource;
+        
+        /// <summary>
+        /// mainScriptManager control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager mainScriptManager;
         
         /// <summary>
         /// txtSearch control.

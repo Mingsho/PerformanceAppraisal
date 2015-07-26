@@ -13,7 +13,7 @@
             runat="server"
             CompleteSuccessText="User account has been successfully created!"
             LoginCreatedUser="false"
-            OnCreatedUser="createPaUserWizard_CreatedUser">
+            OnCreatedUser="createPaUserWizard_CreatedUser" ContinueDestinationPageUrl="~/Administration/AdminIndex.aspx">
             <WizardSteps>
                 <asp:CreateUserWizardStep ID="createPaUserWizardStep1" runat="server"/>
                 <asp:CompleteWizardStep ID="CompletePaUserWizardStep1" runat="server"/>

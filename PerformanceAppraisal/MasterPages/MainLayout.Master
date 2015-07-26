@@ -5,16 +5,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title><%= Page.Title %></title>
-    <asp:ContentPlaceHolder ID="headContent" runat="server">
+
+    <asp:PlaceHolder ID="pnlCoreStyles" runat="server">
+    <%: System.Web.Optimization.Styles.Render("~/CoreStyles") %>
+    </asp:PlaceHolder>
+     <asp:ContentPlaceHolder ID="headContent" runat="server">
     </asp:ContentPlaceHolder>
 
-    <%: System.Web.Optimization.Styles.Render("~/CoreStyles") %>
 </head>
 <body>
     <form id="form1" runat="server">
 
         <asp:SiteMapDataSource ID="mainSDataSource"
             runat="server" ShowStartingNode="false" />
+
+        <asp:ScriptManager ID="mainScriptManager"
+            runat="server"
+            EnablePartialRendering="true"></asp:ScriptManager>
 
         <div id="wrapper">
 
@@ -26,6 +33,7 @@
                     <a class="navbar-brand" href="#">Administrator</a>
                 </div>
 
+                <!--Sidebar Navigation menu-->
                 <div class="navbar-default sidebar" role="navigation">
 
                     <div class="sidebar-nav navbar-collapse">
@@ -81,6 +89,7 @@
                         </ul>
                     </div>
                 </div>
+                <!--End Sidebar menu-->
             </nav>
 
             <div id="page-wrapper" style="min-height: 333px;">
@@ -95,13 +104,15 @@
                 <asp:ContentPlaceHolder ID="mainContent" runat="server">
         
                 </asp:ContentPlaceHolder>
+               
             </div>
         </div>
+
     </form>
 
     <asp:ContentPlaceHolder ID="footerContent" runat="server">
-
     </asp:ContentPlaceHolder>
+
     <%: System.Web.Optimization.Scripts.Render("~/CoreScripts") %>
 </body>
 </html>

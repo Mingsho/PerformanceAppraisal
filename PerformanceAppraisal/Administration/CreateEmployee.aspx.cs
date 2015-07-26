@@ -26,21 +26,10 @@ namespace PerformanceAppraisal.Administration
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
+            {
                 initializeComponents();
-
-            
-
-            //if(Request.IsAjaxRequest())
-
-            //if(CoreUtilities.IsAjaxRequest(this.Request))
-            //{
-            //    if (Session["fUpload"] == null && fUploadProfilePic.HasFile)
-            //        Session["fUpload"] = fUploadProfilePic;
-            //    else if (Session["fUpload"] != null && (!fUploadProfilePic.HasFile))
-            //        fUploadProfilePic = (AsyncFileUpload)Session["fUpload"];
-            //    else if (fUploadProfilePic.HasFile)
-            //        Session["fUpload"] = fUploadProfilePic;
-            //}
+                Master.PageHeading = "Create Employee Profile";
+            }
 
             
         }
@@ -142,7 +131,7 @@ namespace PerformanceAppraisal.Administration
                     Session["objEmployee"] = employee;
 
                     //redirect to create user login
-                    Response.Redirect("~/Users/CreateUserAccount.aspx");
+                    Response.Redirect("~/Administration/CreateUserAccount.aspx");
  
                     
                 }

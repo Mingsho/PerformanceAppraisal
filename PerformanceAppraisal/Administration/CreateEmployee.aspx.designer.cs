@@ -7,29 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PerformanceAppraisal.Administration
-{
+namespace PerformanceAppraisal.Administration {
     
     
     public partial class CreateEmployee {
-        
-        /// <summary>
-        /// form1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
-        /// <summary>
-        /// mainScriptManager control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.ScriptManager mainScriptManager;
         
         /// <summary>
         /// imgProfilePic control.
@@ -381,5 +362,17 @@ namespace PerformanceAppraisal.Administration
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCreateEmployee;
+        
+        /// <summary>
+        /// Master property.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated property.
+        /// </remarks>
+        public new PerformanceAppraisal.MasterPages.MainLayout Master {
+            get {
+                return ((PerformanceAppraisal.MasterPages.MainLayout)(base.Master));
+            }
+        }
     }
 }
