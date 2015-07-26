@@ -44,9 +44,9 @@ namespace PA.DAL {
         
         private global::System.Data.DataRelation relationFK_Title_Employee;
         
-        private global::System.Data.DataRelation relationFk_Title_Responsibility;
-        
         private global::System.Data.DataRelation relationFK_Responsibility_Duty;
+        
+        private global::System.Data.DataRelation relationFK_Emp_Responsibilities;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -330,8 +330,8 @@ namespace PA.DAL {
             this.relationFK_EMP_DEPT = this.Relations["FK_EMP_DEPT"];
             this.relationFK_EMP_UAC = this.Relations["FK_EMP_UAC"];
             this.relationFK_Title_Employee = this.Relations["FK_Title_Employee"];
-            this.relationFk_Title_Responsibility = this.Relations["Fk_Title_Responsibility"];
             this.relationFK_Responsibility_Duty = this.Relations["FK_Responsibility_Duty"];
+            this.relationFK_Emp_Responsibilities = this.Relations["FK_Emp_Responsibilities"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -370,14 +370,14 @@ namespace PA.DAL {
                         this.tabletbl_Title.TitleIDColumn}, new global::System.Data.DataColumn[] {
                         this.tabletbl_Employee.TitleIDColumn}, false);
             this.Relations.Add(this.relationFK_Title_Employee);
-            this.relationFk_Title_Responsibility = new global::System.Data.DataRelation("Fk_Title_Responsibility", new global::System.Data.DataColumn[] {
-                        this.tabletbl_Title.TitleIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tabletbl_Responsibilities.TitleIDColumn}, false);
-            this.Relations.Add(this.relationFk_Title_Responsibility);
             this.relationFK_Responsibility_Duty = new global::System.Data.DataRelation("FK_Responsibility_Duty", new global::System.Data.DataColumn[] {
                         this.tabletbl_Responsibilities.ResponsibilityIDColumn}, new global::System.Data.DataColumn[] {
                         this.tabletbl_Duties.ResponsibilityIDColumn}, false);
             this.Relations.Add(this.relationFK_Responsibility_Duty);
+            this.relationFK_Emp_Responsibilities = new global::System.Data.DataRelation("FK_Emp_Responsibilities", new global::System.Data.DataColumn[] {
+                        this.tabletbl_Employee.EmpIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tabletbl_Responsibilities.EmpIDColumn}, false);
+            this.Relations.Add(this.relationFK_Emp_Responsibilities);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1965,7 +1965,7 @@ namespace PA.DAL {
             
             private global::System.Data.DataColumn columnResponsibility;
             
-            private global::System.Data.DataColumn columnTitleID;
+            private global::System.Data.DataColumn columnEmpID;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -2018,9 +2018,9 @@ namespace PA.DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn TitleIDColumn {
+            public global::System.Data.DataColumn EmpIDColumn {
                 get {
-                    return this.columnTitleID;
+                    return this.columnEmpID;
                 }
             }
             
@@ -2061,14 +2061,14 @@ namespace PA.DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tbl_ResponsibilitiesRow Addtbl_ResponsibilitiesRow(string Responsibility, tbl_TitleRow parenttbl_TitleRowByFk_Title_Responsibility) {
+            public tbl_ResponsibilitiesRow Addtbl_ResponsibilitiesRow(string Responsibility, tbl_EmployeeRow parenttbl_EmployeeRowByFK_Emp_Responsibilities) {
                 tbl_ResponsibilitiesRow rowtbl_ResponsibilitiesRow = ((tbl_ResponsibilitiesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Responsibility,
                         null};
-                if ((parenttbl_TitleRowByFk_Title_Responsibility != null)) {
-                    columnValuesArray[2] = parenttbl_TitleRowByFk_Title_Responsibility[0];
+                if ((parenttbl_EmployeeRowByFK_Emp_Responsibilities != null)) {
+                    columnValuesArray[2] = parenttbl_EmployeeRowByFK_Emp_Responsibilities[0];
                 }
                 rowtbl_ResponsibilitiesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtbl_ResponsibilitiesRow);
@@ -2101,7 +2101,7 @@ namespace PA.DAL {
             internal void InitVars() {
                 this.columnResponsibilityID = base.Columns["ResponsibilityID"];
                 this.columnResponsibility = base.Columns["Responsibility"];
-                this.columnTitleID = base.Columns["TitleID"];
+                this.columnEmpID = base.Columns["EmpID"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2111,8 +2111,8 @@ namespace PA.DAL {
                 base.Columns.Add(this.columnResponsibilityID);
                 this.columnResponsibility = new global::System.Data.DataColumn("Responsibility", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnResponsibility);
-                this.columnTitleID = new global::System.Data.DataColumn("TitleID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTitleID);
+                this.columnEmpID = new global::System.Data.DataColumn("EmpID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEmpID);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnResponsibilityID}, true));
                 this.columnResponsibilityID.AutoIncrement = true;
@@ -2122,7 +2122,7 @@ namespace PA.DAL {
                 this.columnResponsibilityID.ReadOnly = true;
                 this.columnResponsibilityID.Unique = true;
                 this.columnResponsibility.MaxLength = 250;
-                this.columnTitleID.AllowDBNull = false;
+                this.columnEmpID.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3026,6 +3026,17 @@ namespace PA.DAL {
                     return ((tbl_EmployeeRow[])(base.GetChildRows(this.Table.ChildRelations["FK_EMP_EMP"])));
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tbl_ResponsibilitiesRow[] Gettbl_ResponsibilitiesRows() {
+                if ((this.Table.ChildRelations["FK_Emp_Responsibilities"] == null)) {
+                    return new tbl_ResponsibilitiesRow[0];
+                }
+                else {
+                    return ((tbl_ResponsibilitiesRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Emp_Responsibilities"])));
+                }
+            }
         }
         
         /// <summary>
@@ -3259,17 +3270,6 @@ namespace PA.DAL {
                     return ((tbl_EmployeeRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Title_Employee"])));
                 }
             }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tbl_ResponsibilitiesRow[] Gettbl_ResponsibilitiesRows() {
-                if ((this.Table.ChildRelations["Fk_Title_Responsibility"] == null)) {
-                    return new tbl_ResponsibilitiesRow[0];
-                }
-                else {
-                    return ((tbl_ResponsibilitiesRow[])(base.GetChildRows(this.Table.ChildRelations["Fk_Title_Responsibility"])));
-                }
-            }
         }
         
         /// <summary>
@@ -3315,23 +3315,23 @@ namespace PA.DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int TitleID {
+            public int EmpID {
                 get {
-                    return ((int)(this[this.tabletbl_Responsibilities.TitleIDColumn]));
+                    return ((int)(this[this.tabletbl_Responsibilities.EmpIDColumn]));
                 }
                 set {
-                    this[this.tabletbl_Responsibilities.TitleIDColumn] = value;
+                    this[this.tabletbl_Responsibilities.EmpIDColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tbl_TitleRow tbl_TitleRow {
+            public tbl_EmployeeRow tbl_EmployeeRow {
                 get {
-                    return ((tbl_TitleRow)(this.GetParentRow(this.Table.ParentRelations["Fk_Title_Responsibility"])));
+                    return ((tbl_EmployeeRow)(this.GetParentRow(this.Table.ParentRelations["FK_Emp_Responsibilities"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["Fk_Title_Responsibility"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Emp_Responsibilities"]);
                 }
             }
             
@@ -5849,38 +5849,38 @@ SELECT UserId, ApplicationId, UserName, IsAnonymous, LastActivityDate FROM Users
             tableMapping.DataSetTable = "tbl_Responsibilities";
             tableMapping.ColumnMappings.Add("ResponsibilityID", "ResponsibilityID");
             tableMapping.ColumnMappings.Add("Responsibility", "Responsibility");
-            tableMapping.ColumnMappings.Add("TitleID", "TitleID");
+            tableMapping.ColumnMappings.Add("EmpID", "EmpID");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
             this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[tbl_Responsibilities] WHERE (([ResponsibilityID] = @Original_R" +
                 "esponsibilityID) AND ((@IsNull_Responsibility = 1 AND [Responsibility] IS NULL) " +
-                "OR ([Responsibility] = @Original_Responsibility)) AND ([TitleID] = @Original_Tit" +
-                "leID))";
+                "OR ([Responsibility] = @Original_Responsibility)) AND ([EmpID] = @Original_EmpID" +
+                "))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ResponsibilityID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ResponsibilityID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Responsibility", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Responsibility", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Responsibility", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Responsibility", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TitleID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TitleID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EmpID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmpID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[tbl_Responsibilities] ([Responsibility], [TitleID]) VALUES (@R" +
-                "esponsibility, @TitleID);\r\nSELECT ResponsibilityID, Responsibility, TitleID FROM" +
-                " tbl_Responsibilities WHERE (ResponsibilityID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[tbl_Responsibilities] ([Responsibility], [EmpID]) VALUES (@Res" +
+                "ponsibility, @EmpID);\r\nSELECT ResponsibilityID, Responsibility, EmpID FROM tbl_R" +
+                "esponsibilities WHERE (ResponsibilityID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Responsibility", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Responsibility", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TitleID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TitleID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EmpID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmpID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[tbl_Responsibilities] SET [Responsibility] = @Responsibility, [TitleID] = @TitleID WHERE (([ResponsibilityID] = @Original_ResponsibilityID) AND ((@IsNull_Responsibility = 1 AND [Responsibility] IS NULL) OR ([Responsibility] = @Original_Responsibility)) AND ([TitleID] = @Original_TitleID));
-SELECT ResponsibilityID, Responsibility, TitleID FROM tbl_Responsibilities WHERE (ResponsibilityID = @ResponsibilityID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[tbl_Responsibilities] SET [Responsibility] = @Responsibility, [EmpID] = @EmpID WHERE (([ResponsibilityID] = @Original_ResponsibilityID) AND ((@IsNull_Responsibility = 1 AND [Responsibility] IS NULL) OR ([Responsibility] = @Original_Responsibility)) AND ([EmpID] = @Original_EmpID));
+SELECT ResponsibilityID, Responsibility, EmpID FROM tbl_Responsibilities WHERE (ResponsibilityID = @ResponsibilityID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Responsibility", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Responsibility", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TitleID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TitleID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EmpID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmpID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ResponsibilityID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ResponsibilityID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Responsibility", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Responsibility", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Responsibility", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Responsibility", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TitleID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TitleID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EmpID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmpID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ResponsibilityID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ResponsibilityID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -5897,7 +5897,7 @@ SELECT ResponsibilityID, Responsibility, TitleID FROM tbl_Responsibilities WHERE
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ResponsibilityID, Responsibility, TitleID FROM dbo.tbl_Responsibilities";
+            this._commandCollection[0].CommandText = "SELECT ResponsibilityID, Responsibility, EmpID FROM dbo.tbl_Responsibilities";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -5958,7 +5958,7 @@ SELECT ResponsibilityID, Responsibility, TitleID FROM tbl_Responsibilities WHERE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ResponsibilityID, string Original_Responsibility, int Original_TitleID) {
+        public virtual int Delete(int Original_ResponsibilityID, string Original_Responsibility, int Original_EmpID) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ResponsibilityID));
             if ((Original_Responsibility == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -5968,7 +5968,7 @@ SELECT ResponsibilityID, Responsibility, TitleID FROM tbl_Responsibilities WHERE
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Responsibility));
             }
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_TitleID));
+            this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_EmpID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5989,14 +5989,14 @@ SELECT ResponsibilityID, Responsibility, TitleID FROM tbl_Responsibilities WHERE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Responsibility, int TitleID) {
+        public virtual int Insert(string Responsibility, int EmpID) {
             if ((Responsibility == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Responsibility));
             }
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(TitleID));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(EmpID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -6017,14 +6017,14 @@ SELECT ResponsibilityID, Responsibility, TitleID FROM tbl_Responsibilities WHERE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Responsibility, int TitleID, int Original_ResponsibilityID, string Original_Responsibility, int Original_TitleID, int ResponsibilityID) {
+        public virtual int Update(string Responsibility, int EmpID, int Original_ResponsibilityID, string Original_Responsibility, int Original_EmpID, int ResponsibilityID) {
             if ((Responsibility == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Responsibility));
             }
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(TitleID));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(EmpID));
             this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_ResponsibilityID));
             if ((Original_Responsibility == null)) {
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(1));
@@ -6034,7 +6034,7 @@ SELECT ResponsibilityID, Responsibility, TitleID FROM tbl_Responsibilities WHERE
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(0));
                 this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_Responsibility));
             }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_TitleID));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_EmpID));
             this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(ResponsibilityID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -6056,8 +6056,8 @@ SELECT ResponsibilityID, Responsibility, TitleID FROM tbl_Responsibilities WHERE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Responsibility, int TitleID, int Original_ResponsibilityID, string Original_Responsibility, int Original_TitleID) {
-            return this.Update(Responsibility, TitleID, Original_ResponsibilityID, Original_Responsibility, Original_TitleID, Original_ResponsibilityID);
+        public virtual int Update(string Responsibility, int EmpID, int Original_ResponsibilityID, string Original_Responsibility, int Original_EmpID) {
+            return this.Update(Responsibility, EmpID, Original_ResponsibilityID, Original_Responsibility, Original_EmpID, Original_ResponsibilityID);
         }
     }
     
@@ -6596,15 +6596,6 @@ SELECT DutyID, Duty, ResponsibilityID FROM tbl_Duties WHERE (DutyID = @DutyID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateUpdatedRows(PaDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._tbl_TitleTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.tbl_Title.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._tbl_TitleTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._tbl_DepartmentTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.tbl_Department.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -6623,12 +6614,12 @@ SELECT DutyID, Duty, ResponsibilityID FROM tbl_Duties WHERE (DutyID = @DutyID)";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._tbl_ResponsibilitiesTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.tbl_Responsibilities.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._tbl_TitleTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.tbl_Title.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._tbl_ResponsibilitiesTableAdapter.Update(updatedRows));
+                    result = (result + this._tbl_TitleTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -6639,6 +6630,15 @@ SELECT DutyID, Duty, ResponsibilityID FROM tbl_Duties WHERE (DutyID = @DutyID)";
                             && (0 < updatedRows.Length))) {
                     this.SortSelfReferenceRows(updatedRows, dataSet.Relations["FK_EMP_EMP"], false);
                     result = (result + this._tbl_EmployeeTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._tbl_ResponsibilitiesTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.tbl_Responsibilities.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._tbl_ResponsibilitiesTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -6661,14 +6661,6 @@ SELECT DutyID, Duty, ResponsibilityID FROM tbl_Duties WHERE (DutyID = @DutyID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateInsertedRows(PaDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._tbl_TitleTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.tbl_Title.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._tbl_TitleTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._tbl_DepartmentTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.tbl_Department.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -6685,11 +6677,11 @@ SELECT DutyID, Duty, ResponsibilityID FROM tbl_Duties WHERE (DutyID = @DutyID)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._tbl_ResponsibilitiesTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.tbl_Responsibilities.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._tbl_TitleTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.tbl_Title.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._tbl_ResponsibilitiesTableAdapter.Update(addedRows));
+                    result = (result + this._tbl_TitleTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -6699,6 +6691,14 @@ SELECT DutyID, Duty, ResponsibilityID FROM tbl_Duties WHERE (DutyID = @DutyID)";
                             && (0 < addedRows.Length))) {
                     this.SortSelfReferenceRows(addedRows, dataSet.Relations["FK_EMP_EMP"], false);
                     result = (result + this._tbl_EmployeeTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._tbl_ResponsibilitiesTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.tbl_Responsibilities.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._tbl_ResponsibilitiesTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -6728,6 +6728,14 @@ SELECT DutyID, Duty, ResponsibilityID FROM tbl_Duties WHERE (DutyID = @DutyID)";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
+            if ((this._tbl_ResponsibilitiesTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.tbl_Responsibilities.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._tbl_ResponsibilitiesTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._tbl_EmployeeTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.tbl_Employee.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -6737,11 +6745,11 @@ SELECT DutyID, Duty, ResponsibilityID FROM tbl_Duties WHERE (DutyID = @DutyID)";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._tbl_ResponsibilitiesTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.tbl_Responsibilities.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._tbl_TitleTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.tbl_Title.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._tbl_ResponsibilitiesTableAdapter.Update(deletedRows));
+                    result = (result + this._tbl_TitleTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -6758,14 +6766,6 @@ SELECT DutyID, Duty, ResponsibilityID FROM tbl_Duties WHERE (DutyID = @DutyID)";
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._tbl_DepartmentTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._tbl_TitleTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.tbl_Title.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._tbl_TitleTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }

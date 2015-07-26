@@ -40,11 +40,20 @@ namespace PA.BLL
 
         public static readonly string STORED_IMAGE = "SessionImage";
 
+        /// <summary>
+        /// Get all employees
+        /// </summary>
+        /// <returns>Employee Datatable</returns>
         public PA.DAL.PaDataSet.tbl_EmployeeDataTable GetEmployees()
         {
             return Adapter.GetData();
         }
 
+        /// <summary>
+        /// Get all employees from a department
+        /// </summary>
+        /// <param name="nDepartmentID">The selected department Id</param>
+        /// <returns>Employee Datatable</returns>
         public PA.DAL.PaDataSet.tbl_EmployeeDataTable GetEmployees(int nDepartmentID)
         {
             return Adapter.GetEmployeesByDepartmentID(nDepartmentID);

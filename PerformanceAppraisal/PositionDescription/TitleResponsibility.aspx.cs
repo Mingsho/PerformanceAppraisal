@@ -12,6 +12,8 @@ namespace PerformanceAppraisal.PositionDescription
     public partial class TitleResponsibility : System.Web.UI.Page
     {
         TitleBLL titleLogic = new TitleBLL();
+        DepartmentBLL deptLogic = new DepartmentBLL();
+        EmployeeBLL empLogic = new EmployeeBLL();
         ResponsibilityBLL responsiblityLogic = new ResponsibilityBLL();
 
         private void CreateControl(string strId, int nIndex)
@@ -34,12 +36,26 @@ namespace PerformanceAppraisal.PositionDescription
 
         private void InitializeComponents()
         {
-            dListTitles.DataSource = titleLogic.GetTitles();
-            dListTitles.DataTextField = "JobTitle";
-            dListTitles.DataValueField = "TitleID";
-            dListTitles.DataBind();
+            dListDepartment.DataSource = deptLogic.GetDepartments();
+            dListDepartment.DataTextField = "Departmentname";
+            dListDepartment.DataValueField = "DepartmentID";
+            dListDepartment.SelectedIndex = 1;
+            dListDepartment.DataBind();
+
+            //Bind the employees dropdownlist
+            BindEmployees();
+            
         }
 
+        private void BindEmployees()
+        {
+            int nDeptId = int.Parse(dListDepartment.SelectedValue);
+
+            dListEmployee.DataSource = empLogic.GetEmployees(nDeptId);
+            dListEmployee.DataTextField = "Firstname";
+            dListEmployee.DataValueField = "EmpID";
+            dListEmployee.DataBind();
+        }
 
         /// <summary>
         /// recreating the controls that was created dynamically after postback.
@@ -82,7 +98,7 @@ namespace PerformanceAppraisal.PositionDescription
 
             responsibility.ResponsibilityID = null;
             responsibility.ResponsibilityDesc = txtResponsibility.Text;
-            responsibility.TitleID = int.Parse(dListTitles.SelectedValue);
+            responsibility.EmpID = int.Parse(dListEmployee.SelectedValue);
 
             foreach(Control ctrl in pnlDuties.Controls)
             {
@@ -99,6 +115,13 @@ namespace PerformanceAppraisal.PositionDescription
 
             if (responsiblityLogic.AddResponsibility(responsibility))
                 Response.Write("Responsiblity successfully added!");
+        }
+
+        protected void dListDepartment_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //bind employees dropdownlist 
+            //when the selected index is changed.
+            BindEmployees();
         }
 
         

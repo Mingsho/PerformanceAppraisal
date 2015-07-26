@@ -10,8 +10,8 @@
     <Shape ID="DesignTable:tbl_Department" ZOrder="5" X="725" Y="319" Height="134" Width="236" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
     <Shape ID="DesignTable:Users" ZOrder="6" X="548" Y="-4" Height="172" Width="176" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
     <Shape ID="DesignTable:tbl_Title" ZOrder="8" X="267" Y="-18" Height="134" Width="191" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
-    <Shape ID="DesignTable:tbl_Responsibilities" ZOrder="4" X="-34" Y="19" Height="134" Width="256" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
-    <Shape ID="DesignTable:tbl_Duties" ZOrder="2" X="-103" Y="219" Height="134" Width="202" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
+    <Shape ID="DesignTable:tbl_Responsibilities" ZOrder="4" X="-34" Y="19" Height="134" Width="256" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="24" SplitterPosition="83" />
+    <Shape ID="DesignTable:tbl_Duties" ZOrder="3" X="-103" Y="219" Height="134" Width="202" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
   </Shapes>
   <Connectors>
     <Connector ID="DesignRelation:FK_EMP_EMP" ZOrder="12" LineWidth="11">
@@ -86,19 +86,7 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:Fk_Title_Responsibility" ZOrder="3" LineWidth="11">
-      <RoutePoints>
-        <Point>
-          <X>267</X>
-          <Y>67</Y>
-        </Point>
-        <Point>
-          <X>222</X>
-          <Y>67</Y>
-        </Point>
-      </RoutePoints>
-    </Connector>
-    <Connector ID="DesignRelation:FK_Responsibility_Duty" ZOrder="1" LineWidth="11">
+    <Connector ID="DesignRelation:FK_Responsibility_Duty" ZOrder="2" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>-28</X>
@@ -107,6 +95,18 @@
         <Point>
           <X>-28</X>
           <Y>219</Y>
+        </Point>
+      </RoutePoints>
+    </Connector>
+    <Connector ID="DesignRelation:FK_Emp_Responsibilities" ZOrder="1" LineWidth="11">
+      <RoutePoints>
+        <Point>
+          <X>206</X>
+          <Y>269</Y>
+        </Point>
+        <Point>
+          <X>206</X>
+          <Y>153</Y>
         </Point>
       </RoutePoints>
     </Connector>

@@ -33,7 +33,8 @@ namespace PA.BLL
             PA.DAL.PaDataSet.tbl_ResponsibilitiesRow responsibilityRow = responsibilityDtable.Newtbl_ResponsibilitiesRow();
 
             responsibilityRow.Responsibility = responsibility.ResponsibilityDesc;
-            responsibilityRow.TitleID = responsibility.TitleID;
+            //responsibilityRow.TitleID = responsibility.TitleID;
+            responsibilityRow.EmpID = responsibility.EmpID;
 
             responsibilityDtable.Addtbl_ResponsibilitiesRow(responsibilityRow);
 
