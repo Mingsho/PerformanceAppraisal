@@ -8,6 +8,7 @@
                 runat="server"
                 Height="225px"
                 Width="225px"
+                CssClass="img-circle"
                 ImageUrl="~/Images/defaultProfileImage1.png" /><br />
 
 
