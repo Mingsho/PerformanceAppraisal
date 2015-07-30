@@ -12,6 +12,8 @@ namespace PerformanceAppraisal.MasterPages
         protected void Page_Load(object sender, EventArgs e)
         {
             Page.Header.DataBind();
+
+            
         }
 
         //page heading for content pages

@@ -1,22 +1,9 @@
-﻿<%@ Page Language="C#" Title="Employee Responsibilities" AutoEventWireup="true" CodeBehind="TitleResponsibility.aspx.cs" Inherits="PerformanceAppraisal.PositionDescription.TitleResponsibility" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPages/MainLayout.Master" Title="Employee Responsibilities" AutoEventWireup="true" CodeBehind="TitleResponsibility.aspx.cs" Inherits="PerformanceAppraisal.PositionDescription.TitleResponsibility" %>
+<%@ MasterType VirtualPath="~/MasterPages/MainLayout.Master" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
+<asp:Content ID="childMainContent" ContentPlaceHolderID="mainContent" runat="server">
     <div>
-        <%--<asp:Label ID="lblTitle"
-            runat="server"
-            Text="Title: "
-            AssociatedControlID="dListTitles"></asp:Label>
-        <asp:DropDownList ID="dListTitles"
-            runat="server"
-            AutoPostBack="true"></asp:DropDownList><br />--%>
-
+        
         <asp:Label ID="lblDepartment"
             runat="server"
             AssociatedControlID="dListDepartment"
@@ -59,6 +46,4 @@
             OnClick="btnAdd_Click" />
 
     </div>
-    </form>
-</body>
-</html>
+</asp:Content>

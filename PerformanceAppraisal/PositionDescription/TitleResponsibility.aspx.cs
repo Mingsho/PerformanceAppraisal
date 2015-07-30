@@ -23,6 +23,7 @@ namespace PerformanceAppraisal.PositionDescription
             lblTemp.Text = "Duty" + nIndex;
             lblTemp.AssociatedControlID = strId + nIndex;
             pnlDuties.Controls.Add(lblTemp);
+            
 
             TextBox txtTemp = new TextBox();
             txtTemp.ID = strId + nIndex;
