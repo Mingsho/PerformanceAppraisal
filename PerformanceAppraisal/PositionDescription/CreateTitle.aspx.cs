@@ -14,7 +14,8 @@ namespace PerformanceAppraisal.PositionDescription
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!Page.IsPostBack)
+                Master.PageHeading = "Create Title";
         }
 
         protected void btnCreateTitle_Click(object sender, EventArgs e)

@@ -1,14 +1,8 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ListUsers.aspx.cs" Inherits="PerformanceAppraisal.PositionDescription.ListUsers" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPages/MainLayout.Master" AutoEventWireup="true" CodeBehind="ListUsers.aspx.cs" Inherits="PerformanceAppraisal.PositionDescription.ListUsers" %>
+<%@ MasterType VirtualPath="~/MasterPages/MainLayout.Master" %>
 
-<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <a href="../Admin/AdminIndex.aspx">Go Back</a>
+<asp:Content ID="childMainContent" ContentPlaceHolderID="mainContent" runat="server">
     <div>
 
         <asp:Label ID="lblSelectDepartment"
@@ -36,6 +30,5 @@
         </asp:GridView>
     
     </div>
-    </form>
-</body>
-</html>
+</asp:Content>
+

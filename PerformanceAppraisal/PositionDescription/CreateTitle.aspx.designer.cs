@@ -7,20 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PerformanceAppraisal.PositionDescription
-{
+namespace PerformanceAppraisal.PositionDescription {
     
     
     public partial class CreateTitle {
-        
-        /// <summary>
-        /// form1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
         /// lblTitleName control.
@@ -75,5 +65,17 @@ namespace PerformanceAppraisal.PositionDescription
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCreateTitle;
+        
+        /// <summary>
+        /// Master property.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated property.
+        /// </remarks>
+        public new PerformanceAppraisal.MasterPages.MainLayout Master {
+            get {
+                return ((PerformanceAppraisal.MasterPages.MainLayout)(base.Master));
+            }
+        }
     }
 }
