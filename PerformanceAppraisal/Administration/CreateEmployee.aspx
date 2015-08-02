@@ -9,7 +9,7 @@
                 Height="225px"
                 Width="225px"
                 CssClass="img-circle"
-                ImageUrl="~/Images/defaultProfileImage1.png" /><br />
+                ImageUrl="~/Images/defaultProfileImage1.png" BorderStyle="Solid" BorderWidth="1px" /><br />
 
 
             
@@ -45,8 +45,6 @@
                 runat="server"></asp:TextBox><br />
         
         
-       
-
             <asp:Label ID="lblHouseno"
                 runat="server"
                 AssociatedControlID="txtHouseno"

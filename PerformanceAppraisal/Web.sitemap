@@ -13,7 +13,7 @@
       <siteMapNode url="" title="Position Description" description="Create and manage employee position description">
         <siteMapNode url="~/PositionDescription/CreateTitle.aspx" title="Create Title" description="Create title/position for employees"/>
         <siteMapNode url="~/PositionDescription/ListUsers.aspx" title="List Users" description="List all existing users"/>
-        <siteMapNode url="~/PositionDescription/TitleResponsibility.aspx" title="Add Responsibility"/>
+        <siteMapNode url="~/PositionDescription/PositionDescription.aspx" title="Position Description"/>
       </siteMapNode>
       
     </siteMapNode>

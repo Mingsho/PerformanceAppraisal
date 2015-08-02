@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPages/MainLayout.Master" Title="Employee Responsibilities" AutoEventWireup="true" CodeBehind="TitleResponsibility.aspx.cs" Inherits="PerformanceAppraisal.PositionDescription.TitleResponsibility" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPages/MainLayout.Master" Title="Employee Position Description" AutoEventWireup="true" CodeBehind="PositionDescription.aspx.cs" Inherits="PerformanceAppraisal.PositionDescription.PositionDescription" %>
 <%@ MasterType VirtualPath="~/MasterPages/MainLayout.Master" %>
 
 <asp:Content ID="childMainContent" ContentPlaceHolderID="mainContent" runat="server">

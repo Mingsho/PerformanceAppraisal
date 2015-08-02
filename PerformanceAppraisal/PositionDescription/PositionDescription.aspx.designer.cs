@@ -10,7 +10,7 @@
 namespace PerformanceAppraisal.PositionDescription {
     
     
-    public partial class TitleResponsibility {
+    public partial class PositionDescription {
         
         /// <summary>
         /// lblDepartment control.

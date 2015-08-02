@@ -6,10 +6,11 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using PA.BLL;
 using PA.BLL.DTO;
+using PerformanceAppraisal.Utilities;
 
 namespace PerformanceAppraisal.PositionDescription
 {
-    public partial class TitleResponsibility : System.Web.UI.Page
+    public partial class PositionDescription : System.Web.UI.Page
     {
         TitleBLL titleLogic = new TitleBLL();
         DepartmentBLL deptLogic = new DepartmentBLL();
@@ -66,7 +67,10 @@ namespace PerformanceAppraisal.PositionDescription
         /// <param name="e"></param>
         protected override void OnPreInit(EventArgs e)
         {
-            
+            //child control's init event is fired before that of parents.
+            //this method is called to prevent this.
+            this.PrepareChildControlsDuringPreint();
+
             List<string> keys = Request.Form.AllKeys.Where(key => key.Contains("txtDuty")).ToList();
             int i = 1;
 
