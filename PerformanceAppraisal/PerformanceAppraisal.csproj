@@ -139,6 +139,7 @@
     <Content Include="TestPage.aspx" />
     <Content Include="UserPages\UserIndex.aspx" />
     <Content Include="PositionDescription\ListUsers.aspx" />
+    <Content Include="UserPages\UserProfile.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -264,6 +265,13 @@
     </Compile>
     <Compile Include="PositionDescription\ListUsers.aspx.designer.cs">
       <DependentUpon>ListUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserPages\UserProfile.aspx.cs">
+      <DependentUpon>UserProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPages\UserProfile.aspx.designer.cs">
+      <DependentUpon>UserProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Utilities\BundleConfig.cs" />
     <Compile Include="Utilities\CoreUtilities.cs" />

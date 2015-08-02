@@ -4,16 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Web.Security;
 
-namespace PerformanceAppraisal.Administration
+namespace PerformanceAppraisal.UserPages
 {
-    public partial class AdminIndex : System.Web.UI.Page
+    public partial class UserProfile : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Page.IsPostBack)
-                Master.PageHeading = "Dashboard";
 
         }
     }

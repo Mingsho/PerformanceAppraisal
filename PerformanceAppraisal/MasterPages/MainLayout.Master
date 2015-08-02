@@ -30,8 +30,44 @@
 
                 <!--Navigation header-->
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="#">Administrator</a>
+                    <%--<a class="navbar-brand" href="#">Administrator</a>--%>
+                    <asp:DropDownList ID="dlistRoles"
+                        runat="server"
+                        CssClass="navbar-brand dropdown"
+                        AutoPostBack="true"></asp:DropDownList>
                 </div>
+
+                <ul class="nav navbar-top-links navbar-right">
+
+                    <li class="dropdown">
+                        <asp:HyperLink CssClass="dropdown-toggle"
+                            runat="server"
+                            href="#"
+                            data-toggle="dropdown"
+                            aria-expanded="false">
+
+                            <i class="fa fa-user fa-fw"></i>
+                            <i class="fa fa-caret-down"></i>
+
+                        </asp:HyperLink>
+                        <ul class="dropdown-menu dropdown-user">
+                            <li><%--<a href="#">
+                                <i class="fa fa-user fa-fw"></i>
+                                    User Profile
+                                </a>--%>
+                                <asp:HyperLink ID="hLnkUserProfile"
+                                    runat="server"
+                                    NavigateUrl="~/UserPages/UserProfile.aspx">
+
+                                    <i class="fa fa-user fa-fw"></i>
+                                    My Profile
+                                </asp:HyperLink>
+
+                            </li>
+                        </ul>
+                    </li>
+                    
+                </ul>
 
                 <!--Sidebar Navigation menu-->
                 <div class="navbar-default sidebar" role="navigation">

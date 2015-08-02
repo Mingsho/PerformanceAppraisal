@@ -58,6 +58,24 @@ namespace PerformanceAppraisal.MasterPages {
         protected global::System.Web.UI.ScriptManager mainScriptManager;
         
         /// <summary>
+        /// dlistRoles control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList dlistRoles;
+        
+        /// <summary>
+        /// hLnkUserProfile control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hLnkUserProfile;
+        
+        /// <summary>
         /// txtSearch control.
         /// </summary>
         /// <remarks>
