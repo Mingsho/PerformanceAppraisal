@@ -9,7 +9,10 @@
                 runat="server">
                 <ItemTemplate>
                     <asp:Image ID="imgUserProfile"
-                        runat="server" /><br />
+                        runat="server"
+                        Height="225px"
+                        Width="225px"
+                        ImageUrl='<%# GetImage(Eval("ProfileImage")) %>' BorderStyle="Solid" BorderWidth="1px" /><br />
                    Firstname: 
                     <asp:Label ID="lblFirstname"
                         runat="server"

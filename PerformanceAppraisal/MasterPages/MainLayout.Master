@@ -30,7 +30,7 @@
 
                 <!--Navigation header-->
                 <div class="navbar-header">
-                    <%--<a class="navbar-brand" href="#">Administrator</a>--%>
+                   <!--User roles dropdownlist-->
                     <asp:DropDownList ID="dlistRoles"
                         runat="server"
                         CssClass="navbar-brand dropdown"
@@ -51,10 +51,7 @@
 
                         </asp:HyperLink>
                         <ul class="dropdown-menu dropdown-user">
-                            <li><%--<a href="#">
-                                <i class="fa fa-user fa-fw"></i>
-                                    User Profile
-                                </a>--%>
+                            <li>
                                 <asp:HyperLink ID="hLnkUserProfile"
                                     runat="server"
                                     NavigateUrl="~/UserPages/UserProfile.aspx">
@@ -64,7 +61,19 @@
                                 </asp:HyperLink>
 
                             </li>
+                            <li class="divider"></li>
+                            <li>
+                                <asp:LinkButton ID="lnkUserLogout"
+                                    runat="server"
+                                    OnClick="lnkUserLogout_Click">
+
+                                    <i class="fa fa-sign-out fa-fw"></i>
+                                    Logout
+                                </asp:LinkButton>
+                                    
+                            </li>
                         </ul>
+                        
                     </li>
                     
                 </ul>

@@ -24,8 +24,6 @@ namespace PerformanceAppraisal.MasterPages
                 dlistRoles.DataSource = roles;
                 dlistRoles.DataBind();
             }
-
-            
         }
 
         //page heading for content pages
@@ -39,6 +37,18 @@ namespace PerformanceAppraisal.MasterPages
             {
                 this.lblPageHeader.Text = value;
             }
+        }
+
+        protected void lnkUserLogout_Click(object sender, EventArgs e)
+        {
+            //signout the currently logged in user.
+            FormsAuthentication.SignOut();
+
+            //redirect to the login page.
+            FormsAuthentication.RedirectToLoginPage();
+
+            //clear all sessions.
+            Session.Clear();
         }
 
     }

@@ -37,12 +37,6 @@ namespace PerformanceAppraisal.Handlers
             
         }
 
-        //private System.Drawing.Image GetImage(byte[] image)
-        //{
-        //    var stream = new MemoryStream(image);
-        //    return System.Drawing.Image.FromStream(stream);
-        //}
-
         public bool IsReusable
         {
             get
