@@ -101,6 +101,7 @@
     <Content Include="Scripts\jquery.min.js" />
     <Content Include="Scripts\metisMenu.min.js" />
     <Content Include="Scripts\sb-admin-2.js" />
+    <Content Include="TestWebForm.aspx" />
     <Content Include="UserControlTestPage.aspx" />
     <Content Include="Administration\CreateEmployee.aspx" />
     <Content Include="PositionDescription\CreateTitle.aspx" />
@@ -181,6 +182,13 @@
     </Compile>
     <Compile Include="PositionDescription\PositionDescription.aspx.designer.cs">
       <DependentUpon>PositionDescription.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TestWebForm.aspx.cs">
+      <DependentUpon>TestWebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestWebForm.aspx.designer.cs">
+      <DependentUpon>TestWebForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserControlTestPage.aspx.cs">
       <DependentUpon>UserControlTestPage.aspx</DependentUpon>
@@ -276,6 +284,7 @@
     <Compile Include="Utilities\BundleConfig.cs" />
     <Compile Include="Utilities\CoreUtilities.cs" />
     <Compile Include="Utilities\ImageUtil.cs" />
+    <Compile Include="Utilities\MenuRepeaterTemplate.cs" />
     <Compile Include="Utilities\PageExtensions.cs" />
     <Compile Include="Utilities\UserProfile.cs" />
   </ItemGroup>

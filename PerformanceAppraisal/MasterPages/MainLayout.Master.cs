@@ -51,5 +51,29 @@ namespace PerformanceAppraisal.MasterPages
             Session.Clear();
         }
 
+        protected void sideBarMenu_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            //must also include AlternatingItem
+            //the second node is the alternating item in the sitemapnode
+            if(e.Item.ItemType==ListItemType.Item || e.Item.ItemType==ListItemType.AlternatingItem)
+            {
+                SiteMapNode node = (SiteMapNode)e.Item.DataItem;
+
+                switch(node.Title)
+                {
+                    case "Dashboard":
+                        Literal lit = (Literal)e.Item.FindControl("litIcon");
+                        lit.Text = @"<i class=""fa fa-dashboard fa-fw""></i>";
+                        break;
+                }
+
+                if(node.HasChildNodes)
+                {
+                    Literal lit = (Literal)e.Item.FindControl("litCaret");
+                    lit.Text = @"<span class=""fa arrow""></span>";
+                }
+            }
+        }
+
     }
 }

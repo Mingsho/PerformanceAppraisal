@@ -106,28 +106,38 @@
                                 </div>
                             </li>
                             <asp:Repeater ID="sideBarMenu"
-                                runat="server" DataSourceID="mainSDataSource">
+                                runat="server"
+                                DataSourceID="mainSDataSource"
+                                OnItemDataBound="sideBarMenu_ItemDataBound">
 
                                 <ItemTemplate>
                                     <li>
-                                        <asp:HyperLink runat="server"
+                                        <asp:HyperLink ID="hLnkFirstLvl"
+                                            runat="server"
                                             NavigateUrl='<%# Eval("Url") %>'>
+
+                                            <asp:Literal ID="litIcon" runat="server"></asp:Literal>
                                             <%# Eval("Title") %>
-                                            <span class="fa arrow"></span>
+                                            <asp:Literal ID="litCaret" runat="server"></asp:Literal>
+
                                         </asp:HyperLink>
 
                                         <ul class="nav nav-second-level">
-                                        <asp:Repeater ID="sideBarChildNodeMenu"
-                                            runat="server"
-                                            DataSource='<%# ((SiteMapNode)Container.DataItem).ChildNodes %>'>
+                                            <asp:Repeater ID="sideBarChildNodeMenu"
+                                                runat="server"
+                                                DataSource='<%# ((SiteMapNode)Container.DataItem).ChildNodes %>'>
 
-                                            <ItemTemplate>
-                                                <li>
-                                                    <asp:HyperLink runat="server"
-                                                        NavigateUrl='<%# Eval("Url") %>'><%# Eval("Title") %></asp:HyperLink>
-                                                </li>
-                                            </ItemTemplate>
-                                        </asp:Repeater>
+                                                <ItemTemplate>
+                                                    <li>
+                                                        <asp:HyperLink ID="hLnkSecondLvl"
+                                                            runat="server"
+                                                            NavigateUrl='<%# Eval("Url") %>'>
+                                                            <%# Eval("Title") %>
+
+                                                        </asp:HyperLink>
+                                                    </li>
+                                                </ItemTemplate>
+                                            </asp:Repeater>
                                         </ul>
 
                                     </li>
