@@ -59,14 +59,6 @@ namespace PerformanceAppraisal.MasterPages
             {
                 SiteMapNode node = (SiteMapNode)e.Item.DataItem;
 
-                switch(node.Title)
-                {
-                    case "Dashboard":
-                        Literal lit = (Literal)e.Item.FindControl("litIcon");
-                        lit.Text = @"<i class=""fa fa-dashboard fa-fw""></i>";
-                        break;
-                }
-
                 if(node.HasChildNodes)
                 {
                     Literal lit = (Literal)e.Item.FindControl("litCaret");

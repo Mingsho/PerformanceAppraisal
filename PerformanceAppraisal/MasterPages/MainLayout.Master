@@ -116,10 +116,11 @@
                                             runat="server"
                                             NavigateUrl='<%# Eval("Url") %>'>
 
-                                            <asp:Literal ID="litIcon" runat="server"></asp:Literal>
+                                            <%--<asp:Literal ID="litIcon" runat="server"></asp:Literal>--%>
+                                            <i class='<%# Eval("[icon]") %>'></i>
                                             <%# Eval("Title") %>
                                             <asp:Literal ID="litCaret" runat="server"></asp:Literal>
-
+                                            
                                         </asp:HyperLink>
 
                                         <ul class="nav nav-second-level">

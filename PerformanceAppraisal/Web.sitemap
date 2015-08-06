@@ -3,14 +3,14 @@
   
     <siteMapNode url="" title="Site Root"  description="Root node of the site">
       
-      <siteMapNode url="~/Administration/AdminIndex.aspx" title="Dashboard" description="Admin dashboard"/>
+      <siteMapNode url="~/Administration/AdminIndex.aspx" title="Dashboard" icon="fa fa-dashboard fa-fw" description="Admin dashboard"/>
       
-      <siteMapNode url="" title="Administration" description="Administrative tasks">
+      <siteMapNode url="" title="Administration" icon="fa fa-unlock fa-fw" description="Administrative tasks">
         <siteMapNode url="~/Administration/CreateEmployee.aspx" title="Create new employee" description="Create a new employee"/>
         <siteMapNode url="~/Administration/AddDepartment.aspx" title="Create Department" description="Create a new department"/>
       </siteMapNode>
       
-      <siteMapNode url="" title="Position Description" description="Create and manage employee position description">
+      <siteMapNode url="" title="Position Description" icon="fa fa-trophy fa-fw" description="Create and manage employee position description">
         <siteMapNode url="~/PositionDescription/CreateTitle.aspx" title="Create Title" description="Create title/position for employees"/>
         <siteMapNode url="~/PositionDescription/ListUsers.aspx" title="List Users" description="List all existing users"/>
         <siteMapNode url="~/PositionDescription/PositionDescription.aspx" title="Position Description"/>

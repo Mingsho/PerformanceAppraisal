@@ -93,6 +93,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Administration\ManageUsers.aspx" />
     <Content Include="Content\metisMenu.min.css" />
     <Content Include="Administration\AddDepartment.aspx" />
     <Content Include="Administration\AdminIndex.aspx" />
@@ -129,6 +130,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="MasterPages\MainLayout.Master" />
+    <Content Include="App_Themes\DefaultTheme\ControlsSkin.skin" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Icon.png" />
     <Content Include="Scripts\bootstrap.js" />
@@ -145,7 +147,9 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Scripts\jquery-2.1.4.min.map" />
-    <Content Include="Web.sitemap" />
+    <Content Include="Web.sitemap">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Administration\AddDepartment.aspx.cs">
@@ -161,6 +165,13 @@
     </Compile>
     <Compile Include="Administration\AdminIndex.aspx.designer.cs">
       <DependentUpon>AdminIndex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\ManageUsers.aspx.cs">
+      <DependentUpon>ManageUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\ManageUsers.aspx.designer.cs">
+      <DependentUpon>ManageUsers.aspx</DependentUpon>
     </Compile>
     <Compile Include="MasterPages\MainLayout.Master.cs">
       <DependentUpon>MainLayout.Master</DependentUpon>
@@ -297,9 +308,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Themes\DefaultTheme\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\PA.BLL\PA.BLL.csproj">
       <Project>{dd833e6f-bc7b-4ae5-b6cb-d1b50c1f523c}</Project>
