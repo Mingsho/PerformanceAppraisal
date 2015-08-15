@@ -13,6 +13,15 @@ namespace PerformanceAppraisal.PositionDescription {
     public partial class PositionDescription {
         
         /// <summary>
+        /// lgnViewAdmin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LoginView lgnViewAdmin;
+        
+        /// <summary>
         /// lblDepartment control.
         /// </summary>
         /// <remarks>

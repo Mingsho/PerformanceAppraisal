@@ -3,7 +3,12 @@
 
 <asp:Content ID="childMainContent" ContentPlaceHolderID="mainContent" runat="server">
     <div>
-        
+        <asp:LoginView ID="lgnViewAdmin"
+            runat="server">
+            <LoggedInTemplate>
+                
+            </LoggedInTemplate>
+        </asp:LoginView>
         <asp:Label ID="lblDepartment"
             runat="server"
             AssociatedControlID="dListDepartment"

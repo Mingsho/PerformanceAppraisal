@@ -27,6 +27,7 @@ namespace PerformanceAppraisal.Controls
                     int nUserId = empLogic.GetEmployeeID(userGuid.ToString());
                     frmViewUserDetails.DataSource = empLogic.GetEmployeeByID(nUserId);
                     frmViewUserDetails.DataBind();
+                    
                 }
             }
         }

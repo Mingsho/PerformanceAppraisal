@@ -10,8 +10,6 @@
                 Width="225px"
                 ImageUrl="~/Images/defaultProfileImage1.png" BorderStyle="Solid" BorderWidth="1px" /><br />
 
-
-            
             <ajaxToolkit:AsyncFileUpload ID="fUploadProfilePic"
                         runat="server"
                         OnUploadedComplete="fUploadProfilePic_UploadedComplete"
@@ -42,7 +40,6 @@
                 Text="Date of Birth: "></asp:Label>
             <asp:TextBox ID="txtDateofbirth"
                 runat="server"></asp:TextBox><br />
-        
         
             <asp:Label ID="lblHouseno"
                 runat="server"
