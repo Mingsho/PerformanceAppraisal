@@ -10,7 +10,7 @@ using PerformanceAppraisal.Utilities;
 
 namespace PerformanceAppraisal.PositionDescription
 {
-    public partial class PositionDescription : System.Web.UI.Page
+    public partial class PositionDescription : ThemedPage
     {
         TitleBLL titleLogic = new TitleBLL();
         DepartmentBLL deptLogic = new DepartmentBLL();

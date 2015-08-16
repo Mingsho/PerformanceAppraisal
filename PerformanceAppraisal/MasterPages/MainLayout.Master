@@ -33,7 +33,7 @@
                    <!--User roles dropdownlist-->
                     <asp:DropDownList ID="dlistRoles"
                         runat="server"
-                        CssClass="navbar-brand dropdown"
+                        CssClass="navbar-brand form-control"
                         AutoPostBack="true"></asp:DropDownList>
                 </div>
 
