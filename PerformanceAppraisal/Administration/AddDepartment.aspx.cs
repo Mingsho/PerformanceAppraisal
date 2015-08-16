@@ -5,11 +5,12 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using PA.BLL;
+using PerformanceAppraisal.Utilities;
 
 
 namespace PerformanceAppraisal.Administration
 {
-    public partial class AddDepartment : System.Web.UI.Page
+    public partial class AddDepartment : ThemedPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

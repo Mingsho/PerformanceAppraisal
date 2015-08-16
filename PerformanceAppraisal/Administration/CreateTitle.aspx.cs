@@ -5,10 +5,11 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using PA.BLL;
+using PerformanceAppraisal.Utilities;
 
 namespace PerformanceAppraisal.Administration
 {
-    public partial class CreateTitle : System.Web.UI.Page
+    public partial class CreateTitle : ThemedPage
     {
         TitleBLL titleLogic = new TitleBLL();
 

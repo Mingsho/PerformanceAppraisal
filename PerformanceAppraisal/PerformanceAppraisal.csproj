@@ -314,6 +314,11 @@
     <Compile Include="Utilities\ImageUtil.cs" />
     <Compile Include="Utilities\MenuRepeaterTemplate.cs" />
     <Compile Include="Utilities\PageExtensions.cs" />
+    <Compile Include="Utilities\Theme.cs" />
+    <Compile Include="Utilities\ThemedPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utilities\ThemeManager.cs" />
     <Compile Include="Utilities\UserProfile.cs" />
   </ItemGroup>
   <ItemGroup>

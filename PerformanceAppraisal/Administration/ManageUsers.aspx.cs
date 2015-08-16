@@ -6,10 +6,11 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using PA.BLL;
 using PA.DAL.PaDataSetTableAdapters;
+using PerformanceAppraisal.Utilities;
 
 namespace PerformanceAppraisal.Administration
 {
-    public partial class ManageUsers : System.Web.UI.Page
+    public partial class ManageUsers : ThemedPage
     {
         EmployeeBLL empLogic = new EmployeeBLL();
         DepartmentBLL deptLogic = new DepartmentBLL();

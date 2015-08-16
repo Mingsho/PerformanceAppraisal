@@ -6,11 +6,12 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using PA.BLL;
 using PA.BLL.DTO;
+using PerformanceAppraisal.Utilities;
 using System.Web.Security;
 
 namespace PerformanceAppraisal.Administration
 {
-    public partial class CreateUserAccount : System.Web.UI.Page
+    public partial class CreateUserAccount : ThemedPage
     {
         EmployeeBLL empLogic = new EmployeeBLL();
 

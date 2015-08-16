@@ -13,7 +13,7 @@ using PerformanceAppraisal.Utilities;
 
 namespace PerformanceAppraisal.Administration
 {
-    public partial class CreateEmployee : System.Web.UI.Page
+    public partial class CreateEmployee : ThemedPage
     {
         EmployeeBLL empLogic = new EmployeeBLL();
         DepartmentBLL deptLogic = new DepartmentBLL();
