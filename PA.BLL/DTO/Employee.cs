@@ -11,6 +11,7 @@ namespace PA.BLL.DTO
     /// </summary>
     public class Employee
     {
+        public int? EmployeeID { get; set; }
         public string Firstname { get; set; }
         public string Middlename { get; set; }
         public string Lastname { get; set; }
@@ -29,7 +30,5 @@ namespace PA.BLL.DTO
         public int? DepartmentID { get; set; }
         public byte[] ProfileImage { get; set; }
         public int TitleID { get; set; }
-
-
     }
 }

@@ -50,6 +50,81 @@ namespace PA.BLL
         }
 
         /// <summary>
+        /// Return the Employee Object by Employee ID
+        /// </summary>
+        /// <returns>Employee Object</returns>
+        /// <param name="nEmpId">The required employee ID.</param>
+        public Employee GetEmployee(int nEmpId)
+        {
+            PA.DAL.PaDataSet.tbl_EmployeeDataTable empDataTable = Adapter.GetEmployeeByID(nEmpId);
+
+            Employee employee;
+
+            if (empDataTable.Rows.Count > 0)
+            {
+                employee = new Employee();
+
+                employee.EmployeeID = int.Parse(empDataTable.Rows[0]["EmpID"].ToString());
+
+                employee.Firstname = empDataTable.Rows[0]["Firstname"].ToString();
+                employee.Middlename = empDataTable.Rows[0]["Middlename"].ToString();
+                employee.Lastname = empDataTable.Rows[0]["Lastname"].ToString();
+
+                if (empDataTable.Rows[0]["DateOfBirth"] != DBNull.Value)
+                    employee.DateofBirth = DateTime.Parse(empDataTable.Rows[0]["DateOfBirth"].ToString());
+                else
+                    employee.DateofBirth = null;
+
+                employee.HouseUnitNo = empDataTable.Rows[0]["HouseUnitNo"].ToString();
+                employee.Streetname = empDataTable.Rows[0]["Streetname"].ToString();
+                employee.Suburb = empDataTable.Rows[0]["Suburb"].ToString();
+                employee.City = empDataTable.Rows[0]["City"].ToString();
+
+                if (empDataTable.Rows[0]["Postcode"] != DBNull.Value)
+                    employee.Postcode = int.Parse(empDataTable.Rows[0]["Postcode"].ToString());
+                else
+                    employee.Postcode = null;
+
+                employee.ContactNumber = empDataTable.Rows[0]["ContactNumber"].ToString();
+
+                employee.Email = empDataTable.Rows[0]["Email"].ToString();
+
+                employee.EmployeeType = empDataTable.Rows[0]["EmployeeType"].ToString();
+
+                if (empDataTable.Rows[0]["StartDate"] != DBNull.Value)
+                    employee.StartDate = DateTime.Parse(empDataTable.Rows[0]["StartDate"].ToString());
+                else
+                    employee.StartDate = null;
+
+                if (empDataTable.Rows[0]["ManagerID"] != DBNull.Value)
+                    employee.ManagerID = int.Parse(empDataTable.Rows[0]["ManagerID"].ToString());
+                else
+                    employee.ManagerID = null;
+
+                employee.UserAccountID = Guid.Parse(empDataTable.Rows[0]["UserAccountID"].ToString());
+
+                if (empDataTable.Rows[0]["DeptID"] != DBNull.Value)
+                    employee.DepartmentID = int.Parse(empDataTable.Rows[0]["DeptID"].ToString());
+                else
+                    employee.DepartmentID = null;
+
+                if (empDataTable.Rows[0]["ProfileImage"] != DBNull.Value)
+                    employee.ProfileImage = (byte[])empDataTable.Rows[0]["ProfileImage"];
+                else
+                    employee.ProfileImage = null;
+
+                employee.TitleID = int.Parse(empDataTable.Rows[0]["TitleID"].ToString());
+
+
+
+            }
+            else
+                employee = null;
+
+            return employee;
+        }
+
+        /// <summary>
         /// Get all employees from a department
         /// </summary>
         /// <param name="nDepartmentID">The selected department Id</param>

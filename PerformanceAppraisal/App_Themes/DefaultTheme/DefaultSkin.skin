@@ -1,0 +1,8 @@
+﻿<%--
+Default Skin for the Performance Appraisal Application.
+--%>
+
+
+<asp:Button runat="server" CssClass="btn btn-primary" />
+
+<asp:TextBox runat="server" CssClass="" />

@@ -24,10 +24,10 @@
 
                <asp:TemplateField>
                    <ItemTemplate>
-                       <asp:LinkButton ID="lnkEditRole"
-                           runat="server" Text="Edit Role"
-                           OnClick="lnkEditRole_Click">
-                       </asp:LinkButton>
+                       <asp:HyperLink ID="hLnkEditRole"
+                           Text="Edit Role"
+                           runat="server"
+                           NavigateUrl='<%# Eval("EmpID","~/Administration/EditUserRole.aspx?Id={0}") %>'></asp:HyperLink>
                    </ItemTemplate>
                </asp:TemplateField>
            </Columns>

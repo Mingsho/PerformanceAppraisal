@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPages/MainLayout.Master" AutoEventWireup="true" CodeBehind="CreateEmployee.aspx.cs" Inherits="PerformanceAppraisal.Administration.CreateEmployee" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPages/MainLayout.Master" Theme="DefaultTheme" AutoEventWireup="true" CodeBehind="CreateEmployee.aspx.cs" Inherits="PerformanceAppraisal.Administration.CreateEmployee" %>
 <%@ MasterType VirtualPath="~/MasterPages/MainLayout.Master" %>
 
 <asp:Content ID="childContent" ContentPlaceHolderID="mainContent" runat="server">

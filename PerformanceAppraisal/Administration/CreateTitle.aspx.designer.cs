@@ -7,7 +7,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PerformanceAppraisal.PositionDescription {
+namespace PerformanceAppraisal.Administration
+{
     
     
     public partial class CreateTitle {

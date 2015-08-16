@@ -47,9 +47,6 @@ namespace PerformanceAppraisal.Administration
           
         }
 
-        protected void lnkEditRole_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

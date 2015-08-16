@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPages/MainLayout.Master" AutoEventWireup="true" CodeBehind="CreateTitle.aspx.cs" Inherits="PerformanceAppraisal.PositionDescription.CreateTitle" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPages/MainLayout.Master" AutoEventWireup="true" CodeBehind="CreateTitle.aspx.cs" Inherits="PerformanceAppraisal.Administration.CreateTitle" %>
 <%@ MasterType VirtualPath="~/MasterPages/MainLayout.Master" %>
 
 <asp:Content ID="childMainContent" ContentPlaceHolderID="mainContent" runat="server">

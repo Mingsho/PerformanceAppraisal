@@ -93,10 +93,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Administration\EditUserRole.aspx" />
     <Content Include="Administration\ManageUsers.aspx" />
     <Content Include="Content\metisMenu.min.css" />
     <Content Include="Administration\AddDepartment.aspx" />
     <Content Include="Administration\AdminIndex.aspx" />
+    <Content Include="Controls\UserRolesControl.ascx" />
+    <Content Include="Index.aspx" />
     <Content Include="Page1.aspx" />
     <Content Include="PositionDescription\PositionDescription.aspx" />
     <Content Include="Scripts\jquery.min.js" />
@@ -105,7 +108,7 @@
     <Content Include="TestWebForm.aspx" />
     <Content Include="UserControlTestPage.aspx" />
     <Content Include="Administration\CreateEmployee.aspx" />
-    <Content Include="PositionDescription\CreateTitle.aspx" />
+    <Content Include="Administration\CreateTitle.aspx" />
     <Content Include="Administration\CreateUserAccount.aspx" />
     <Content Include="Authentication.aspx" />
     <Content Include="Content\bootstrap.css" />
@@ -130,8 +133,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="MasterPages\MainLayout.Master" />
+    <Content Include="App_Themes\DefaultTheme\DefaultSkin.skin">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
-    <Content Include="Icon.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
@@ -140,7 +145,6 @@
     <Content Include="Scripts\npm.js" />
     <Content Include="TestPage.aspx" />
     <Content Include="UserPages\UserIndex.aspx" />
-    <Content Include="PositionDescription\ListUsers.aspx" />
     <Content Include="UserPages\UserProfile.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -165,12 +169,33 @@
     <Compile Include="Administration\AdminIndex.aspx.designer.cs">
       <DependentUpon>AdminIndex.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Administration\EditUserRole.aspx.cs">
+      <DependentUpon>EditUserRole.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\EditUserRole.aspx.designer.cs">
+      <DependentUpon>EditUserRole.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Administration\ManageUsers.aspx.cs">
       <DependentUpon>ManageUsers.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Administration\ManageUsers.aspx.designer.cs">
       <DependentUpon>ManageUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserRolesControl.ascx.cs">
+      <DependentUpon>UserRolesControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\UserRolesControl.ascx.designer.cs">
+      <DependentUpon>UserRolesControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="MasterPages\MainLayout.Master.cs">
       <DependentUpon>MainLayout.Master</DependentUpon>
@@ -214,11 +239,11 @@
     <Compile Include="Administration\CreateEmployee.aspx.designer.cs">
       <DependentUpon>CreateEmployee.aspx</DependentUpon>
     </Compile>
-    <Compile Include="PositionDescription\CreateTitle.aspx.cs">
+    <Compile Include="Administration\CreateTitle.aspx.cs">
       <DependentUpon>CreateTitle.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PositionDescription\CreateTitle.aspx.designer.cs">
+    <Compile Include="Administration\CreateTitle.aspx.designer.cs">
       <DependentUpon>CreateTitle.aspx</DependentUpon>
     </Compile>
     <Compile Include="Administration\CreateUserAccount.aspx.cs">
@@ -277,13 +302,6 @@
     <Compile Include="UserPages\UserIndex.aspx.designer.cs">
       <DependentUpon>UserIndex.aspx</DependentUpon>
     </Compile>
-    <Compile Include="PositionDescription\ListUsers.aspx.cs">
-      <DependentUpon>ListUsers.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="PositionDescription\ListUsers.aspx.designer.cs">
-      <DependentUpon>ListUsers.aspx</DependentUpon>
-    </Compile>
     <Compile Include="UserPages\UserProfile.aspx.cs">
       <DependentUpon>UserProfile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -307,9 +325,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Themes\DefaultTheme\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\PA.BLL\PA.BLL.csproj">
       <Project>{dd833e6f-bc7b-4ae5-b6cb-d1b50c1f523c}</Project>
