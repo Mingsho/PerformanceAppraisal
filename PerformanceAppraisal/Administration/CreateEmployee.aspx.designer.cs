@@ -229,13 +229,13 @@ namespace PerformanceAppraisal.Administration {
         protected global::System.Web.UI.WebControls.TextBox txtEmail;
         
         /// <summary>
-        /// uPanelProfilePicUpload control.
+        /// uPanel1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel uPanelProfilePicUpload;
+        protected global::System.Web.UI.UpdatePanel uPanel1;
         
         /// <summary>
         /// lblEmployeetype control.
@@ -274,13 +274,13 @@ namespace PerformanceAppraisal.Administration {
         protected global::System.Web.UI.WebControls.TextBox txtStartdate;
         
         /// <summary>
-        /// uPanelEmployeeTitle control.
+        /// uPanel2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel uPanelEmployeeTitle;
+        protected global::System.Web.UI.UpdatePanel uPanel2;
         
         /// <summary>
         /// lblEmployeeTitle control.
