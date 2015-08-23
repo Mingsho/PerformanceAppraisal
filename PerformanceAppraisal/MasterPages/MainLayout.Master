@@ -14,7 +14,7 @@
 
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="form1" runat="server" role="form">
 
         <asp:SiteMapDataSource ID="mainSDataSource"
             runat="server" ShowStartingNode="false" />

@@ -14,7 +14,8 @@ namespace PerformanceAppraisal.Administration
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!Page.IsPostBack)
+                this.Master.PageHeading = "Add Department Details";
         }
 
         protected void btnAdd_Click(object sender, EventArgs e)
