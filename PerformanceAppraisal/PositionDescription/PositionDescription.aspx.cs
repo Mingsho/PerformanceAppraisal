@@ -85,8 +85,11 @@ namespace PerformanceAppraisal.PositionDescription
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!Page.IsPostBack)
+            if (!Page.IsPostBack)
+            {
                 InitializeComponents();
+                this.Master.PageHeading = "Employee Position Description";
+            }
             
         }
 

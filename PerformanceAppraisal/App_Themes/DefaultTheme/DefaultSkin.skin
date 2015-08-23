@@ -10,3 +10,5 @@ Default Skin for the Performance Appraisal Application.
 <asp:DropDownList runat="server" CssClass="form-control" />
 
 <asp:Image runat="server" CssClass="img-thumbnail" />
+
+<asp:Label runat="server" CssClass="control-label" />

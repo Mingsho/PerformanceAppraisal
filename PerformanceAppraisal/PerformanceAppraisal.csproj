@@ -330,7 +330,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="PerfAppraisal\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PA.BLL\PA.BLL.csproj">
       <Project>{dd833e6f-bc7b-4ae5-b6cb-d1b50c1f523c}</Project>
