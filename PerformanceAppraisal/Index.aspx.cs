@@ -12,7 +12,8 @@ namespace PerformanceAppraisal
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!Page.IsPostBack)
+                this.Master.PageHeading = "Dashboard";
         }
     }
 }

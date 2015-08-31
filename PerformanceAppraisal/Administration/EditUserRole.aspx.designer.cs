@@ -20,5 +20,17 @@ namespace PerformanceAppraisal.Administration {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::PerformanceAppraisal.Controls.UserRolesControl uCusRoles;
+        
+        /// <summary>
+        /// Master property.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated property.
+        /// </remarks>
+        public new PerformanceAppraisal.MasterPages.MainLayout Master {
+            get {
+                return ((PerformanceAppraisal.MasterPages.MainLayout)(base.Master));
+            }
+        }
     }
 }
