@@ -38,5 +38,17 @@ namespace PerformanceAppraisal.Administration {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView grdEmployees;
+        
+        /// <summary>
+        /// Master property.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated property.
+        /// </remarks>
+        public new PerformanceAppraisal.MasterPages.MainLayout Master {
+            get {
+                return ((PerformanceAppraisal.MasterPages.MainLayout)(base.Master));
+            }
+        }
     }
 }

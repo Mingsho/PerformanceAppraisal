@@ -214,16 +214,15 @@
                             </ContentTemplate>
 
                         </asp:UpdatePanel>
-                        <br />
+                        
+                    </div>
+                    <div class="form-group">
+                        <asp:Button ID="btnCreateEmployee"
+                        runat="server"
+                        Text="Next"
+                        OnClick="btnCreateEmployee_Click" />
                     </div>
 
-                </div>
-
-                <div class="form-group">
-                    <asp:Button ID="btnCreateEmployee"
-                    runat="server"
-                    Text="Next"
-                    OnClick="btnCreateEmployee_Click" />
                 </div>
 
             </div>

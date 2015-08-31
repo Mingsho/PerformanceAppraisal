@@ -18,7 +18,11 @@ namespace PerformanceAppraisal.Administration
         protected void Page_Load(object sender, EventArgs e)
         {
             if(!Page.IsPostBack)
+            {
                 InitializeComponents();
+                this.Master.PageHeading = "Manage Users";
+            }
+                
 
         }
 

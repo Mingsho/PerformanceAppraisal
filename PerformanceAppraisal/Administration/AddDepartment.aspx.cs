@@ -26,8 +26,6 @@ namespace PerformanceAppraisal.Administration
                 Response.Write("New Department added");
             else
                 Response.Write("Unable to add new department");
-
-            
         }
     }
 }

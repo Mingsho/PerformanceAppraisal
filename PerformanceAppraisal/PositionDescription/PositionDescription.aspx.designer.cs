@@ -76,15 +76,6 @@ namespace PerformanceAppraisal.PositionDescription {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredResponsiblity;
         
         /// <summary>
-        /// btnAddDuty control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddDuty;
-        
-        /// <summary>
         /// pnlDuties control.
         /// </summary>
         /// <remarks>
@@ -92,6 +83,15 @@ namespace PerformanceAppraisal.PositionDescription {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlDuties;
+        
+        /// <summary>
+        /// btnAddDuty control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAddDuty;
         
         /// <summary>
         /// btnAdd control.

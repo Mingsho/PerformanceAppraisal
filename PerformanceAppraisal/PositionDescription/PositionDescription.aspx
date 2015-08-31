@@ -10,46 +10,58 @@
 
                <div class="row">
                    <div class="col-lg-6">
-                       <asp:Label ID="lblDepartment"
+
+                       <div class="form-group">
+                           <asp:Label ID="lblDepartment"
                             runat="server"
                             AssociatedControlID="dListDepartment"
                             Text="Department: "></asp:Label>
 
-                        <asp:DropDownList ID="dListDepartment"
-                            runat="server"
-                            AutoPostBack="true"
-                            OnSelectedIndexChanged="dListDepartment_SelectedIndexChanged"></asp:DropDownList><br />
-
-                        <asp:Label ID="lblEmployee"
+                            <asp:DropDownList ID="dListDepartment"
+                                runat="server"
+                                AutoPostBack="true"
+                                OnSelectedIndexChanged="dListDepartment_SelectedIndexChanged"></asp:DropDownList>
+                       </div>
+                       <div class="form-group">
+                           <asp:Label ID="lblEmployee"
                             runat="server"
                             AssociatedControlID="dListEmployee"
                             Text="Employee: "></asp:Label>
 
                         <asp:DropDownList ID="dListEmployee"
                             runat="server"
-                            AutoPostBack="true"></asp:DropDownList><br />
-
-                        <asp:Label ID="lblResponsibility"
+                            AutoPostBack="true"></asp:DropDownList>
+                       </div>
+                       <div class="form-group">
+                           <asp:Label ID="lblResponsibility"
                             runat="server"
                             Text="Responsibility: "
                             AssociatedControlID="txtResponsibility"></asp:Label>
                         <asp:TextBox ID="txtResponsibility"
                             runat="server"
-                            TextMode="MultiLine"></asp:TextBox><br />
+                            TextMode="MultiLine"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="requiredResponsiblity"
-                            runat="server"
-                            ControlToValidate="txtResponsibility"
-                            ErrorMessage="Responsibility cannot be blank!"></asp:RequiredFieldValidator>
-                        <asp:Button ID="btnAddDuty"
+                        runat="server"
+                        ControlToValidate="txtResponsibility"
+                        ErrorMessage="Responsibility cannot be blank!"></asp:RequiredFieldValidator>
+                       </div>
+                       <div class="form-group">
+                            <asp:Panel ID="pnlDuties"
+                            runat="server"></asp:Panel>
+                       </div>
+                       <div class="form-group">
+                           <asp:Button ID="btnAddDuty"
                             runat="server"
                             Text="Add Duty"
                             OnClick="btnAddDuty_Click" />
-                        <asp:Panel ID="pnlDuties"
-                            runat="server"></asp:Panel><br />
-                        <asp:Button ID="btnAdd"
+                       </div>
+                       <div class="form-group">
+                           <asp:Button ID="btnAdd"
                             runat="server"
                             Text="Add Responsibility"
                             OnClick="btnAdd_Click" />
+                       </div>
+                        
                    </div>
                </div>
 
