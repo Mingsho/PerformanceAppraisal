@@ -12,3 +12,5 @@ Default Skin for the Performance Appraisal Application.
 <asp:Image runat="server" CssClass="img-thumbnail" />
 
 <asp:Label runat="server" CssClass="control-label" />
+
+<asp:GridView runat="server" CssClass="table table-striped table-bordered table-hover dataTable no-footer" />
