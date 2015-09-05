@@ -9,16 +9,29 @@
                 <div class="col-lg-6">
 
                     <div class="form-group">
-                        <asp:Label ID="lblDeptName" runat="server" Text="Department Name: "></asp:Label>
-                        <asp:TextBox ID="txtDeptName" runat="server" placeholder="Department name..."></asp:TextBox><br />
+                        <asp:Label ID="lblDeptName"
+                            AssociatedControlID="txtDeptName"
+                            runat="server"
+                            Text="Department Name: "></asp:Label>
+                        <asp:TextBox ID="txtDeptName"
+                            runat="server"
+                            placeholder="Department name..."></asp:TextBox><br />
                     </div>
                     
                     <div class="form-group">
-                        <asp:Label ID="lblDesc" runat="server" Text="Description: "></asp:Label>
-                        <asp:TextBox ID="txtDesc" runat="server" TextMode="MultiLine"></asp:TextBox><br />
+                        <asp:Label ID="lblDesc"
+                            runat="server"
+                            AssociatedControlID="txtDesc"
+                            Text="Description: "></asp:Label>
+                        <asp:TextBox ID="txtDesc"
+                            runat="server" 
+                            TextMode="MultiLine"></asp:TextBox><br />
                     </div>
                     
-                    <asp:Button ID="btnAdd" runat="server" Text="Add Department" OnClick="btnAdd_Click" />
+                    <asp:Button ID="btnAdd" 
+                        runat="server" 
+                        Text="Add Department" 
+                        OnClick="btnAdd_Click" />
                 </div>
             </div>
         </div>

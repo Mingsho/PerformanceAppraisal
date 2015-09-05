@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DepartmentBLL.cs" />
+    <Compile Include="DTO\Department.cs" />
     <Compile Include="DTO\Duty.cs" />
     <Compile Include="DTO\Responsibility.cs" />
     <Compile Include="DTO\Employee.cs" />

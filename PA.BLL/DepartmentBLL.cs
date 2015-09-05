@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using PA.DAL.PaDataSetTableAdapters;
 using PA.DAL;
+using PA.BLL.DTO;
 
 namespace PA.BLL
 {
@@ -27,7 +28,29 @@ namespace PA.BLL
             return Adapter.GetData();
         }
 
-        public bool addDepartment(string departmentName, string description)
+        public Department GetDepartment(int nDeptId)
+        {
+
+            PaDataSet.tbl_DepartmentDataTable departments = Adapter.GetDepartmentByID(nDeptId);
+
+            Department department;
+
+            if (departments.Rows.Count > 0)
+            {
+                department = new Department();
+
+                department.DepartmentID = int.Parse(departments.Rows[0]["DepartmentID"].ToString());
+                department.Departmentname = departments.Rows[0]["Departmentname"].ToString();
+                department.Description = departments.Rows[0]["Description"].ToString();
+            }
+            else
+                department = null;
+
+            return department;
+
+        }       
+
+        public bool AddDepartment(string departmentName, string description)
         {
             bool bRetVal = false;
 

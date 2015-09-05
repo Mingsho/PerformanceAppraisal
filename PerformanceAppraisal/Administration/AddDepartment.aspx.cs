@@ -22,7 +22,7 @@ namespace PerformanceAppraisal.Administration
         {
             DepartmentBLL deptBll = new DepartmentBLL();
 
-            if (deptBll.addDepartment(txtDeptName.Text, txtDesc.Text))
+            if (deptBll.AddDepartment(txtDeptName.Text, txtDesc.Text))
                 Response.Write("New Department added");
             else
                 Response.Write("Unable to add new department");
