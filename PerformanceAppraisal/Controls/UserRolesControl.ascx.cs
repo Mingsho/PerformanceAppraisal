@@ -17,6 +17,9 @@ namespace PerformanceAppraisal.Controls
             EmployeeBLL empLogic = new EmployeeBLL();
             DepartmentBLL deptLogic=new DepartmentBLL();
 
+            Employee employee=null;
+            Department department=null;
+
             if(!Page.IsPostBack)
             {
                 //get employee id from the query string.
@@ -24,43 +27,54 @@ namespace PerformanceAppraisal.Controls
                 {
                     int nEmpId = int.Parse(Request.QueryString["Id"]);
 
-                    Employee employee = empLogic.GetEmployee(nEmpId);
+
+                    employee = empLogic.GetEmployee(nEmpId);
                    
-                    Department department = deptLogic.GetDepartment(employee.DepartmentID.GetValueOrDefault());
-
-                    lblEmpId.Text = employee.EmployeeID.ToString();
-                    lblEmpName.Text = employee.Firstname + " " + employee.Lastname;
-                    lblDepartment.Text = department.Departmentname;
-
-                    MembershipUser user = Membership.GetUser(employee.UserAccountID.GetValueOrDefault());
-
-                    string[] userRoles = Roles.GetRolesForUser(user.UserName);
-
-                    string[] arrRoles = Roles.GetAllRoles();
-
-                    foreach(string role in arrRoles)
-                    {
-                        
-                        int nIndex=0;
-
-                        CheckBox chkTemp = new CheckBox();
-                        chkTemp.ID = "chkRole" + nIndex;
-                        chkTemp.Text = role;
-
-                        foreach(string userRole in userRoles)
-                        {
-                            if (userRole.Equals(role))
-                                chkTemp.Checked = true;
-                            
-                        }
-
-                        pnlRoles.Controls.Add(chkTemp);
-
-                        nIndex++;
-                    }
-                 
+                    department = deptLogic.GetDepartment(employee.DepartmentID.GetValueOrDefault());
                 }
             }
+
+            lblEmpId.Text = employee.EmployeeID.ToString();
+            lblEmpName.Text = employee.Firstname + " " + employee.Lastname;
+            lblDepartment.Text = department.Departmentname;
+
+            MembershipUser user = Membership.GetUser(employee.UserAccountID.GetValueOrDefault());
+
+            string[] userRoles = Roles.GetRolesForUser(user.UserName);
+
+            string[] arrRoles = Roles.GetAllRoles();
+
+            foreach(string role in arrRoles)
+            {
+                        
+                int nIndex=0;
+
+                CheckBox chkTemp = new CheckBox();
+                chkTemp.ID = "chkRole" + nIndex;
+                chkTemp.Text = role;
+                chkTemp.AutoPostBack = true;
+                chkTemp.CheckedChanged += chkTemp_CheckedChanged;
+
+                foreach(string userRole in userRoles)
+                {
+                    if (userRole.Equals(role))
+                        chkTemp.Checked = true;
+                }
+                        
+                pnlRoles.Controls.Add(chkTemp);
+
+                nIndex++;
+            }
+                 
         }
+            
+        
+
+        void chkTemp_CheckedChanged(object sender, EventArgs e)
+        {
+            Response.Write("You just clicked the checkbox");
+        }
+
+        
     }
 }
