@@ -20,19 +20,25 @@ namespace PerformanceAppraisal.Controls
             Employee employee=null;
             Department department=null;
 
+            int nEmpId = 0;
+
             if(!Page.IsPostBack)
             {
                 //get employee id from the query string.
                 if(Request.QueryString["Id"]!=null)
                 {
-                    int nEmpId = int.Parse(Request.QueryString["Id"]);
+                    nEmpId = int.Parse(Request.QueryString["Id"]);
+                    ViewState["EmpId"] = nEmpId;
 
-
-                    employee = empLogic.GetEmployee(nEmpId);
-                   
-                    department = deptLogic.GetDepartment(employee.DepartmentID.GetValueOrDefault());
                 }
             }
+
+            if (nEmpId == 0)
+                nEmpId = int.Parse(ViewState["EmpId"].ToString());
+
+            employee = empLogic.GetEmployee(nEmpId);
+
+            department = deptLogic.GetDepartment(employee.DepartmentID.GetValueOrDefault());
 
             lblEmpId.Text = employee.EmployeeID.ToString();
             lblEmpName.Text = employee.Firstname + " " + employee.Lastname;
@@ -44,11 +50,11 @@ namespace PerformanceAppraisal.Controls
 
             string[] arrRoles = Roles.GetAllRoles();
 
+            int nIndex = 0;
+
             foreach(string role in arrRoles)
             {
-                        
-                int nIndex=0;
-
+                  
                 CheckBox chkTemp = new CheckBox();
                 chkTemp.ID = "chkRole" + nIndex;
                 chkTemp.Text = role;
@@ -72,7 +78,12 @@ namespace PerformanceAppraisal.Controls
 
         void chkTemp_CheckedChanged(object sender, EventArgs e)
         {
-            Response.Write("You just clicked the checkbox");
+            CheckBox chk = sender as CheckBox;
+
+            if (chk.Text.Equals("SuperAdmin"))
+                Response.Write("SuperAdmin");
+            else
+                Response.Write("User");
         }
 
         

@@ -20,4 +20,7 @@
     
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="footerContent" runat="server">
+    <script type="text/javascript">
+
+    </script>
 </asp:Content>
