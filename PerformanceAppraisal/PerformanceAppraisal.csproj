@@ -334,6 +334,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="PerfAppraisal\" />
+    <Folder Include="Scripts\Validation\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PA.BLL\PA.BLL.csproj">

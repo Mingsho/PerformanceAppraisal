@@ -15,8 +15,8 @@
                             AssociatedControlID="txtTitleName"></asp:Label>
 
                             <asp:TextBox ID="txtTitleName"
-                                runat="server" placeholder="Enter Title name..."></asp:TextBox>&nbsp;
-                            <asp:RequiredFieldValidator ID="rFieldValidator1"
+                                runat="server" placeholder="Enter Title name..."></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="reqTitleVal"
                                 runat="server"
                                 ControlToValidate="txtTitleName"
                                 ErrorMessage="The Title name cannot be blank!"

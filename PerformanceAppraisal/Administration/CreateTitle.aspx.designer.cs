@@ -7,8 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PerformanceAppraisal.Administration
-{
+namespace PerformanceAppraisal.Administration {
     
     
     public partial class CreateTitle {
@@ -32,13 +31,13 @@ namespace PerformanceAppraisal.Administration
         protected global::System.Web.UI.WebControls.TextBox txtTitleName;
         
         /// <summary>
-        /// rFieldValidator1 control.
+        /// reqTitleVal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rFieldValidator1;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqTitleVal;
         
         /// <summary>
         /// lblTitlePurpose control.

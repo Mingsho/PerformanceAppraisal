@@ -16,6 +16,11 @@
                         <asp:TextBox ID="txtDeptName"
                             runat="server"
                             placeholder="Department name..."></asp:TextBox><br />
+                        <asp:RequiredFieldValidator ID="reqDeptNameVal"
+                            runat="server" ControlToValidate="txtDeptName"
+                            ErrorMessage="Department name is required"
+                            ToolTip="Department name is required">
+                        </asp:RequiredFieldValidator>
                     </div>
                     
                     <div class="form-group">
@@ -25,7 +30,7 @@
                             Text="Description: "></asp:Label>
                         <asp:TextBox ID="txtDesc"
                             runat="server" 
-                            TextMode="MultiLine"></asp:TextBox><br />
+                            TextMode="MultiLine"></asp:TextBox>
                     </div>
                     
                     <asp:Button ID="btnAdd" 
@@ -37,5 +42,15 @@
         </div>
         
     </div>
+</asp:Content>
+
+<asp:Content ID="childFooterContent" runat="server" ContentPlaceHolderID="footerContent">
+    <script type="text/javascript">
+        function testFunction() {
+
+            var a = document.getElementById('<%= Page.Master.FindControl("mainContent").FindControl("txtDesc").ClientID%>');
+            alert(a.textContent);
+        }
+    </script>
 </asp:Content>
 
