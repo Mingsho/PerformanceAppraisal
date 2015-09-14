@@ -23,7 +23,7 @@
                                 ForeColor="Red"></asp:RequiredFieldValidator>
                             <br />
                         </div>
-                        
+
                         <div class="form-group">
                             <asp:Label ID="lblTitlePurpose"
                             runat="server"
@@ -43,10 +43,6 @@
                     </div>
                 </div>
             </div>
-
-        
-
-    
     </div>
 </asp:Content>
 

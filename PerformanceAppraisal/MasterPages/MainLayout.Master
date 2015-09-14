@@ -174,9 +174,11 @@
 
     </form>
 
+    <%: System.Web.Optimization.Scripts.Render("~/CoreScripts") %>
+    
+
     <asp:ContentPlaceHolder ID="footerContent" runat="server">
     </asp:ContentPlaceHolder>
 
-    <%: System.Web.Optimization.Scripts.Render("~/CoreScripts") %>
 </body>
 </html>

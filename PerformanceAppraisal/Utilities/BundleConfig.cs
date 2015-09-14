@@ -16,12 +16,16 @@ namespace PerformanceAppraisal.Utilities
                 "~/Content/sb-admin-2.css",
                 "~/Content/font-awesome.min.css"));
 
+            bundles.Add(new StyleBundle("~/CustomStyles").Include("~/Content/jquery-ui.css"));
+
             //The core javascripts
             bundles.Add(new ScriptBundle("~/CoreScripts").Include("~/Scripts/jquery-{version}.js",
                 "~/Scripts/bootstrap.min.js",
                 "~/Scripts/metisMenu.min.js",
                 "~/Scripts/sb-admin-2.js",
                 "~/Scripts/modernizr-{version}.js"));
+
+            bundles.Add(new ScriptBundle("~/CustomScripts").Include("~/Scripts/jquery-ui.js"));
             
         }
     }

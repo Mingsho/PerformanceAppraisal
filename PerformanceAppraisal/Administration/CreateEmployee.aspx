@@ -1,6 +1,10 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/MasterPages/MainLayout.Master" Theme="DefaultTheme" AutoEventWireup="true" CodeBehind="CreateEmployee.aspx.cs" Inherits="PerformanceAppraisal.Administration.CreateEmployee" %>
 <%@ MasterType VirtualPath="~/MasterPages/MainLayout.Master" %>
 
+<asp:Content ID="childHeadContent" ContentPlaceHolderID="headContent" runat="server">
+    <%: System.Web.Optimization.Styles.Render("~/CustomStyles") %>
+</asp:Content>
+
 <asp:Content ID="childContent" ContentPlaceHolderID="mainContent" runat="server">
 
     <div class="panel panel-default">
@@ -234,7 +238,15 @@
 
 
 <asp:Content ID="childFooterContent" ContentPlaceHolderID="footerContent" runat="server">
+
+    <%: System.Web.Optimization.Scripts.Render("~/CustomScripts") %>
+
     <script type="text/javascript">
+
+        $(function () {
+
+            $('#<%= Page.Master.FindControl("mainContent").FindControl("txtDateofbirth").ClientID%>').datepicker();
+        });
 
         function getRandomNumber() {
 
@@ -253,4 +265,6 @@
 
     </script>
 </asp:Content>
+
+
 
