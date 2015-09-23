@@ -107,6 +107,8 @@
     <Content Include="Scripts\jquery.min.js" />
     <Content Include="Scripts\metisMenu.min.js" />
     <Content Include="Scripts\sb-admin-2.js" />
+    <Content Include="Scripts\Validation\departmentValidation.js" />
+    <Content Include="Scripts\Validation\jquery.validate.min.js" />
     <Content Include="TestWebForm.aspx" />
     <Content Include="UserControlTestPage.aspx" />
     <Content Include="Administration\CreateEmployee.aspx" />
@@ -336,7 +338,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="PerfAppraisal\" />
-    <Folder Include="Scripts\Validation\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PA.BLL\PA.BLL.csproj">

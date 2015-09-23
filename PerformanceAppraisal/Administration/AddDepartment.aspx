@@ -13,17 +13,22 @@
                             AssociatedControlID="txtDeptName"
                             runat="server"
                             Text="Department Name: "></asp:Label>
+
                         <asp:TextBox ID="txtDeptName"
                             runat="server"
-                            placeholder="Department name..."></asp:TextBox><br />
+                            placeholder="Department name..."></asp:TextBox>
+
                         <asp:RequiredFieldValidator ID="reqDeptNameVal"
                             runat="server" ControlToValidate="txtDeptName"
                             ErrorMessage="Department name is required"
-                            ToolTip="Department name is required">
+                            ToolTip="Department name is required"
+                            EnableClientScript="false">
                         </asp:RequiredFieldValidator>
+
                     </div>
                     
                     <div class="form-group">
+
                         <asp:Label ID="lblDesc"
                             runat="server"
                             AssociatedControlID="txtDesc"
@@ -31,6 +36,7 @@
                         <asp:TextBox ID="txtDesc"
                             runat="server" 
                             TextMode="MultiLine"></asp:TextBox>
+
                     </div>
                     
                     <asp:Button ID="btnAdd" 
@@ -45,12 +51,15 @@
 </asp:Content>
 
 <asp:Content ID="childFooterContent" runat="server" ContentPlaceHolderID="footerContent">
-    <script type="text/javascript">
-        function testFunction() {
 
-            var a = document.getElementById('<%= Page.Master.FindControl("mainContent").FindControl("txtDesc").ClientID%>');
-            alert(a.textContent);
-        }
+    <script type="text/javascript">
+
+        var txtDeptName = '<%= Page.Master.FindControl("mainContent").FindControl("txtDeptName").ClientID%>';
+        
     </script>
+
+   <%: System.Web.Optimization.Scripts.Render("~/ValidationScripts") %>
+    <script src="../Scripts/Validation/departmentValidation.js"></script>
+
 </asp:Content>
 

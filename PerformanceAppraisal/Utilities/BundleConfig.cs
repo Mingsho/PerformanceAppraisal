@@ -26,6 +26,8 @@ namespace PerformanceAppraisal.Utilities
                 "~/Scripts/modernizr-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/CustomScripts").Include("~/Scripts/jquery-ui.js"));
+
+            bundles.Add(new ScriptBundle("~/ValidationScripts").Include("~/Scripts/Validation/jquery.validate.min.js"));
             
         }
     }
