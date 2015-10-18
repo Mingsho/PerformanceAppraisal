@@ -3,7 +3,6 @@
 
 <asp:Content ID="childMainContent" ContentPlaceHolderID="mainContent" runat="server">
     
-        
        <div class="panel panel-default">
            <div class="panel-heading">Responsibilities and duties</div>
            <div class="panel-body">
@@ -37,13 +36,15 @@
                             runat="server"
                             Text="Responsibility: "
                             AssociatedControlID="txtResponsibility"></asp:Label>
-                        <asp:TextBox ID="txtResponsibility"
-                            runat="server"
-                            TextMode="MultiLine"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="requiredResponsiblity"
-                        runat="server"
-                        ControlToValidate="txtResponsibility"
-                        ErrorMessage="Responsibility cannot be blank!"></asp:RequiredFieldValidator>
+                            <asp:TextBox ID="txtResponsibility"
+                                runat="server"
+                                TextMode="MultiLine"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="requiredResponsiblity"
+                                runat="server"
+                                ControlToValidate="txtResponsibility"
+                                ErrorMessage="Responsibility cannot be blank!"
+                                EnableClientScript="false">
+                            </asp:RequiredFieldValidator>
                        </div>
                        <div class="form-group">
                             <asp:Panel ID="pnlDuties"
@@ -67,8 +68,9 @@
 
            </div>
        </div>
-        
+</asp:Content>
 
+<asp:Content ID="childFooterContent" ContentPlaceHolderID="footerContent" runat="server">
     
-
+    <%: System.Web.Optimization.Scripts.Render("~/ValidationScripts") %>
 </asp:Content>

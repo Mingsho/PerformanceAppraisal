@@ -23,9 +23,13 @@
                 <div class="col-lg-12">
                     <div class="form-group">
                         <asp:GridView ID="grdEmployees"
-                           runat="server"
-                           AutoGenerateColumns="false"
-                           role="grid">
+                            runat="server"
+                            AutoGenerateColumns="false"
+                            AllowPaging="true"
+                            OnRowCommand="grdEmployees_RowCommand"
+                            OnRowDeleting="grdEmployees_RowDeleting"
+                            role="grid"
+                            DataKeyNames="EmpID">
 
                            <Columns>
                                <asp:BoundField HeaderText="Employee ID" DataField="EmpID" />
@@ -33,12 +37,18 @@
                                <asp:BoundField HeaderText="Middle Name" DataField="Middlename" />
                                <asp:BoundField HeaderText="Last Name" DataField="Lastname" />
 
-                               <asp:TemplateField>
+                               <asp:TemplateField HeaderText="Actions">
                                    <ItemTemplate>
                                        <asp:HyperLink ID="hLnkEditRole"
                                            Text="Edit Role"
                                            runat="server"
-                                           NavigateUrl='<%# Eval("EmpID","~/Administration/EditUserRole.aspx?Id={0}") %>'></asp:HyperLink>
+                                           NavigateUrl='<%# Eval("EmpID","~/Administration/EditUserRole.aspx?Id={0}") %>'></asp:HyperLink>|
+                                       <asp:LinkButton ID="lnkBtnDelete"
+                                           Text="Delete"
+                                           runat="server"
+                                           OnClick="lnkBtnDelete_Click"
+                                           CommandName="Delete"
+                                           CommandArgument='<%# Container.DataItemIndex %>'></asp:LinkButton>
                                    </ItemTemplate>
                                </asp:TemplateField>
                            </Columns>

@@ -101,7 +101,6 @@
     <Content Include="Administration\AdminIndex.aspx" />
     <Content Include="Controls\UserRolesControl.ascx" />
     <Content Include="Index.aspx" />
-    <Content Include="Page1.aspx" />
     <Content Include="PositionDescription\PositionDescription.aspx" />
     <Content Include="Scripts\jquery-ui.js" />
     <Content Include="Scripts\jquery.min.js" />
@@ -109,7 +108,6 @@
     <Content Include="Scripts\sb-admin-2.js" />
     <Content Include="Scripts\Validation\departmentValidation.js" />
     <Content Include="Scripts\Validation\jquery.validate.min.js" />
-    <Content Include="TestWebForm.aspx" />
     <Content Include="UserControlTestPage.aspx" />
     <Content Include="Administration\CreateEmployee.aspx" />
     <Content Include="Administration\CreateTitle.aspx" />
@@ -147,7 +145,6 @@
     <Content Include="Scripts\jquery-2.1.4.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\npm.js" />
-    <Content Include="TestPage.aspx" />
     <Content Include="UserPages\UserIndex.aspx" />
     <Content Include="UserPages\UserProfile.aspx" />
     <Content Include="Web.config">
@@ -208,26 +205,12 @@
     <Compile Include="MasterPages\MainLayout.Master.designer.cs">
       <DependentUpon>MainLayout.Master</DependentUpon>
     </Compile>
-    <Compile Include="Page1.aspx.cs">
-      <DependentUpon>Page1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Page1.aspx.designer.cs">
-      <DependentUpon>Page1.aspx</DependentUpon>
-    </Compile>
     <Compile Include="PositionDescription\PositionDescription.aspx.cs">
       <DependentUpon>PositionDescription.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="PositionDescription\PositionDescription.aspx.designer.cs">
       <DependentUpon>PositionDescription.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="TestWebForm.aspx.cs">
-      <DependentUpon>TestWebForm.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="TestWebForm.aspx.designer.cs">
-      <DependentUpon>TestWebForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserControlTestPage.aspx.cs">
       <DependentUpon>UserControlTestPage.aspx</DependentUpon>
@@ -292,13 +275,6 @@
       <DependentUpon>AdminLayout.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TestPage.aspx.cs">
-      <DependentUpon>TestPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="TestPage.aspx.designer.cs">
-      <DependentUpon>TestPage.aspx</DependentUpon>
-    </Compile>
     <Compile Include="UserPages\UserIndex.aspx.cs">
       <DependentUpon>UserIndex.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

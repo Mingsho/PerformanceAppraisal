@@ -52,6 +52,31 @@ namespace PerformanceAppraisal.Administration
           
         }
 
+        protected void lnkBtnDelete_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        protected void grdEmployees_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+
+            if (e.CommandName == "Delete")
+            {
+
+                int nRowindex = Convert.ToInt32(e.CommandArgument);
+
+                string val = (string)this.grdEmployees.DataKeys[nRowindex]["EmpID"].ToString();
+
+                
+
+            }
+        }
+
+        protected void grdEmployees_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            Response.Write("Deleting row");
+        }
+
         
     }
 }

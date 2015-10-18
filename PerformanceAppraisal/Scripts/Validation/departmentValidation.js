@@ -2,18 +2,20 @@
 
     $('#form1').validate({
 
-        submitHandler: function(form)
+        onkeyup: false,
+        onfocusout: false,
+        highlight:function(element, errorClass)
         {
-            //select the closest div of input[id=txtDeptName] i.e div class="form-group"
-            var controlGroup = $('input[id=' + txtDeptName + ']').closest('.form-group');
-
-            //add the 'has-error' class to it.
-            $(controlGroup).addClass('has-error');
-
-            form.submit();
+            var controlGroup = $(element).closest('.form-group').addClass(errorClass);
         }
     });
 
+
+    ////select the closest div of input[id=txtDeptName] i.e div class="form-group"
+    //    var controlGroup = $('input[id=' + txtDeptName + ']').closest('.form-group');
+
+    //    //add the 'has-error' class to it.
+    //    $(controlGroup).addClass('has-error');
      
 
     $('#' + txtDeptName).rules("add", {
