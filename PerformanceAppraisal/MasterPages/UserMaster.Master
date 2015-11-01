@@ -10,6 +10,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+       <a href="../UserPages/UserProfile.aspx">User Profile</a>
     <div>
         <asp:ContentPlaceHolder ID="userMainContent" runat="server">
         

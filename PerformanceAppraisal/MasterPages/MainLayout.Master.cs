@@ -44,11 +44,13 @@ namespace PerformanceAppraisal.MasterPages
             //signout the currently logged in user.
             FormsAuthentication.SignOut();
 
-            //redirect to the login page.
-            FormsAuthentication.RedirectToLoginPage();
-
             //clear all sessions.
             Session.Clear();
+
+            //redirect to the loginurl
+            Response.Redirect(FormsAuthentication.LoginUrl);
+
+            
         }
 
         protected void sideBarMenu_ItemDataBound(object sender, RepeaterItemEventArgs e)
