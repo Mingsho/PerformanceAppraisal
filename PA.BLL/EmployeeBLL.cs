@@ -273,6 +273,24 @@ namespace PA.BLL
             return bRetVal;
         }
 
+        public bool DeleteEmployee(int nEmployeeID)
+        {
+            bool bRetVal = false;
+
+            PA.DAL.PaDataSet.tbl_EmployeeDataTable empDtTable = new DAL.PaDataSet.tbl_EmployeeDataTable();
+            PA.DAL.PaDataSet.tbl_EmployeeRow empRow = empDtTable.Rows.Find(nEmployeeID) as PA.DAL.PaDataSet.tbl_EmployeeRow;
+
+            if(empRow!=null)
+            {
+                empRow.Delete();
+                empDtTable.AcceptChanges();
+                bRetVal = true;
+            }
+
+            return bRetVal;
+
+        }
+
         
     }
 }

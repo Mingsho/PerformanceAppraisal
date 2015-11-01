@@ -67,14 +67,15 @@ namespace PerformanceAppraisal.Administration
 
                 string val = (string)this.grdEmployees.DataKeys[nRowindex]["EmpID"].ToString();
 
-                
-
             }
         }
 
         protected void grdEmployees_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            Response.Write("Deleting row");
+            int nEmpID = Convert.ToInt32(grdEmployees.DataKeys[e.RowIndex].Value);
+
+            Response.Write(nEmpID.ToString());
+
         }
 
         
