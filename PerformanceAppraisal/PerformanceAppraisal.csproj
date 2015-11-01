@@ -138,6 +138,7 @@
     <Content Include="App_Themes\DefaultTheme\DefaultSkin.skin">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
+    <Content Include="MasterPages\UserMaster.Master" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -204,6 +205,13 @@
     </Compile>
     <Compile Include="MasterPages\MainLayout.Master.designer.cs">
       <DependentUpon>MainLayout.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPages\UserMaster.Master.cs">
+      <DependentUpon>UserMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\UserMaster.Master.designer.cs">
+      <DependentUpon>UserMaster.Master</DependentUpon>
     </Compile>
     <Compile Include="PositionDescription\PositionDescription.aspx.cs">
       <DependentUpon>PositionDescription.aspx</DependentUpon>

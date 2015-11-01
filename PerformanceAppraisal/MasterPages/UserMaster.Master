@@ -1,0 +1,23 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="UserMaster.master.cs" Inherits="PerformanceAppraisal.MasterPages.UserMaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title><%= Page.Title %></title>
+    <asp:ContentPlaceHolder ID="userHeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder ID="userMainContent" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+    <asp:ContentPlaceHolder ID="userFooterContent" runat="server">
+
+    </asp:ContentPlaceHolder>
+</body>
+</html>

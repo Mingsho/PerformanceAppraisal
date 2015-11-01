@@ -7,10 +7,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PerformanceAppraisal.UserPages {
+namespace PerformanceAppraisal.MasterPages {
     
     
-    public partial class UserIndex {
+    public partial class UserMaster {
+        
+        /// <summary>
+        /// userHeadContent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder userHeadContent;
         
         /// <summary>
         /// form1 control.
@@ -22,33 +31,21 @@ namespace PerformanceAppraisal.UserPages {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// LoginName1 control.
+        /// userMainContent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LoginName LoginName1;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder userMainContent;
         
         /// <summary>
-        /// LoginStatus1 control.
+        /// userFooterContent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LoginStatus LoginStatus1;
-        
-        /// <summary>
-        /// Master property.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated property.
-        /// </remarks>
-        public new PerformanceAppraisal.MasterPages.UserMaster Master {
-            get {
-                return ((PerformanceAppraisal.MasterPages.UserMaster)(base.Master));
-            }
-        }
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder userFooterContent;
     }
 }
