@@ -10,7 +10,15 @@
 </head>
 <body>
     <form id="form1" runat="server">
+
+        <asp:LoginName ID="LoginName1" runat="server" />
+    
+        <asp:LoginStatus ID="LoginStatus1" runat="server" />
+
+        <hr />
        <a href="../UserPages/UserProfile.aspx">User Profile</a>
+
+      
     <div>
         <asp:ContentPlaceHolder ID="userMainContent" runat="server">
         

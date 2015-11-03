@@ -11,10 +11,16 @@
     <form id="form1" runat="server">
     <div>
         This is the User Index Page!!
-        <asp:LoginName ID="LoginName1" runat="server" />
-    
-        <asp:LoginStatus ID="LoginStatus1" runat="server" />
+       
         </div>
     </form>
 </body>
 </html>
+
+<asp:Content ID="childHeadContent" runat="server" ContentPlaceHolderID="userHeadContent"></asp:Content>
+
+<asp:Content ID="childMainContent" runat="server" ContentPlaceHolderID="userMainContent">
+    This is the user index page!!
+</asp:Content>
+
+<asp:Content ID="childFooterContent" runat="server" ContentPlaceHolderID="userFooterContent"></asp:Content>
