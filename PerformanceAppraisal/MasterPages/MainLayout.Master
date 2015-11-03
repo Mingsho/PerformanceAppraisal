@@ -154,9 +154,15 @@
 
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header"><asp:Label ID="lblPageHeader"
-                            runat="server"></asp:Label>
+                        <h1 class="page-header">
+                            
+                            <asp:Label ID="lblPageHeader"
+                                runat="server"></asp:Label>
+                            <asp:Label ID="lblCurrentDateTime" style="float: right" runat="server">
+                            </asp:Label>
+
                         </h1>
+                        
                     </div>
                 </div>
 

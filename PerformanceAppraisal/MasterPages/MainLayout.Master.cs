@@ -15,6 +15,8 @@ namespace PerformanceAppraisal.MasterPages
         {
             Page.Header.DataBind();
 
+            this.lblCurrentDateTime.Text = DateTime.Now.ToString();
+
             if(System.Web.HttpContext.Current.User.Identity.IsAuthenticated)
             {
                 MembershipUser user = Membership.GetUser();

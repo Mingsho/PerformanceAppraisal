@@ -8,6 +8,7 @@
             <asp:FormView ID="frmViewUserDetails"
                 runat="server">
                 <ItemTemplate>
+                    
                     <asp:Image ID="imgUserProfile"
                         runat="server"
                         Height="225px"

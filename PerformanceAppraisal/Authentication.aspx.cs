@@ -52,8 +52,6 @@ namespace PerformanceAppraisal
                         break;
                 }
 
-                //Response.Redirect("~/Index.aspx");
-               
             }
             else
                 Response.Redirect(returnUrl);
