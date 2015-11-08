@@ -248,6 +248,7 @@
             $('#<%= Page.Master.FindControl("mainContent").FindControl("txtDateofbirth").ClientID%>').datepicker();
         });
 
+        //a method to generate random numbers
         function getRandomNumber() {
 
             var randomNumber = Math.random(10000);
@@ -256,6 +257,7 @@
 
         function onFileUploadProfilePic(sender, args) {
 
+            //path to the imagehandler.ashx
             var handlerPage = '<%= Page.ResolveClientUrl("~/Handlers/ImageHandler.ashx")%>';
             var queryString = '?randomno=' + getRandomNumber();
             var src = handlerPage + queryString;

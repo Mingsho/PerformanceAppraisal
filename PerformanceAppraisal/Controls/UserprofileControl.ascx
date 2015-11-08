@@ -13,7 +13,7 @@
                         runat="server"
                         Height="225px"
                         Width="225px"
-                        ImageUrl='<%# GetImage(Eval("ProfileImage")) %>' BorderStyle="Solid" BorderWidth="1px" /><br />
+                        ImageUrl='<%# "~/Handlers/Handler1.ashx?empId="+Eval("EmpID") %>' BorderStyle="Solid" BorderWidth="1px" /><br />
                    Firstname: 
                     <asp:Label ID="lblFirstname"
                         runat="server"

@@ -6,6 +6,7 @@ using System.Web.SessionState;
 using System.IO;
 using PA.BLL;
 using PerformanceAppraisal.Utilities;
+using System.Drawing.Imaging;
 
 namespace PerformanceAppraisal.Handlers
 {
@@ -25,12 +26,19 @@ namespace PerformanceAppraisal.Handlers
 
                 if(storedImage!=null)
                 {
-                    System.Drawing.Image image = ImageUtil.ConvertByteArrayToImage(storedImage);
+                    
+                    System.Drawing.Image image = ImageUtilities.ConvertByteArrayToImage(storedImage);
 
                     if(image!=null)
                     {
-                        context.Response.ContentType = "image/jpeg";
-                        image.Save(context.Response.OutputStream, System.Drawing.Imaging.ImageFormat.Jpeg);
+                        //get image mime-type
+                        ImageFormat format = image.RawFormat;
+                        ImageCodecInfo codec = ImageCodecInfo.GetImageDecoders().First(c => c.FormatID == format.Guid);
+                        string mimeType = codec.MimeType;
+
+                        context.Response.ContentType = mimeType;
+                        image.Save(context.Response.OutputStream, format);
+                        
                     }
                 }
             }

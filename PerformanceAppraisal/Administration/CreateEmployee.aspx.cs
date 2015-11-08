@@ -106,8 +106,13 @@ namespace PerformanceAppraisal.Administration
                     employee.EmployeeType = dListEmpType.SelectedValue;
                     employee.StartDate = DateTime.Parse(txtStartdate.Text);
 
-                    if (fUploadProfilePic.HasFile)
-                        employee.ProfileImage = ImageUtil.ReadFile(fUploadProfilePic.PostedFile);
+                    if (fUploadProfilePic.PostedFile!=null)
+                    {
+                        //employee.ProfileImage = ImageUtilities.ReadFile(fUploadProfilePic.PostedFile);
+
+                        employee.ProfileImage = Session[EmployeeBLL.STORED_IMAGE] as byte[];
+                    }
+                        
                     else
                         employee.ProfileImage = null;
 
@@ -157,8 +162,7 @@ namespace PerformanceAppraisal.Administration
             {
                 HttpPostedFile file = fUploadProfilePic.PostedFile;
 
-                byte[] data = Utilities.ImageUtil.ReadFile(file);
-
+                byte[] data = ImageUtilities.ReadFile(file);
                
                 Session[EmployeeBLL.STORED_IMAGE] = data;
 
