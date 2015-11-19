@@ -18,9 +18,9 @@ namespace PerformanceAppraisal.UserPages {
         /// <remarks>
         /// Auto-generated property.
         /// </remarks>
-        public new PerformanceAppraisal.MasterPages.UserMaster Master {
+        public new PerformanceAppraisal.MasterPages.MainLayout Master {
             get {
-                return ((PerformanceAppraisal.MasterPages.UserMaster)(base.Master));
+                return ((PerformanceAppraisal.MasterPages.MainLayout)(base.Master));
             }
         }
     }

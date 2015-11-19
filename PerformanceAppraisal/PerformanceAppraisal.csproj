@@ -95,6 +95,8 @@
   <ItemGroup>
     <Content Include="Administration\EditUserRole.aspx" />
     <Content Include="Administration\ManageUsers.aspx" />
+    <Content Include="Appraisal\BehaviouralCompetency.aspx" />
+    <Content Include="Appraisal\SelfAssessment.aspx" />
     <Content Include="Content\jquery-ui.css" />
     <Content Include="Content\metisMenu.min.css" />
     <Content Include="Administration\AddDepartment.aspx" />
@@ -124,7 +126,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Images\defaultProfileImage1.png" />
-    <Content Include="MasterPages\AdminLayout.Master" />
     <Content Include="Handlers\ImageHandler.ashx" />
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
@@ -185,6 +186,20 @@
     </Compile>
     <Compile Include="Administration\ManageUsers.aspx.designer.cs">
       <DependentUpon>ManageUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Appraisal\BehaviouralCompetency.aspx.cs">
+      <DependentUpon>BehaviouralCompetency.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Appraisal\BehaviouralCompetency.aspx.designer.cs">
+      <DependentUpon>BehaviouralCompetency.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Appraisal\SelfAssessment.aspx.cs">
+      <DependentUpon>SelfAssessment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Appraisal\SelfAssessment.aspx.designer.cs">
+      <DependentUpon>SelfAssessment.aspx</DependentUpon>
     </Compile>
     <Compile Include="Controls\UserRolesControl.ascx.cs">
       <DependentUpon>UserRolesControl.ascx</DependentUpon>
@@ -279,13 +294,6 @@
     <Compile Include="Handlers\ImageHandler.ashx.cs">
       <DependentUpon>ImageHandler.ashx</DependentUpon>
     </Compile>
-    <Compile Include="MasterPages\AdminLayout.Master.cs">
-      <DependentUpon>AdminLayout.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MasterPages\AdminLayout.Master.designer.cs">
-      <DependentUpon>AdminLayout.Master</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserPages\UserIndex.aspx.cs">
       <DependentUpon>UserIndex.aspx</DependentUpon>
@@ -324,9 +332,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="PerfAppraisal\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\PA.BLL\PA.BLL.csproj">
       <Project>{dd833e6f-bc7b-4ae5-b6cb-d1b50c1f523c}</Project>

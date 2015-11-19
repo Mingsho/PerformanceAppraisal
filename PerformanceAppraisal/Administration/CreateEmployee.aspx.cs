@@ -108,8 +108,6 @@ namespace PerformanceAppraisal.Administration
 
                     if (fUploadProfilePic.PostedFile!=null)
                     {
-                        //employee.ProfileImage = ImageUtilities.ReadFile(fUploadProfilePic.PostedFile);
-
                         employee.ProfileImage = Session[EmployeeBLL.STORED_IMAGE] as byte[];
                     }
                         

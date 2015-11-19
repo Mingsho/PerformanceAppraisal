@@ -32,12 +32,6 @@ namespace PerformanceAppraisal.Controls
             }
         }
 
-        //public string GetImage(object img)
-        //{
-        //    if (img!=System.DBNull.Value)
-        //        return "data:image/jpg;base64," + Convert.ToBase64String((byte[])img);
-        //    else
-        //        return "~/Images/defaultProfileImage1.png";
-        //}
+       
     }
 }

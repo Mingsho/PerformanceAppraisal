@@ -19,13 +19,7 @@ namespace PerformanceAppraisal.Utilities
 
             return buffer;
 
-            //using (var bReader= new BinaryReader(file.InputStream))
-            //{
-            //    buffer = bReader.ReadBytes(file.ContentLength);
-            //}
-
-            //return buffer;
-
+            
         }
 
         public static System.Drawing.Image ConvertByteArrayToImage(byte[] bytArray)

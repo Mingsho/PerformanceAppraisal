@@ -5,11 +5,26 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title><%= Page.Title %></title>
+    
+    <%: System.Web.Optimization.Styles.Render("~/CoreStyles") %>
+
     <asp:ContentPlaceHolder ID="userHeadContent" runat="server">
     </asp:ContentPlaceHolder>
+
 </head>
 <body>
     <form id="form1" runat="server">
+
+        <div id="wrapper">
+            <!-- Start Nav -->
+            <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    The navbar-header
+                </div>
+            <!-- Sidebar Navigation menu -->
+
+            </nav>
+        </div>
 
         <asp:LoginName ID="LoginName1" runat="server" />
     

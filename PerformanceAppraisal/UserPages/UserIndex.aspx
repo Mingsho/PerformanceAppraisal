@@ -1,10 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MasterPages/UserMaster.Master" CodeBehind="UserIndex.aspx.cs" Inherits="PerformanceAppraisal.UserPages.UserIndex" %>
-<%@ MasterType VirtualPath="~/MasterPages/UserMaster.Master" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MasterPages/MainLayout.Master" CodeBehind="UserIndex.aspx.cs" Inherits="PerformanceAppraisal.UserPages.UserIndex" %>
+<%@ MasterType VirtualPath="~/MasterPages/MainLayout.Master" %>
 
-<asp:Content ID="childHeadContent" runat="server" ContentPlaceHolderID="userHeadContent"></asp:Content>
+<asp:Content ID="childHeaderContent" ContentPlaceHolderID="headContent" runat="server"></asp:Content>
 
-<asp:Content ID="childMainContent" runat="server" ContentPlaceHolderID="userMainContent">
-    This is the user index page!!
+<asp:Content ID="childMainContent" ContentPlaceHolderID="mainContent" runat="server">
+    This is the User Main content!
 </asp:Content>
 
-<asp:Content ID="childFooterContent" runat="server" ContentPlaceHolderID="userFooterContent"></asp:Content>
+<asp:Content ID="childFooterContent" ContentPlaceHolderID="footerContent" runat="server"></asp:Content>

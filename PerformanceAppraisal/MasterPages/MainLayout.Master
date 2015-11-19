@@ -35,7 +35,7 @@
                         runat="server"
                         CssClass="navbar-brand form-control"
                         AutoPostBack="true"></asp:DropDownList>
-                </div>
+                </div> <!-- End navbar-header -->
 
                 <ul class="nav navbar-top-links navbar-right">
 

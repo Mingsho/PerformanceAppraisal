@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
   
-    <siteMapNode url="" title="Site Root"  description="Root node of the site">
+    <siteMapNode url="" title="Site Root" description="Root node of the site" roles="*">
       
       <siteMapNode url="~/Index.aspx" title="Dashboard" icon="fa fa-dashboard fa-fw" description="User Index Page"/>
       
@@ -15,6 +15,11 @@
       <siteMapNode url="" title="Position Description" icon="fa fa-trophy fa-fw" description="Create and manage employee position description">
         <siteMapNode url="~/PositionDescription/PositionDescription.aspx" title="Position Description"/>
       </siteMapNode>
+
+      <!--<siteMapNode url="" title="Performance Appraisal" icon="fa fa-trophy fa-fw" description="Performance appraisal tab">
+        <siteMapNode url="~/Appraisal/SelfAssessment.aspx" title="Self Assessment" />
+        <siteMapNode url="~/Appraisal/BehaviouralCompetency.aspx" title="Behavioural Competency" />
+      </siteMapNode>-->
       
     </siteMapNode>
   

@@ -13,13 +13,13 @@ namespace PerformanceAppraisal.UserPages {
     public partial class UserProfile {
         
         /// <summary>
-        /// uProfileControl control.
+        /// userProfileControl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::PerformanceAppraisal.Controls.UserprofileControl uProfileControl;
+        protected global::PerformanceAppraisal.Controls.UserprofileControl userProfileControl;
         
         /// <summary>
         /// Master property.
@@ -27,9 +27,9 @@ namespace PerformanceAppraisal.UserPages {
         /// <remarks>
         /// Auto-generated property.
         /// </remarks>
-        public new PerformanceAppraisal.MasterPages.UserMaster Master {
+        public new PerformanceAppraisal.MasterPages.MainLayout Master {
             get {
-                return ((PerformanceAppraisal.MasterPages.UserMaster)(base.Master));
+                return ((PerformanceAppraisal.MasterPages.MainLayout)(base.Master));
             }
         }
     }
