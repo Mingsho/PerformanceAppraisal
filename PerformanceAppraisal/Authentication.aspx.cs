@@ -48,7 +48,7 @@ namespace PerformanceAppraisal
                         Response.Redirect("~/Administration/AdminIndex.aspx");
                         break;
                     case "User":
-                        Response.Redirect("~/Index.aspx");
+                        Response.Redirect("~/UserPages/UserIndex.aspx");
                         break;
                 }
 

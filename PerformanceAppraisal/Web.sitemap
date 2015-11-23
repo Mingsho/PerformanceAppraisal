@@ -5,7 +5,10 @@
     <siteMapNode url="" title="Site Root" description="Root node of the site" roles="*">
       
       <!-- The Dashboard node-->
-      <siteMapNode url="~/Index.aspx" title="Dashboard" icon="fa fa-dashboard fa-fw" description="User Index Page"/>
+      <siteMapNode url="~/Index.aspx" title="Dashboard" icon="fa fa-dashboard fa-fw" description="Admin Index Page" roles="SuperAdmin"/>
+      
+      <!--The User Home page-->
+      <siteMapNode url="~/UserPages/UserIndex.aspx" icon="fa fa-home fa-fw" title="Home" description="User Index Page" roles="User" />
       
       <!-- Administration Node-->
       <siteMapNode url="" title="Administration" icon="fa fa-unlock fa-fw" description="Administrative tasks" roles="SuperAdmin">
