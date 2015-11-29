@@ -32,6 +32,11 @@ namespace PerformanceAppraisal.Controls
             }
         }
 
+        protected void frmViewUserDetails_ModeChanging(object sender, FormViewModeEventArgs e)
+        {
+            frmViewUserDetails.ChangeMode(FormViewMode.Edit);
+        }
+
        
     }
 }

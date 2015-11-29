@@ -140,7 +140,6 @@
       <SubType>ASPXCodeBehind</SubType>
     </Content>
     <Content Include="MasterPages\UserMaster.Master" />
-    <Content Include="Handlers\Handler1.ashx" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -207,9 +206,6 @@
     </Compile>
     <Compile Include="Controls\UserRolesControl.ascx.designer.cs">
       <DependentUpon>UserRolesControl.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Handlers\Handler1.ashx.cs">
-      <DependentUpon>Handler1.ashx</DependentUpon>
     </Compile>
     <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>

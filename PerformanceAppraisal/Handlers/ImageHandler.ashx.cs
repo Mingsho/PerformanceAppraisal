@@ -7,11 +7,12 @@ using System.IO;
 using PA.BLL;
 using PerformanceAppraisal.Utilities;
 using System.Drawing.Imaging;
+using PA.BLL.DTO;
 
 namespace PerformanceAppraisal.Handlers
 {
     /// <summary>
-    /// A generic handler to return image from an object in the session state.
+    /// A generic handler to return image
     /// </summary>
     public class ImageHandler : IHttpHandler, IRequiresSessionState
     {
@@ -41,6 +42,36 @@ namespace PerformanceAppraisal.Handlers
                         
                     }
                 }
+                //clear this session.
+                context.Session.Remove(EmployeeBLL.STORED_IMAGE);
+            }
+
+            else if(context.Request.QueryString["empId"]!=null)
+            {
+                string employeeID = context.Request.QueryString["empId"];
+
+                EmployeeBLL empLogic = new EmployeeBLL();
+                Employee emp = new Employee();
+
+                try
+                {
+                    if (!string.IsNullOrEmpty(employeeID))
+                    {
+                        int nEmpID = int.Parse(employeeID);
+
+                        emp = empLogic.GetEmployee(nEmpID);
+                    }
+
+                    //context.Response.ContentType = "image/jpeg";
+                    if (emp.ProfileImage != null)
+                        context.Response.BinaryWrite(emp.ProfileImage);
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+
             }
             
         }
