@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.Security;
 using PA.BLL;
+using PA.BLL.DTO;
 
 
 
@@ -20,23 +21,52 @@ namespace PerformanceAppraisal.Controls
             
             if(!Page.IsPostBack)
             {
-                Guid userGuid = (Guid)Membership.GetUser().ProviderUserKey;
-
-                if(userGuid!=null)
-                {
-                    int nUserId = empLogic.GetEmployeeID(userGuid.ToString());
-                    frmViewUserDetails.DataSource = empLogic.GetEmployeeByID(nUserId);
-                    frmViewUserDetails.DataBind();
-                    
-                }
+                FormViewBind();
             }
+        }
+
+        /// <summary>
+        /// Method to bind the FormView with the details of the
+        /// currently logged in user
+        /// </summary>
+        private void FormViewBind()
+        {
+            Guid userGuid = (Guid)Membership.GetUser().ProviderUserKey;
+
+            if (userGuid != null)
+            {
+                int nUserId = empLogic.GetEmployeeID(userGuid.ToString());
+                frmViewUserDetails.DataSource = empLogic.GetEmployeeByID(nUserId);
+                frmViewUserDetails.DataBind();
+
+            }
+        }
+
+        protected void frmViewUserDetails_ItemUpdating(object sender, FormViewUpdateEventArgs e)
+        {
+            Employee employee = new Employee();
+
+            DataKey dtKey = frmViewUserDetails.DataKey;
+
+            Image tempImgUserProfilePic=(Image)frmViewUserDetails.FindControl("imgUserProfileEdit");
+
+            TextBox tempTxtFirstname = (TextBox)frmViewUserDetails.FindControl("txtFname");
+            TextBox tempTxtMiddlename = (TextBox)frmViewUserDetails.FindControl("txtMname");
+            TextBox tempTxtLastname = (TextBox)frmViewUserDetails.FindControl("txtLname");
+            
         }
 
         protected void frmViewUserDetails_ModeChanging(object sender, FormViewModeEventArgs e)
         {
-            frmViewUserDetails.ChangeMode(FormViewMode.Edit);
+
+            frmViewUserDetails.ChangeMode(e.NewMode);
+
         }
 
-       
+        protected void frmViewUserDetails_ItemUpdated(object sender, FormViewUpdatedEventArgs e)
+        {
+            frmViewUserDetails.ChangeMode(FormViewMode.ReadOnly);
+        }
+
     }
 }

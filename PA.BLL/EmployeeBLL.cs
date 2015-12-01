@@ -291,6 +291,12 @@ namespace PA.BLL
 
         }
 
+        public bool UpdateEmployee(Employee employee)
+        {
+            bool retVal = false;
+
+            return retVal;
+        }
         
     }
 }
