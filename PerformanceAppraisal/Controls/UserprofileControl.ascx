@@ -43,6 +43,42 @@
                     <asp:Label ID="lblHouseUnitNo"
                         runat="server"
                         Text='<%# Eval("HouseUnitNo") %>'></asp:Label><br />
+                    Streetname:
+                    <asp:Label ID="lblStreetname"
+                        runat="server"
+                        Text='<%# Eval("Streetname") %>'></asp:Label><br />
+                    Suburb:
+                    <asp:Label ID="lblSuburb"
+                        runat="server"
+                        Text='<%# Eval("Suburb") %>'></asp:Label><br />
+                    City:
+                    <asp:Label ID="lblCity"
+                        runat="server"
+                        Text='<%# Eval("City") %>'></asp:Label><br />
+                    Postcode:
+                    <asp:Label ID="lblPostcode"
+                        runat="server"
+                        Text='<%# Eval("Postcode") %>'></asp:Label><br />
+                    ContactNumber:
+                    <asp:Label ID="lblContactNumber"
+                        runat="server"
+                        Text='<%# Eval("ContactNumber") %>'></asp:Label><br />
+                    Email:
+                    <asp:Label ID="lblEmail"
+                        runat="server"
+                        Text='<%# Eval("Email") %>'></asp:Label><br />
+                    Employee Type:
+                    <asp:Label ID="lblEmpType"
+                        runat="server"
+                        Text='<%# Eval("EmployeeType") %>'></asp:Label><br />
+                    Start Date:
+                    <asp:label ID="lblStartDate"
+                        runat="server"
+                        Text='<%# Eval("StartDate") %>'></asp:label><br />
+                    Manager:
+                    <asp:Label ID="lblManager"
+                        runat="server"
+                        Text=""></asp:Label><br />
 
 
                 </ItemTemplate>
@@ -64,6 +100,10 @@
                     Lastname: <asp:TextBox ID="txtLname"
                         runat="server"
                         Text='<%# Bind("Lastname") %>'></asp:TextBox><br />
+                    Date Of Birth: <asp:TextBox ID="txtDob"
+                        runat="server"
+                        Text='<%# Bind("DateOfBirth") %>'></asp:TextBox><br />
+
 
                     <asp:LinkButton ID="lnkBtnUpdate"
                         runat="server"

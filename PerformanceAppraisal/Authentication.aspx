@@ -12,6 +12,7 @@
     <div>
         <asp:Login ID="lgnUser"
             runat="server"
+            OnAuthenticate="lgnUser_Authenticate"
             OnLoggedIn="lgnUser_LoggedIn" RenderOuterTable="False">
             <LayoutTemplate>
                 <div class="container">

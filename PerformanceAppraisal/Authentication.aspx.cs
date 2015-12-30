@@ -17,11 +17,21 @@ namespace PerformanceAppraisal
            
         }
 
+        protected void lgnUser_Authenticate(object sender, AuthenticateEventArgs e)
+        {
+            e.Authenticated = false;
+
+            if(Membership.ValidateUser(lgnUser.UserName,lgnUser.Password))
+            {
+                e.Authenticated = true;
+            }
+        }
+
         protected void lgnUser_LoggedIn(object sender, EventArgs e)
         {
             string returnUrl = Request.QueryString["ReturnUrl"];
             UserProfile profile = UserProfile.GetUserProfile(lgnUser.UserName);
-            
+
             if (returnUrl == null)
             {
                 
@@ -57,6 +67,8 @@ namespace PerformanceAppraisal
                 Response.Redirect(returnUrl);
             
         }
+
+       
         
 
     }
