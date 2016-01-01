@@ -13,7 +13,9 @@
         <asp:Login ID="lgnUser"
             runat="server"
             OnAuthenticate="lgnUser_Authenticate"
-            OnLoggedIn="lgnUser_LoggedIn" RenderOuterTable="False">
+            OnLoggedIn="lgnUser_LoggedIn"
+            RenderOuterTable="False"
+            FailureText="There was an error while trying to log you in.">
             <LayoutTemplate>
                 <div class="container">
                     <div class="row">
@@ -72,6 +74,7 @@
                         </div>
                     </div>
                 </div>
+                <asp:Literal ID="FailureText" runat="server"></asp:Literal>
             </LayoutTemplate>
         </asp:Login>
     </div>

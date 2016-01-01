@@ -27,12 +27,15 @@ namespace PerformanceAppraisal
             }
         }
 
+
+        //event handler after the user is authenticated.
         protected void lgnUser_LoggedIn(object sender, EventArgs e)
         {
+            //retrive a return Url from Query string if any
             string returnUrl = Request.QueryString["ReturnUrl"];
             UserProfile profile = UserProfile.GetUserProfile(lgnUser.UserName);
 
-            if (returnUrl == null)
+            if (returnUrl == null)// if no return url in the query string.
             {
                 
                 string[] userRoles=Roles.GetRolesForUser(lgnUser.UserName);
@@ -50,9 +53,11 @@ namespace PerformanceAppraisal
                             profile.RolePriority = "User";
                             
                     }
+
+                   
                 }
 
-                switch(profile.RolePriority)
+                switch (profile.RolePriority) // redirect user to corresponding index pages based on role priority
                 {
                     case "SuperAdmin":
                         Response.Redirect("~/Administration/AdminIndex.aspx");
