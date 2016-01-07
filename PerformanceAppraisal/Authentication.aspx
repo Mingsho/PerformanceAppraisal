@@ -36,7 +36,7 @@
                                                 ControlToValidate="UserName" 
                                                 ErrorMessage="User Name is required." 
                                                 ToolTip="User Name is required." 
-                                                ValidationGroup="lgnUser">*</asp:RequiredFieldValidator>
+                                                ValidationGroup="lgnUser" />
                                         </div>
                                         <div class="form-group">
                                             <asp:TextBox ID="Password"
@@ -71,15 +71,40 @@
                                     </fieldset>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <asp:Literal ID="FailureText" runat="server"></asp:Literal>
+
+                            <div id="errorDiv" class="alert alert-danger fade in" role="alert" style="visibility: hidden">
+                                <a href="#" class="close" data-dismiss="alert">&times;</a>
+                                <!--The literal displays the error text.-->
+                                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                <asp:Literal ID="FailureText" runat="server"></asp:Literal>
+                            </div>
+                        </div> <!--end col-md-4-->
+
+                    </div> <!-- end row-->
+
+                </div> <!-- end container-->
+                
             </LayoutTemplate>
         </asp:Login>
     </div>
     </form>
 
     <%: System.Web.Optimization.Scripts.Render("CoreScripts") %>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            
+            $("#form1").on('submit', function (e) {
+
+                var isValid = $("#lgnUser").valid();
+                
+                if (!isValid) {
+
+                    alert("Working!!");
+                }
+            });
+        });
+    </script>
 </body>
 </html>
