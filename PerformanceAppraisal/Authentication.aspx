@@ -14,6 +14,7 @@
             runat="server"
             OnAuthenticate="lgnUser_Authenticate"
             OnLoggedIn="lgnUser_LoggedIn"
+            UserNameRequiredErrorMessage="test"
             RenderOuterTable="False"
             FailureText="There was an error while trying to log you in.">
             <LayoutTemplate>
@@ -34,7 +35,8 @@
                                             <asp:RequiredFieldValidator ID="UserNameRequired"
                                                 runat="server"
                                                 ControlToValidate="UserName" 
-                                                ErrorMessage="User Name is required." 
+                                                ErrorMessage="* User Name is required." 
+                                                ForeColor="Red"
                                                 ToolTip="User Name is required." 
                                                 ValidationGroup="lgnUser" />
                                         </div>
@@ -47,9 +49,10 @@
                                             <asp:RequiredFieldValidator ID="PasswordRequired" 
                                                 runat="server" 
                                                 ControlToValidate="Password" 
-                                                ErrorMessage="Password is required." 
+                                                ErrorMessage="* Password is required."
+                                                ForeColor="Red" 
                                                 ToolTip="Password is required." 
-                                                ValidationGroup="lgnUser">*</asp:RequiredFieldValidator>
+                                                ValidationGroup="lgnUser"/>
                                         </div>
                                         <div class="checkbox">
                                             <asp:Label ID="lblRememberMe"
@@ -72,7 +75,7 @@
                                 </div>
                             </div>
 
-                            <div id="errorDiv" class="alert alert-danger fade in" role="alert" style="visibility: hidden">
+                            <div id="errorDiv" class="alert alert-danger fade in" role="alert">
                                 <a href="#" class="close" data-dismiss="alert">&times;</a>
                                 <!--The literal displays the error text.-->
                                 <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
@@ -86,25 +89,11 @@
                 
             </LayoutTemplate>
         </asp:Login>
+
     </div>
     </form>
 
     <%: System.Web.Optimization.Scripts.Render("CoreScripts") %>
 
-    <script type="text/javascript">
-        $(document).ready(function () {
-
-            
-            $("#form1").on('submit', function (e) {
-
-                var isValid = $("#lgnUser").valid();
-                
-                if (!isValid) {
-
-                    alert("Working!!");
-                }
-            });
-        });
-    </script>
 </body>
 </html>

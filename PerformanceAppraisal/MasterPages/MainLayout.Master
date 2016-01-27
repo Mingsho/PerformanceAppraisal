@@ -160,7 +160,7 @@
                             
                             <asp:Label ID="lblPageHeader"
                                 runat="server"></asp:Label>
-                            <asp:Label ID="lblCurrentDateTime" style="float: right" runat="server">
+                            
                             </asp:Label>
 
                         </h1>

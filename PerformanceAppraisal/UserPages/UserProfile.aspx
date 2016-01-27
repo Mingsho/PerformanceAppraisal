@@ -5,10 +5,14 @@
 <asp:Content ID="childHeadContent" runat="server" ContentPlaceHolderID="headContent"></asp:Content>
 
 <asp:Content ID="childMainContent" runat="server" ContentPlaceHolderID="mainContent">
-    <a href="UserIndex.aspx">Go back to index</a>
-    <br />
-
-    <cus:UserProfileControl ID="userProfileControl" runat="server" />
+    
+    <div class="panel panel-default">
+        <div class="panel-heading">My Profile</div>
+        <div class="panel-body">
+            <cus:UserProfileControl ID="userProfileControl" runat="server" />
+        </div>
+    </div>
+    
 </asp:Content>
 
 <asp:Content ID="childFooterContent" runat="server" ContentPlaceHolderID="footerContent"></asp:Content>

@@ -1,10 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="UserprofileControl.ascx.cs" Inherits="PerformanceAppraisal.Controls.UserprofileControl" %>
 
-<div>
-    <fieldset>
-        <legend>Basic User Profile</legend>
-        
-        <div>
+<div class="row">
+    
             <asp:FormView ID="frmViewUserDetails"
                 runat="server"
                 EmptyDataText="No Employee Found!"
@@ -120,7 +117,4 @@
                 </EditItemTemplate>
                 
             </asp:FormView>
-        </div>
-    </fieldset>
-
 </div>
