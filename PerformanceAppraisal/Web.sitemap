@@ -24,6 +24,13 @@
                    roles="SuperAdmin">
         <siteMapNode url="~/PositionDescription/PositionDescription.aspx" title="Position Description"/>
       </siteMapNode>
+      
+      <!-- User profile Node -->
+
+      <siteMapNode url="~/UserPages/UserProfile.aspx" title="My Profile" icon="fa fa-user fa-fw"
+                   description="View and edit basic profile"
+                   roles="User">
+      </siteMapNode>
 
       <!--Performance appraisal node-->
       <siteMapNode url="" title="Performance Appraisal" icon="fa fa-trophy fa-fw" description="Performance appraisal tab" roles="User">

@@ -110,38 +110,46 @@
                             <asp:Repeater ID="sideBarMenu"
                                 runat="server"
                                 DataSourceID="mainSDataSource"
-                                OnItemDataBound="sideBarMenu_ItemDataBound">
+                                OnItemDataBound="sideBarMenu_ItemDataBound"
+                                OnItemCreated="sideBarMenu_ItemCreated">
 
                                 <ItemTemplate>
+
                                     <li>
+                                    
                                         <asp:HyperLink ID="hLnkFirstLvl"
                                             runat="server"
-                                            NavigateUrl='<%# Eval("Url") %>'>
+                                            NavigateUrl='<%# ((SiteMapNode)Container.DataItem).Url %>'>
 
-                                            <i class='<%# Eval("[icon]") %>'></i>
-                                            <%# Eval("Title") %>
+                                            <i class='<%# ((SiteMapNode)Container.DataItem)["icon"] %>'></i>
+                                            <%# ((SiteMapNode)Container.DataItem).Title %>
                                             <asp:Literal ID="litCaret" runat="server"></asp:Literal>
                                             
                                         </asp:HyperLink>
 
-                                        <ul class="nav nav-second-level">
-                                            <asp:Repeater ID="sideBarChildNodeMenu"
-                                                runat="server"
-                                                DataSource='<%# ((SiteMapNode)Container.DataItem).ChildNodes %>'>
+                                        <asp:Repeater ID="sideBarChildNodeMenu"
+                                                runat="server">
+                                                
+                                                <HeaderTemplate>
+                                                    <ul class="nav nav-second-level">
+                                                </HeaderTemplate>
 
                                                 <ItemTemplate>
                                                     <li>
                                                         <asp:HyperLink ID="hLnkSecondLvl"
                                                             runat="server"
-                                                            NavigateUrl='<%# Eval("Url") %>'>
-                                                            <%# Eval("Title") %>
+                                                            NavigateUrl='<%# ((SiteMapNode)Container.DataItem).Url %>'>
+                                                            <%# ((SiteMapNode)Container.DataItem).Title %>
 
                                                         </asp:HyperLink>
                                                     </li>
                                                 </ItemTemplate>
-                                            </asp:Repeater>
-                                        </ul>
 
+                                                <FooterTemplate>
+                                                     </ul>
+                                                </FooterTemplate>
+
+                                            </asp:Repeater>
                                     </li>
                                 </ItemTemplate>
 
@@ -159,10 +167,9 @@
                         <h1 class="page-header">
                             
                             <asp:Label ID="lblPageHeader"
-                                runat="server"></asp:Label>
-                            
+                                runat="server">
                             </asp:Label>
-
+                            
                         </h1>
                         
                     </div>

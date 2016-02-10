@@ -71,5 +71,20 @@ namespace PerformanceAppraisal.MasterPages
             }
         }
 
+        protected void sideBarMenu_ItemCreated(object sender, RepeaterItemEventArgs e)
+        {
+            if(e.Item.DataItem is SiteMapNode)
+            {
+                SiteMapNodeCollection nodes = (e.Item.DataItem as SiteMapNode).ChildNodes;
+
+                if(nodes.Count>0)
+                {
+                    Repeater rp = e.Item.FindControl("sideBarChildNodeMenu") as Repeater;
+                    rp.DataSource = nodes;
+                    rp.DataBind();
+                }
+            }
+        }
+
     }
 }

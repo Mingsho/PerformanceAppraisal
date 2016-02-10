@@ -13,20 +13,21 @@ namespace PerformanceAppraisal
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.lgnUser.Focus();
-           
+
+            Page.Form.DefaultFocus = lgnUser.FindControl("Username").ClientID;
+
         }
 
         protected void lgnUser_Authenticate(object sender, AuthenticateEventArgs e)
         {
             e.Authenticated = false;
 
-            if(Membership.ValidateUser(lgnUser.UserName,lgnUser.Password))
-            {
+            if (Membership.ValidateUser(lgnUser.UserName, lgnUser.Password))
                 e.Authenticated = true;
-            }
+            else
+                ClientScript.RegisterClientScriptBlock(this.GetType(), 
+                    "ShowErrorDiv", "$('#errorDiv').show();", true);
         }
-
 
         //event handler after the user is authenticated.
         protected void lgnUser_LoggedIn(object sender, EventArgs e)
@@ -72,6 +73,8 @@ namespace PerformanceAppraisal
                 Response.Redirect(returnUrl);
             
         }
+
+        
 
     }
 }
