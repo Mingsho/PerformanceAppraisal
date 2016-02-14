@@ -77,7 +77,7 @@ namespace PerformanceAppraisal.MasterPages
             {
                 SiteMapNodeCollection nodes = (e.Item.DataItem as SiteMapNode).ChildNodes;
 
-                if(nodes.Count>0)
+                if(nodes.Count>0) //only if there are child nodes, bind to the second repeater
                 {
                     Repeater rp = e.Item.FindControl("sideBarChildNodeMenu") as Repeater;
                     rp.DataSource = nodes;

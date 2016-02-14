@@ -42,6 +42,12 @@ namespace PerformanceAppraisal.Controls
             }
         }
 
+        protected void frmViewUserDetails_ModeChanging(object sender, FormViewModeEventArgs e)
+        {
+            frmViewUserDetails.ChangeMode(e.NewMode);
+            FormViewBind();
+        }
+
         protected void frmViewUserDetails_ItemUpdating(object sender, FormViewUpdateEventArgs e)
         {
             Employee employee = new Employee();
@@ -56,17 +62,12 @@ namespace PerformanceAppraisal.Controls
             
         }
 
-        protected void frmViewUserDetails_ModeChanging(object sender, FormViewModeEventArgs e)
-        {
-
-            frmViewUserDetails.ChangeMode(e.NewMode);
-
-        }
-
         protected void frmViewUserDetails_ItemUpdated(object sender, FormViewUpdatedEventArgs e)
         {
             frmViewUserDetails.ChangeMode(FormViewMode.ReadOnly);
         }
+
+       
 
     }
 }
