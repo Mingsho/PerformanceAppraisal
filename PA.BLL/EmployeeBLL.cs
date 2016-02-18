@@ -103,17 +103,31 @@ namespace PA.BLL
 
                 employee.UserAccountID = Guid.Parse(empDataTable.Rows[0]["UserAccountID"].ToString());
 
+                DepartmentBLL deptBll= new DepartmentBLL();
+
                 if (empDataTable.Rows[0]["DeptID"] != DBNull.Value)
-                    employee.DepartmentID = int.Parse(empDataTable.Rows[0]["DeptID"].ToString());
+                {
+                    int nDeptId= int.Parse(empDataTable.Rows[0]["DeptID"].ToString());
+                    employee.DepartmentID = nDeptId;
+                    employee.DepartmentName = deptBll.GetDepartment(nDeptId).Departmentname;
+                }
+                    
                 else
                     employee.DepartmentID = null;
+
+
 
                 if (empDataTable.Rows[0]["ProfileImage"] != DBNull.Value)
                     employee.ProfileImage = (byte[])empDataTable.Rows[0]["ProfileImage"];
                 else
                     employee.ProfileImage = null;
 
-                employee.TitleID = int.Parse(empDataTable.Rows[0]["TitleID"].ToString());
+                int nTitleId = int.Parse(empDataTable.Rows[0]["TitleID"].ToString());
+
+                TitleBLL titleBll= new TitleBLL();
+
+                employee.TitleID = nTitleId;
+                employee.TitleName = titleBll.GetTitleByID(nTitleId).JobTitle;
 
 
 

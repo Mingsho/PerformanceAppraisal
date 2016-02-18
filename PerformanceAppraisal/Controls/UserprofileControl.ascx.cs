@@ -59,12 +59,25 @@ namespace PerformanceAppraisal.Controls
             TextBox tempTxtFirstname = (TextBox)frmViewUserDetails.FindControl("txtFname");
             TextBox tempTxtMiddlename = (TextBox)frmViewUserDetails.FindControl("txtMname");
             TextBox tempTxtLastname = (TextBox)frmViewUserDetails.FindControl("txtLname");
+            TextBox tempTxtDob = (TextBox)frmViewUserDetails.FindControl("txtDob");
+            TextBox tempTxtHouseUnitNo = (TextBox)frmViewUserDetails.FindControl("txtHouseUnitNo");
+            TextBox tempTxtStreetname = (TextBox)frmViewUserDetails.FindControl("txtStreetname");
+            TextBox tempTxtSuburb = (TextBox)frmViewUserDetails.FindControl("txtSuburb");
+            TextBox tempTxtCity = (TextBox)frmViewUserDetails.FindControl("txtCity");
+            TextBox tempTxtPostcode = (TextBox)frmViewUserDetails.FindControl("txtPostCode");
+            TextBox tempTxtContactNo = (TextBox)frmViewUserDetails.FindControl("txtContactNo");
+            TextBox tempTxtEmail = (TextBox)frmViewUserDetails.FindControl("txtEmail");
             
         }
 
         protected void frmViewUserDetails_ItemUpdated(object sender, FormViewUpdatedEventArgs e)
         {
             frmViewUserDetails.ChangeMode(FormViewMode.ReadOnly);
+        }
+
+        protected void fUploadProfilePic_UploadedComplete(object sender, AjaxControlToolkit.AsyncFileUploadEventArgs e)
+        {
+
         }
 
        

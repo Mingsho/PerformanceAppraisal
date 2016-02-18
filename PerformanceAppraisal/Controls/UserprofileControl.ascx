@@ -2,18 +2,15 @@
 
 <div class="row">
 
-    
-    
-        <asp:FormView ID="frmViewUserDetails"
-            runat="server"
-            EmptyDataText="No Employee Found!"
-            DataKeyNames="EmpID"
-            OnItemUpdating="frmViewUserDetails_ItemUpdating"
-            OnModeChanging="frmViewUserDetails_ModeChanging"
-            OnItemUpdated="frmViewUserDetails_ItemUpdated"
-            RenderOuterTable="false">
+    <asp:FormView ID="frmViewUserDetails"
+        runat="server"
+        EmptyDataText="No Employee Found!"
+        DataKeyNames="EmpID"
+        OnItemUpdating="frmViewUserDetails_ItemUpdating"
+        OnModeChanging="frmViewUserDetails_ModeChanging"
+        OnItemUpdated="frmViewUserDetails_ItemUpdated"
+        RenderOuterTable="false">
 
-              
         <ItemTemplate>
 
             <div class="col-lg-6">
@@ -54,6 +51,14 @@
                 </div>
 
                 <div class="form-group">
+
+                    <label>Job Title:</label>
+                    <asp:Label ID="lblTitle"
+                        runat="server"
+                        Text='<%# Eval("JobTitle") %>'></asp:Label>
+                </div>
+
+                <div class="form-group">
                     <label>Date of birth:</label>
                     <asp:Label ID="lblDateOfBirth"
                         runat="server"
@@ -79,59 +84,66 @@
                 </div>
 
                 <div class="form-group">
-                     Suburb:
+                     <label>Suburb:</label>
                     <asp:Label ID="lblSuburb"
                         runat="server"
                         Text='<%# Eval("Suburb") %>'></asp:Label>
                 </div>
 
                 <div class="form-group">
-                    City:
+                    <label>City:</label>
                     <asp:Label ID="lblCity"
                         runat="server"
                         Text='<%# Eval("City") %>'></asp:Label>
                 </div>
 
                 <div class="form-group">
-                    Postcode:
+                    <label>Post Code:</label>
                     <asp:Label ID="lblPostcode"
                         runat="server"
                         Text='<%# Eval("Postcode") %>'></asp:Label>
                 </div>
 
                 <div class="form-group">
-                    ContactNumber:
+                    <label>Contact Number:</label>
                     <asp:Label ID="lblContactNumber"
                         runat="server"
                         Text='<%# Eval("ContactNumber") %>'></asp:Label>
                 </div>
 
                 <div class="form-group">
-                    Email:
+                    <label>Email:</label>
                     <asp:Label ID="lblEmail"
                         runat="server"
                         Text='<%# Eval("Email") %>'></asp:Label>
                 </div>
 
                 <div class="form-group">
-                    Employee Type:
+                    <label>Employee Type:</label>
                     <asp:Label ID="lblEmpType"
                         runat="server"
                         Text='<%# Eval("EmployeeType") %>'></asp:Label>
                 </div>
 
                 <div class="form-group">
-                    Start Date:
+                    <label>Start Date:</label>
                     <asp:label ID="lblStartDate"
                         runat="server"
                         Text='<%# Eval("StartDate") %>'></asp:label>
                 </div>
 
                 <div class="form-group">
-                     Manager:
+                     <label>Manager ID:</label>
                     <asp:Label ID="lblManager"
                         runat="server"
-                        Text=""></asp:Label>
+                        Text='<%# Eval("ManagerID") %>'></asp:Label>
+                </div>
+
+                <div class="form-group">
+                    <label>Department:</label>
+                    <asp:Label ID="lblDepartment"
+                        runat="server"
+                        Text='<%# Eval("Departmentname") %>'></asp:Label>
                 </div>
 
                 <asp:LinkButton ID="lnkBtnEdit"
@@ -160,14 +172,24 @@
                     ImageUrl='<%# "~/Handlers/ImageHandler.ashx?empId="+Eval("EmpID") %>' 
                     BorderStyle="Solid" BorderWidth="1px" />
 
+                    &nbsp;
+                    <ajaxToolkit:AsyncFileUpload ID="fUploadProfilePic"
+                        runat="server"
+                        CssClass="form-control"
+                        OnUploadedComplete="fUploadProfilePic_UploadedComplete"
+                        OnClientUploadComplete=""
+                        UploaderStyle="Modern" />
+
                 </div>
 
                 <div class="form-group">
                     <asp:Label ID="lbl2Firstname" runat="server"
-                        Text="Firstname:"></asp:Label>
+                        Text="Firstname:"
+                        AssociatedControlID="txtFname"></asp:Label>
                     <asp:TextBox ID="txtFname"
-                    runat="server"
-                    Text='<%# Bind("Firstname") %>'></asp:TextBox>
+                        runat="server"
+                        CssClass="form-control"
+                        Text='<%# Bind("Firstname") %>'></asp:TextBox>
                 </div>
 
                 <div class="form-group">
@@ -175,17 +197,29 @@
                         AssociatedControlID="txtMname"
                         Text="Middlename:"></asp:Label>
                     <asp:TextBox ID="txtMname"
-                    runat="server"
-                    Text='<%# Bind("Middlename") %>'></asp:TextBox>
+                        runat="server"
+                        CssClass="form-control"
+                        Text='<%# Bind("Middlename") %>'></asp:TextBox>
                 </div>
 
                 <div class="form-group">
                     <asp:Label ID="lbl2Lastname" runat="server"
                         AssociatedControlID="txtLname"
                         Text="Lastname:"></asp:Label>
-                         <asp:TextBox ID="txtLname"
-                    runat="server"
-                    Text='<%# Bind("Lastname") %>'></asp:TextBox>
+                    <asp:TextBox ID="txtLname"
+                        runat="server"
+                        CssClass="form-control"
+                        Text='<%# Bind("Lastname") %>'></asp:TextBox>
+                </div>
+
+                <div class="form-group">
+                    <asp:Label ID="lbl2JobTitle" runat="server"
+                        Text="Job Title"></asp:Label>
+                    <asp:TextBox ID="txtJobTitle"
+                        runat="server"
+                        CssClass="form-control"
+                        Text='<%# Bind("JobTitle") %>'
+                        disabled></asp:TextBox>
                 </div>
 
                 <div class="form-group">
@@ -193,8 +227,9 @@
                         AssociatedControlID="txtDob"
                         Text="Date of Birth:"></asp:Label> 
                     <asp:TextBox ID="txtDob"
-                    runat="server"
-                    Text='<%# Bind("DateOfBirth") %>'></asp:TextBox>
+                        runat="server"
+                        CssClass="form-control"
+                        Text='<%# Bind("DateOfBirth") %>'></asp:TextBox>
                 </div>
 
             </div>
@@ -210,6 +245,7 @@
                     </asp:Label>
                     <asp:TextBox ID="txtHouseUnitNo" 
                         runat="server"
+                        CssClass="form-control"
                         Text='<%# Bind("HouseUnitNo") %>'></asp:TextBox>
                 </div>
 
@@ -217,22 +253,24 @@
 
                     <asp:Label ID="lbl2Streetname" 
                         runat="server"
-                        Text="Streetname" 
+                        Text="Streetname:" 
                         AssociatedControlID="txtStreetname">
                     </asp:Label>
                     <asp:TextBox ID="txtStreetname" 
                         runat="server"
+                        CssClass="form-control"
                         Text='<%# Bind("Streetname") %>'></asp:TextBox>
                 </div>
 
                 <div class="form-group">
                     <asp:Label ID="lbl2Suburb" 
                         runat="server"
-                        Text="Suburb"
+                        Text="Suburb:"
                         AssociatedControlID="txtSuburb">
                     </asp:Label>
                     <asp:TextBox ID="txtSuburb"
                         runat="server"
+                        CssClass="form-control"
                         Text='<%# Bind("Suburb") %>'></asp:TextBox>
                 </div>
 
@@ -240,10 +278,11 @@
 
                     <asp:Label ID="lbl2City"
                         runat="server"
-                        Text="City"
+                        Text="City:"
                         AssociatedControlID="txtCity"></asp:Label>
                     <asp:TextBox ID="txtCity"
                         runat="server"
+                        CssClass="form-control"
                         Text='<%# Bind("City") %>'></asp:TextBox>
                 </div>
 
@@ -251,10 +290,11 @@
 
                     <asp:Label ID="lbl2Postcode"
                         runat="server"
-                        Text="Postcode"
-                        AssociatedControlI="txtPostCode"></asp:Label>
+                        Text="Postcode:"
+                        AssociatedControlID="txtPostCode"></asp:Label>
                     <asp:TextBox ID="txtPostcode"
                         runat="server"
+                        CssClass="form-control"
                         Text='<%# Bind("Postcode") %>'></asp:TextBox>
 
                 </div>
@@ -267,6 +307,7 @@
                         AssociatedControlID="txtContactNo"></asp:Label>
                     <asp:TextBox ID="txtContactNo"
                         runat="server"
+                        CssClass="form-control"
                         Text='<%# Bind("ContactNumber") %>'></asp:TextBox>
 
                 </div>
@@ -275,10 +316,11 @@
 
                     <asp:Label ID="lbl2Email"
                         runat="server"
-                        Text="Email"
+                        Text="Email:"
                         AssociatedControlID="txtEmail"></asp:Label>
                     <asp:TextBox ID="txtEmail"
                         runat="server"
+                        CssClass="form-control"
                         Text='<%# Bind("Email") %>'></asp:TextBox>
                 </div>
 
@@ -286,10 +328,11 @@
 
                     <asp:Label ID="lbl2EmpType"
                         runat="server"
-                        Text="Employee Type"
+                        Text="Employee Type:"
                         AssociatedControlID="txtEmpType"></asp:Label>
                     <asp:TextBox ID="txtEmpType"
                         runat="server"
+                        CssClass="form-control"
                         Text='<%# Bind("EmployeeType") %>'></asp:TextBox>
                 </div>
 
@@ -297,12 +340,37 @@
 
                     <asp:Label ID="lbl2StartDate"
                         runat="server"
-                        Text="Start Date"
+                        Text="Start Date:"
                         AssociatedControlID="txtStartDate"></asp:Label>
                     <asp:TextBox ID="txtStartDate"
                         runat="server"
+                        CssClass="form-control"
                         Text='<%# Bind("StartDate") %>'></asp:TextBox>
                 </div>
+
+                <div class="form-group">
+
+                    <asp:Label ID="lbl2ManagerID"
+                        runat="server"
+                        Text="Manager ID:"></asp:Label>
+                    <asp:TextBox ID="txtManagerID"
+                        runat="server"
+                        Text='<%# Bind("ManagerID") %>'
+                        CssClass="form-control"
+                        disabled></asp:TextBox>
+                </div>
+
+                <div class="form-group">
+                    <asp:Label ID="lbl2Department"
+                        runat="server"
+                        Text="Department:"></asp:Label>
+                    <asp:TextBox ID="txtDepartment"
+                        runat="server"
+                        Text='<%# Bind("Departmentname") %>'
+                        CssClass="form-control"
+                        disabled></asp:TextBox>
+                </div>
+
 
                 <asp:LinkButton ID="lnkBtnUpdate"
                     runat="server"
@@ -318,15 +386,6 @@
 
             </div>
             
-
-            
-
-            
-
-           
-
-
-
         </EditItemTemplate>
                 
     </asp:FormView>

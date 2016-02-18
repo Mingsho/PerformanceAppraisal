@@ -11,6 +11,11 @@ namespace PA.BLL.DTO
     /// </summary>
     public class Employee
     {
+
+        //string strManagerName = "";
+        string strDepartmentName = "";
+        string strTitleName = "";
+
         public int? EmployeeID { get; set; }
         public string Firstname { get; set; }
         public string Middlename { get; set; }
@@ -25,10 +30,50 @@ namespace PA.BLL.DTO
         public string Email { get; set; }
         public string EmployeeType { get; set; }
         public DateTime? StartDate { get; set; }
+
         public int? ManagerID { get; set; }
+
+        //public string ManagerName 
+        //{ 
+        //    get
+        //    {
+        //        return strManagerName;
+        //    }
+        //    set
+        //    {
+        //        strManagerName = value;
+        //    }
+        //}
+
+        public string DepartmentName
+        {
+            get
+            {
+                return strDepartmentName;
+            }
+            set
+            {
+                strDepartmentName = value;
+            }
+        }
+
+        public string TitleName
+        {
+            get
+            {
+                return strTitleName;
+            }
+            set
+            {
+                strTitleName = value;
+            }
+
+        }
+
         public Guid? UserAccountID { get; set; }
         public int? DepartmentID { get; set; }
         public byte[] ProfileImage { get; set; }
         public int TitleID { get; set; }
+
     }
 }

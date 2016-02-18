@@ -3926,10 +3926,13 @@ FROM            tbl_Employee";
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DepartmentID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "DeptID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"SELECT        EmpID, Firstname, Middlename, Lastname, DateOfBirth, HouseUnitNo, Streetname, Suburb, City, Postcode, ContactNumber, Email, EmployeeType, StartDate, ManagerID, UserAccountID, DeptID, ProfileImage, 
-                         TitleID
-FROM            tbl_Employee
-WHERE EmpID=@EmpID";
+            this._commandCollection[2].CommandText = @"SELECT        tbl_Employee.EmpID, tbl_Employee.Firstname, tbl_Employee.Middlename, tbl_Employee.Lastname, tbl_Employee.DateOfBirth, tbl_Employee.HouseUnitNo, tbl_Employee.Streetname, tbl_Employee.Suburb, 
+                         tbl_Employee.City, tbl_Employee.Postcode, tbl_Employee.ContactNumber, tbl_Employee.Email, tbl_Employee.EmployeeType, tbl_Employee.StartDate, tbl_Employee.ManagerID, tbl_Employee.UserAccountID, 
+                         tbl_Employee.DeptID, tbl_Employee.ProfileImage, tbl_Employee.TitleID, tbl_Department.Departmentname, tbl_Title.JobTitle
+FROM            tbl_Employee INNER JOIN
+                         tbl_Department ON tbl_Employee.DeptID = tbl_Department.DepartmentID INNER JOIN
+                         tbl_Title ON tbl_Employee.TitleID = tbl_Title.TitleID
+WHERE        (tbl_Employee.EmpID = @EmpID)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EmpID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "EmpID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
