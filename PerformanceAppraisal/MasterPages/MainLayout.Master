@@ -7,7 +7,8 @@
     <title><%= Page.Title %></title>
 
     <asp:PlaceHolder ID="pnlCoreStyles" runat="server">
-    <%: System.Web.Optimization.Styles.Render("~/CoreStyles") %>
+        <%: System.Web.Optimization.Styles.Render("~/CoreStyles")%>
+        <%: System.Web.Optimization.Styles.Render("~/LessStyles")%>
     </asp:PlaceHolder>
      <asp:ContentPlaceHolder ID="headContent" runat="server">
     </asp:ContentPlaceHolder>

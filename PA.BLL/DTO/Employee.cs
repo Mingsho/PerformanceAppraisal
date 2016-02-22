@@ -33,18 +33,6 @@ namespace PA.BLL.DTO
 
         public int? ManagerID { get; set; }
 
-        //public string ManagerName 
-        //{ 
-        //    get
-        //    {
-        //        return strManagerName;
-        //    }
-        //    set
-        //    {
-        //        strManagerName = value;
-        //    }
-        //}
-
         public string DepartmentName
         {
             get

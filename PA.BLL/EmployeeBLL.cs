@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
+using PA.DAL;
 using PA.DAL.PaDataSetTableAdapters;
 using PA.BLL.DTO;
 using System.Data;
+
 
 
 
@@ -136,6 +138,30 @@ namespace PA.BLL
                 employee = null;
 
             return employee;
+        }
+
+        /// <summary>
+        /// Return account username by Employee ID
+        /// </summary>
+        /// <param name="nEmpId">The employee ID to pass</param>
+        /// <returns>The username of the employee</returns>
+        public string GetUsernameByEmployeeId(int nEmpId)
+        {
+            string strUsername = "";
+
+            UserBLL userLogic = new UserBLL();
+
+            PaDataSet.tbl_EmployeeDataTable empDtTable = Adapter.GetEmployeeByID(nEmpId);
+
+            if(empDtTable.Rows.Count>0)
+            {
+                Guid empUserId = (Guid)empDtTable.Rows[0]["UserAccountID"];
+
+                strUsername = userLogic.GetUsernameById(empUserId);
+
+            }
+
+            return strUsername;
         }
 
         /// <summary>
@@ -287,22 +313,14 @@ namespace PA.BLL
             return bRetVal;
         }
 
-        public bool DeleteEmployee(int nEmployeeID)
+        public int DeleteEmployee(int nEmployeeID)
         {
-            bool bRetVal = false;
 
-            PA.DAL.PaDataSet.tbl_EmployeeDataTable empDtTable = new DAL.PaDataSet.tbl_EmployeeDataTable();
-            PA.DAL.PaDataSet.tbl_EmployeeRow empRow = empDtTable.Rows.Find(nEmployeeID) as PA.DAL.PaDataSet.tbl_EmployeeRow;
+            int nRetVal = 0;
 
-            if(empRow!=null)
-            {
-                empRow.Delete();
-                empDtTable.AcceptChanges();
-                bRetVal = true;
-            }
+            nRetVal = Adapter.Delete(nEmployeeID);
 
-            return bRetVal;
-
+            return nRetVal;
         }
 
         public bool UpdateEmployee(Employee employee)

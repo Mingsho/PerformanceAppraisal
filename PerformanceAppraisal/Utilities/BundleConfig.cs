@@ -16,6 +16,9 @@ namespace PerformanceAppraisal.Utilities
                 "~/Content/sb-admin-2.css",
                 "~/Content/font-awesome.min.css"));
 
+            bundles.Add(new StyleBundle("~/LessStyles").Include("~/Content/mixins.less",
+                "~/Content/sb-admin-2.less", "~/Content/variables.ess"));
+
             bundles.Add(new StyleBundle("~/CustomStyles").Include("~/Content/jquery-ui.css"));
 
             //The core javascripts

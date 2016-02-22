@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.Security;
 using PA.BLL;
 using PA.DAL.PaDataSetTableAdapters;
 using PerformanceAppraisal.Utilities;
@@ -35,6 +36,8 @@ namespace PerformanceAppraisal.Administration
 
             int nDeptId = int.Parse(dListDepartment.SelectedValue);
 
+            ViewState["deptId"] = nDeptId;
+
             BindGridView(nDeptId);
         }
 
@@ -50,11 +53,6 @@ namespace PerformanceAppraisal.Administration
 
             BindGridView(nDepartmentID);
           
-        }
-
-        protected void lnkBtnDelete_Click(object sender, EventArgs e)
-        {
-            
         }
 
         protected void grdEmployees_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -74,7 +72,18 @@ namespace PerformanceAppraisal.Administration
         {
             int nEmpID = Convert.ToInt32(grdEmployees.DataKeys[e.RowIndex].Value);
 
-            Response.Write(nEmpID.ToString());
+            string strUsername = empLogic.GetUsernameByEmployeeId(nEmpID);
+
+            if(Membership.DeleteUser(strUsername,true))
+                empLogic.DeleteEmployee(nEmpID);
+
+            if(ViewState["deptId"]!=null)
+            {
+                int nDeptId = int.Parse(ViewState["deptId"].ToString());
+                BindGridView(nDeptId);
+            }
+
+            //BindGridView();
 
         }
 

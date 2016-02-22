@@ -2,12 +2,17 @@
 <%@ MasterType VirtualPath="~/MasterPages/MainLayout.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="headContent" runat="server">
+    <link rel="stylesheet" href="../Content/jquery-ui.css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="mainContent" runat="server">
     <div class="panel panel-default">
+
         <div class="panel-heading">Manage employee roles</div>
+
         <div class="panel-body">
+
             <div class="row">
+
                 <div class="col-lg-6">
                     <div class="form-group">
                         <asp:Label ID="lblDepartment"
@@ -20,6 +25,9 @@
                         </asp:DropDownList>
                     </div>
                 </div>
+            </div> <!--row-->
+
+            <div class="row">
                 <div class="col-lg-12">
                     <div class="form-group">
                         <asp:GridView ID="grdEmployees"
@@ -46,18 +54,28 @@
                                        <asp:LinkButton ID="lnkBtnDelete"
                                            Text="Delete"
                                            runat="server"
-                                           OnClick="lnkBtnDelete_Click"
                                            CommandName="Delete"
-                                           CommandArgument='<%# Container.DataItemIndex %>'></asp:LinkButton>
+                                           CommandArgument='<%# Container.DataItemIndex %>'></asp:LinkButton>|
+                                       <asp:LinkButton ID="lnkTest"
+                                           runat="server"
+                                           Text="ClickMe"></asp:LinkButton>
                                    </ItemTemplate>
                                </asp:TemplateField>
                            </Columns>
                         </asp:GridView>
                     </div>
                 </div>
-            </div><!--inner row-->
-            </div><!--panel body-->
-    </div><!--Panel-->
+            </div><!--row-->
+
+        </div><!--Panel-body-->
+    </div>
+    <div id="dialog-confirm" title="Empty the recycle bin?">
+  <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>These items will be permanently deleted and cannot be recovered. Are you sure?</p>
+</div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="footerContent" runat="server">
+    <%: System.Web.Optimization.Scripts.Render("~/CustomScripts") %>
+
+    <script type="text/javascript" src="../Scripts/Custom/myCustom1.js"></script>
+
 </asp:Content>
