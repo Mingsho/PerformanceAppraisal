@@ -69,13 +69,18 @@
 
         </div><!--Panel-body-->
     </div>
-    <div id="dialog-confirm" title="Empty the recycle bin?">
-  <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>These items will be permanently deleted and cannot be recovered. Are you sure?</p>
-</div>
+
+    <div id="dialog-confirm" title="Confirm delete?">
+        <p>
+            <span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>
+            All data related to the user will be deleted. Are you sure?
+        </p>
+    </div>
+
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="footerContent" runat="server">
     <%: System.Web.Optimization.Scripts.Render("~/CustomScripts") %>
 
-    <script type="text/javascript" src="../Scripts/Custom/myCustom1.js"></script>
+    <script type="text/javascript" src="../Scripts/Custom/PAppraisalScript.js"></script>
 
 </asp:Content>

@@ -104,10 +104,10 @@
     <Content Include="Controls\UserRolesControl.ascx" />
     <Content Include="Index.aspx" />
     <Content Include="PositionDescription\PositionDescription.aspx" />
-    <Content Include="Scripts\Custom\myCustom1.js" />
     <Content Include="Scripts\jquery-ui.js" />
     <Content Include="Scripts\jquery.min.js" />
     <Content Include="Scripts\metisMenu.min.js" />
+    <Content Include="Scripts\Custom\PAppraisalScript.js" />
     <Content Include="Scripts\sb-admin-2.js" />
     <Content Include="Scripts\Validation\departmentValidation.js" />
     <Content Include="Scripts\Validation\jquery.validate.min.js" />
