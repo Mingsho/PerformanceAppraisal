@@ -23,6 +23,8 @@
                    description="Create and manage employee position description"
                    roles="SuperAdmin">
         <siteMapNode url="~/PositionDescription/PositionDescription.aspx" title="Position Description"/>
+        <siteMapNode url="~/PositionDescription/EmployeeList.aspx" title="Employee List"/>
+        
       </siteMapNode>
       
       <!-- User profile Node -->

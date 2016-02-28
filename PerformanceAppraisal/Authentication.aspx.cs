@@ -25,8 +25,13 @@ namespace PerformanceAppraisal
             if (Membership.ValidateUser(lgnUser.UserName, lgnUser.Password))
                 e.Authenticated = true;
             else
-                ClientScript.RegisterClientScriptBlock(this.GetType(), 
-                    "ShowErrorDiv", "$('#errorDiv').show();", true);
+            {
+                //ClientScript.RegisterClientScriptBlock(this.GetType(),
+                //    "ShowErrorDiv", "$('#errorDiv').show();", true);
+
+
+            }
+                
         }
 
         //event handler after the user is authenticated.

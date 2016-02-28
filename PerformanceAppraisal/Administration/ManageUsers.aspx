@@ -56,9 +56,7 @@
                                            runat="server"
                                            CommandName="Delete"
                                            CommandArgument='<%# Container.DataItemIndex %>'></asp:LinkButton>|
-                                       <asp:LinkButton ID="lnkTest"
-                                           runat="server"
-                                           Text="ClickMe"></asp:LinkButton>
+                                       
                                    </ItemTemplate>
                                </asp:TemplateField>
                            </Columns>

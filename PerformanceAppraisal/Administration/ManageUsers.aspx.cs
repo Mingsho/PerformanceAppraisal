@@ -83,7 +83,6 @@ namespace PerformanceAppraisal.Administration
                 BindGridView(nDeptId);
             }
 
-            //BindGridView();
 
         }
 

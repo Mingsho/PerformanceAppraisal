@@ -102,7 +102,23 @@
     <Content Include="Administration\AddDepartment.aspx" />
     <Content Include="Administration\AdminIndex.aspx" />
     <Content Include="Controls\UserRolesControl.ascx" />
+    <Content Include="images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="images\ui-bg_flat_55_fbec88_40x100.png" />
+    <Content Include="images\ui-bg_glass_75_d0e5f5_1x400.png" />
+    <Content Include="images\ui-bg_glass_85_dfeffc_1x400.png" />
+    <Content Include="images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="images\ui-bg_gloss-wave_55_5c9ccc_500x100.png" />
+    <Content Include="images\ui-bg_inset-hard_100_f5f8f9_1x100.png" />
+    <Content Include="images\ui-bg_inset-hard_100_fcfdfd_1x100.png" />
+    <Content Include="images\ui-icons_217bc0_256x240.png" />
+    <Content Include="images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="images\ui-icons_469bdd_256x240.png" />
+    <Content Include="images\ui-icons_6da8d5_256x240.png" />
+    <Content Include="images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="images\ui-icons_d8e7f3_256x240.png" />
+    <Content Include="images\ui-icons_f9bd01_256x240.png" />
     <Content Include="Index.aspx" />
+    <Content Include="PositionDescription\EmployeeList.aspx" />
     <Content Include="PositionDescription\PositionDescription.aspx" />
     <Content Include="Scripts\jquery-ui.js" />
     <Content Include="Scripts\jquery.min.js" />
@@ -126,7 +142,7 @@
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Images\defaultProfileImage1.png" />
+    <Content Include="images\defaultProfileImage1.png" />
     <Content Include="Handlers\ImageHandler.ashx" />
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
@@ -231,6 +247,13 @@
     </Compile>
     <Compile Include="MasterPages\UserMaster.Master.designer.cs">
       <DependentUpon>UserMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="PositionDescription\EmployeeList.aspx.cs">
+      <DependentUpon>EmployeeList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PositionDescription\EmployeeList.aspx.designer.cs">
+      <DependentUpon>EmployeeList.aspx</DependentUpon>
     </Compile>
     <Compile Include="PositionDescription\PositionDescription.aspx.cs">
       <DependentUpon>PositionDescription.aspx</DependentUpon>

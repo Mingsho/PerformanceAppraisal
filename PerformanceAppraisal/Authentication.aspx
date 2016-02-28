@@ -17,7 +17,7 @@
             UserNameRequiredErrorMessage="test"
             RenderOuterTable="False"
             DisplayRememberMe="true"
-            FailureText="There was an error while trying to log you in.">
+            FailureText="Incorrect username or password. Please try again!">
 
             <LayoutTemplate>
                 <div class="container">
@@ -78,19 +78,24 @@
                                             CommandName="Login"
                                             Text="Log In"
                                             ValidationGroup="lgnUser"
-                                            CssClass="btn btn-lg btn-success btn-block"/>
+                                            CssClass="btn btn-lg btn-primary btn-block"/>
 
                                     </fieldset>
 
                                 </div>
                             </div>
 
-                            <div id="errorDiv" class="alert alert-danger fade in" role="alert">
+                            <asp:Label ID="FailureText" 
+                                runat="server">
+                            </asp:Label>
+
+                            <%--<div id="errorDiv" class="alert alert-danger fade in" role="alert">
                                 <a href="#" class="close" data-dismiss="alert">&times;</a>
                                 <!--The literal displays the error text.-->
                                 <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
                                 <asp:Literal ID="FailureText" runat="server"></asp:Literal>
-                            </div>
+                            </div>--%>
+
                         </div> <!--end col-md-4-->
 
                     </div> <!-- end row-->
@@ -104,17 +109,8 @@
     </form>
 
     <%: System.Web.Optimization.Scripts.Render("CoreScripts") %>
-    <%: System.Web.Optimization.Scripts.Render("ValidationScripts") %>
 
-    <%--<script type="text/javascript">
-
-        $(document).ready(function () {
-
-            $("#errorDiv").hide();
-
-            
-        });
-    </script>--%>
+    <script src="Scripts/Custom/PAppraisalScript.js"></script>
 
 </body>
 </html>

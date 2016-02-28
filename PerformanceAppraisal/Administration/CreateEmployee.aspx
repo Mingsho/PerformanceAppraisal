@@ -19,7 +19,7 @@
                             runat="server"
                             Height="225px"
                             Width="225px"
-                            ImageUrl="~/Images/defaultProfileImage1.png" BorderStyle="Solid" BorderWidth="1px" />
+                            ImageUrl="~/images/defaultProfileImage1.png" BorderStyle="Solid" BorderWidth="1px" />
 
                         <ajaxToolkit:AsyncFileUpload ID="fUploadProfilePic"
                                 runat="server"
