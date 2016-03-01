@@ -13,6 +13,15 @@ namespace PerformanceAppraisal.PositionDescription {
     public partial class EmployeeList {
         
         /// <summary>
+        /// sqlDepartmentDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource sqlDepartmentDataSource;
+        
+        /// <summary>
         /// lblDepartment control.
         /// </summary>
         /// <remarks>
@@ -29,6 +38,15 @@ namespace PerformanceAppraisal.PositionDescription {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList dListDepartment;
+        
+        /// <summary>
+        /// sqlUserDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource sqlUserDataSource;
         
         /// <summary>
         /// grdUserList control.
