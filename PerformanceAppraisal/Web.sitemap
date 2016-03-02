@@ -19,16 +19,13 @@
       </siteMapNode>
       
       <!-- Position Description Node-->
-      <siteMapNode url="" title="Position Description" icon="fa fa-trophy fa-fw"
-                   description="Create and manage employee position description"
+      <siteMapNode url="~/PositionDescription/EmployeeList.aspx" title="Position Description"
+                   icon="fa fa-trophy fa-fw"
+                   description="View and update employee position description"
                    roles="SuperAdmin">
-        <siteMapNode url="~/PositionDescription/PositionDescription.aspx" title="Position Description"/>
-        <siteMapNode url="~/PositionDescription/EmployeeList.aspx" title="Employee List"/>
-        
       </siteMapNode>
       
       <!-- User profile Node -->
-
       <siteMapNode url="~/UserPages/UserProfile.aspx" title="My Profile" icon="fa fa-user fa-fw"
                    description="View and edit basic profile"
                    roles="User">

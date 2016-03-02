@@ -114,7 +114,12 @@
                                     </ItemTemplate>
                                 </asp:TemplateField>
 
-                                <asp:CommandField ShowEditButton="true" EditText="View PD" />
+                                <asp:ButtonField CommandName="ViewPD"
+                                    ButtonType="Button"
+                                    HeaderText="View PD"
+                                    Text="View"
+                                    ControlStyle-CssClass="btn btn-primary" />
+                                    
 
                             </Columns>
 
