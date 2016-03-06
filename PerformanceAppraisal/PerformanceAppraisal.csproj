@@ -119,6 +119,7 @@
     <Content Include="images\ui-icons_f9bd01_256x240.png" />
     <Content Include="Index.aspx" />
     <Content Include="PositionDescription\EmployeeList.aspx" />
+    <Content Include="PositionDescription\EmployeePD.aspx" />
     <Content Include="PositionDescription\PositionDescription.aspx" />
     <Content Include="Scripts\jquery-ui.js" />
     <Content Include="Scripts\jquery.min.js" />
@@ -254,6 +255,13 @@
     </Compile>
     <Compile Include="PositionDescription\EmployeeList.aspx.designer.cs">
       <DependentUpon>EmployeeList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PositionDescription\EmployeePD.aspx.cs">
+      <DependentUpon>EmployeePD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PositionDescription\EmployeePD.aspx.designer.cs">
+      <DependentUpon>EmployeePD.aspx</DependentUpon>
     </Compile>
     <Compile Include="PositionDescription\PositionDescription.aspx.cs">
       <DependentUpon>PositionDescription.aspx</DependentUpon>

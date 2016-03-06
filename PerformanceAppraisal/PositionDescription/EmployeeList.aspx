@@ -69,7 +69,8 @@
                             AllowSorting="true"
                             role="grid"
                             DataKeyNames="EmpID"
-                            CssClass="table-condensed">
+                            CssClass="table-condensed"
+                            OnRowCommand="grdUserList_RowCommand">
 
                             <Columns>
                                 <asp:BoundField HeaderText="Employee ID"
@@ -114,12 +115,11 @@
                                     </ItemTemplate>
                                 </asp:TemplateField>
 
-                                <asp:ButtonField CommandName="ViewPD"
-                                    ButtonType="Button"
+                                <asp:ButtonField ButtonType="Button"
+                                    CommandName="ViewPD"
                                     HeaderText="View PD"
                                     Text="View"
                                     ControlStyle-CssClass="btn btn-primary" />
-                                    
 
                             </Columns>
 

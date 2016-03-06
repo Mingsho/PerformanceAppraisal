@@ -11,50 +11,50 @@ namespace PA.BLL
 {
     public class ResponsibilityBLL
     {
-        private tbl_ResponsibilitiesTableAdapter tblResponsibilityTblAdapter;
-        private DutyBLL dutyLogic = new DutyBLL();
+        //private tbl_ResponsibilitiesTableAdapter tblResponsibilityTblAdapter;
+        //private DutyBLL dutyLogic = new DutyBLL();
 
-        protected tbl_ResponsibilitiesTableAdapter Adapter
-        {
-            get
-            {
-                if (tblResponsibilityTblAdapter == null)
-                    tblResponsibilityTblAdapter = new tbl_ResponsibilitiesTableAdapter();
-                return tblResponsibilityTblAdapter;
-            }
-        }
+        //protected tbl_ResponsibilitiesTableAdapter Adapter
+        //{
+        //    get
+        //    {
+        //        if (tblResponsibilityTblAdapter == null)
+        //            tblResponsibilityTblAdapter = new tbl_ResponsibilitiesTableAdapter();
+        //        return tblResponsibilityTblAdapter;
+        //    }
+        //}
 
-        public bool AddResponsibility(Responsibility responsibility)
-        {
-            bool bRetVal = false;
+        //public bool AddResponsibility(Responsibility responsibility)
+        //{
+        //    bool bRetVal = false;
 
-            PA.DAL.PaDataSet.tbl_ResponsibilitiesDataTable responsibilityDtable = new PaDataSet.
-                tbl_ResponsibilitiesDataTable();
-            PA.DAL.PaDataSet.tbl_ResponsibilitiesRow responsibilityRow = responsibilityDtable.Newtbl_ResponsibilitiesRow();
+        //    PA.DAL.PaDataSet.tbl_ResponsibilitiesDataTable responsibilityDtable = new PaDataSet.
+        //        tbl_ResponsibilitiesDataTable();
+        //    PA.DAL.PaDataSet.tbl_ResponsibilitiesRow responsibilityRow = responsibilityDtable.Newtbl_ResponsibilitiesRow();
 
-            responsibilityRow.Responsibility = responsibility.ResponsibilityDesc;
-            //responsibilityRow.TitleID = responsibility.TitleID;
-            responsibilityRow.EmpID = responsibility.EmpID;
+        //    responsibilityRow.Responsibility = responsibility.ResponsibilityDesc;
+        //    //responsibilityRow.TitleID = responsibility.TitleID;
+        //    responsibilityRow.EmpID = responsibility.EmpID;
 
-            responsibilityDtable.Addtbl_ResponsibilitiesRow(responsibilityRow);
+        //    responsibilityDtable.Addtbl_ResponsibilitiesRow(responsibilityRow);
 
-            int nRowsAffected = Adapter.Update(responsibilityDtable);
+        //    int nRowsAffected = Adapter.Update(responsibilityDtable);
 
-            int nResponsibilityId = responsibilityRow.ResponsibilityID;
+        //    int nResponsibilityId = responsibilityRow.ResponsibilityID;
 
-            foreach(Duty duty in responsibility.LstDuties)
-            {
-                duty.ResponsibilityID = nResponsibilityId;
-                dutyLogic.AddDuty(duty);
+        //    foreach(Duty duty in responsibility.LstDuties)
+        //    {
+        //        duty.ResponsibilityID = nResponsibilityId;
+        //        dutyLogic.AddDuty(duty);
 
-            }
+        //    }
 
-            if (nRowsAffected > 0)
-                bRetVal = true;
+        //    if (nRowsAffected > 0)
+        //        bRetVal = true;
 
-            return bRetVal;
+        //    return bRetVal;
 
-        }
+        //}
 
     }
 }

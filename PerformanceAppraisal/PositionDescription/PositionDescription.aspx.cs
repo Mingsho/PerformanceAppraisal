@@ -121,8 +121,8 @@ namespace PerformanceAppraisal.PositionDescription
                 }
             }
 
-            if (responsiblityLogic.AddResponsibility(responsibility))
-                Response.Write("Responsiblity successfully added!");
+            //if (responsiblityLogic.AddResponsibility(responsibility))
+            //    Response.Write("Responsiblity successfully added!");
         }
 
         protected void dListDepartment_SelectedIndexChanged(object sender, EventArgs e)
