@@ -43,9 +43,11 @@
     <Compile Include="DepartmentBLL.cs" />
     <Compile Include="DTO\Department.cs" />
     <Compile Include="DTO\Duty.cs" />
+    <Compile Include="DTO\PositionDescription.cs" />
     <Compile Include="DTO\Responsibility.cs" />
     <Compile Include="DTO\Employee.cs" />
     <Compile Include="DTO\User.cs" />
+    <Compile Include="DTO\WorkStandard.cs" />
     <Compile Include="DutyBLL.cs" />
     <Compile Include="EmployeeBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

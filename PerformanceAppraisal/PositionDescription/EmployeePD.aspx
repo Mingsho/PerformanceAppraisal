@@ -12,10 +12,11 @@
         SelectCommand="SELECT * FROM [tbl_PositionDescription]
                        WHERE EmpID=@EmpID"
         InsertCommand="INSERT INTO tbl_PositionDescription
-                       VALUES(@EmpID,@PosPurpose)">
+                       VALUES(@EmpID,@PosPurpose)"
+        OnSelected="sqlPdDataSource_Selected">
 
         <SelectParameters>
-            <asp:QueryStringParameter 
+            <asp:QueryStringParameter Name="EmpID" DbType="Int32" QueryStringField="EmpID" />
         </SelectParameters>
 
         <InsertParameters>
@@ -26,22 +27,42 @@
     
     <div class="panel panel-default">
 
-        <div class="panel-heading">Employee Position description</div>
+        <div class="panel-heading">
+            <h3 class="panel-title">Employee Position description</h3>
+        </div>
 
         <div class="panel-body">
+
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        Position Description
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        Test: Mingsho Nembang
+                    </div>
+                </div>
+            </div>
 
             <div class="row">
 
                 <asp:FormView ID="frmViewPd"
                     runat="server"
                     RenderOuterTable="false"
-                    DataSourceID="sqlPdDataSource">
+                    DataSourceID="sqlPdDataSource"
+                    DefaultMode="Insert"
+                    OnDataBound="frmViewPd_DataBound">
+
+                  
 
                     <InsertItemTemplate>
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <asp:Label ID="lblPositionPurpose"
                                     runat="server"
+                                    Text="Position Purpose"
                                     AssociatedControlID="txtPurpose"></asp:Label>
                                 <asp:TextBox ID="txtPurpose"
                                     runat="server"
@@ -62,7 +83,7 @@
 
                         </div>
                     </InsertItemTemplate>
-
+                    
                 </asp:FormView>
                     
             </div>

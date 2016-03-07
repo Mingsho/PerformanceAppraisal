@@ -12,126 +12,127 @@ namespace PerformanceAppraisal.PositionDescription
 {
     public partial class PositionDescription : ThemedPage
     {
-        TitleBLL titleLogic = new TitleBLL();
-        DepartmentBLL deptLogic = new DepartmentBLL();
-        EmployeeBLL empLogic = new EmployeeBLL();
-        ResponsibilityBLL responsiblityLogic = new ResponsibilityBLL();
+        //    TitleBLL titleLogic = new TitleBLL();
+        //    DepartmentBLL deptLogic = new DepartmentBLL();
+        //    EmployeeBLL empLogic = new EmployeeBLL();
+        //    ResponsibilityBLL responsiblityLogic = new ResponsibilityBLL();
 
-        private void CreateControl(string strId, int nIndex)
-        {
-            Label lblTemp = new Label();
-            lblTemp.ID="lblDuty"+ nIndex;
-            lblTemp.Text = "Duty" + nIndex;
-            lblTemp.AssociatedControlID = strId + nIndex;
-            pnlDuties.Controls.Add(lblTemp);
-            
+        //    private void CreateControl(string strId, int nIndex)
+        //    {
+        //        Label lblTemp = new Label();
+        //        lblTemp.ID="lblDuty"+ nIndex;
+        //        lblTemp.Text = "Duty" + nIndex;
+        //        lblTemp.AssociatedControlID = strId + nIndex;
+        //        pnlDuties.Controls.Add(lblTemp);
 
-            TextBox txtTemp = new TextBox();
-            txtTemp.ID = strId + nIndex;
-            txtTemp.TextMode = TextBoxMode.MultiLine;
-            pnlDuties.Controls.Add(txtTemp);
 
-            Literal lt = new Literal();
-            lt.Text = "<br/>";
-            pnlDuties.Controls.Add(lt);
-        }
+        //        TextBox txtTemp = new TextBox();
+        //        txtTemp.ID = strId + nIndex;
+        //        txtTemp.TextMode = TextBoxMode.MultiLine;
+        //        pnlDuties.Controls.Add(txtTemp);
 
-        private void InitializeComponents()
-        {
-            dListDepartment.DataSource = deptLogic.GetDepartments();
-            dListDepartment.DataTextField = "Departmentname";
-            dListDepartment.DataValueField = "DepartmentID";
-            dListDepartment.SelectedIndex = 1;
-            dListDepartment.DataBind();
+        //        Literal lt = new Literal();
+        //        lt.Text = "<br/>";
+        //        pnlDuties.Controls.Add(lt);
+        //    }
 
-            //Bind the employees dropdownlist
-            BindEmployees();
-            
-        }
+        //    private void InitializeComponents()
+        //    {
+        //        dListDepartment.DataSource = deptLogic.GetDepartments();
+        //        dListDepartment.DataTextField = "Departmentname";
+        //        dListDepartment.DataValueField = "DepartmentID";
+        //        dListDepartment.SelectedIndex = 1;
+        //        dListDepartment.DataBind();
 
-        private void BindEmployees()
-        {
-            int nDeptId = int.Parse(dListDepartment.SelectedValue);
+        //        //Bind the employees dropdownlist
+        //        BindEmployees();
 
-            dListEmployee.DataSource = empLogic.GetEmployees(nDeptId);
-            dListEmployee.DataTextField = "Firstname";
-            dListEmployee.DataValueField = "EmpID";
-            dListEmployee.DataBind();
-        }
+        //    }
 
-        /// <summary>
-        /// recreating the controls that was created dynamically after postback.
-        /// all controls with the key "txtDuty" is retrieved from the Request.Forms
-        /// foreach of these keys the CreateTextBox method is called.
-        /// </summary>
-        /// <param name="e"></param>
-        protected override void OnPreInit(EventArgs e)
-        {
-            //child control's init event is fired before that of parents.
-            //this method is called to prevent this.
-            this.PrepareChildControlsDuringPreint();
+        //    private void BindEmployees()
+        //    {
+        //        int nDeptId = int.Parse(dListDepartment.SelectedValue);
 
-            List<string> keys = Request.Form.AllKeys.Where(key => key.Contains("txtDuty")).ToList();
-            int i = 1;
+        //        dListEmployee.DataSource = empLogic.GetEmployees(nDeptId);
+        //        dListEmployee.DataTextField = "Firstname";
+        //        dListEmployee.DataValueField = "EmpID";
+        //        dListEmployee.DataBind();
+        //    }
 
-            foreach(string key in keys)
-            {
-                this.CreateControl("txtDuty", i);
-                i++;
-            }
+        //    /// <summary>
+        //    /// recreating the controls that was created dynamically after postback.
+        //    /// all controls with the key "txtDuty" is retrieved from the Request.Forms
+        //    /// foreach of these keys the CreateTextBox method is called.
+        //    /// </summary>
+        //    /// <param name="e"></param>
+        //    protected override void OnPreInit(EventArgs e)
+        //    {
+        //        //child control's init event is fired before that of parents.
+        //        //this method is called to prevent this.
+        //        this.PrepareChildControlsDuringPreint();
 
-            base.OnPreInit(e);
-        }
+        //        List<string> keys = Request.Form.AllKeys.Where(key => key.Contains("txtDuty")).ToList();
+        //        int i = 1;
 
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            if (!Page.IsPostBack)
-            {
-                InitializeComponents();
-                this.Master.PageHeading = "Employee Position Description";
-            }
-            
-        }
+        //        foreach(string key in keys)
+        //        {
+        //            this.CreateControl("txtDuty", i);
+        //            i++;
+        //        }
 
-        protected void btnAddDuty_Click(object sender, EventArgs e)
-        {
-            //get the count of textbox in the pnlduties control.
-            int nIndex = pnlDuties.Controls.OfType<TextBox>().ToList().Count + 1;
-            this.CreateControl("txtDuty", nIndex);
-        }
+        //        base.OnPreInit(e);
+        //    }
 
-        protected void btnAdd_Click(object sender, EventArgs e)
-        {
-            Responsibility responsibility = new Responsibility();
+        //    protected void Page_Load(object sender, EventArgs e)
+        //    {
+        //        if (!Page.IsPostBack)
+        //        {
+        //            InitializeComponents();
+        //            this.Master.PageHeading = "Employee Position Description";
+        //        }
 
-            responsibility.ResponsibilityID = null;
-            responsibility.ResponsibilityDesc = txtResponsibility.Text;
-            responsibility.EmpID = int.Parse(dListEmployee.SelectedValue);
+        //    }
 
-            foreach(Control ctrl in pnlDuties.Controls)
-            {
-                Duty duty = new Duty();
+        //    protected void btnAddDuty_Click(object sender, EventArgs e)
+        //    {
+        //        //get the count of textbox in the pnlduties control.
+        //        int nIndex = pnlDuties.Controls.OfType<TextBox>().ToList().Count + 1;
+        //        this.CreateControl("txtDuty", nIndex);
+        //    }
 
-                if(ctrl is TextBox)
-                {
-                    duty.DutyID = null;
-                    duty.DutyDescription = ((TextBox)ctrl).Text;
+        //    protected void btnAdd_Click(object sender, EventArgs e)
+        //    {
+        //        Responsibility responsibility = new Responsibility();
 
-                    responsibility.LstDuties.Add(duty);
-                }
-            }
+        //        responsibility.ResponsibilityID = null;
+        //        responsibility.ResponsibilityDesc = txtResponsibility.Text;
+        //        responsibility.EmpID = int.Parse(dListEmployee.SelectedValue);
 
-            //if (responsiblityLogic.AddResponsibility(responsibility))
-            //    Response.Write("Responsiblity successfully added!");
-        }
+        //        foreach(Control ctrl in pnlDuties.Controls)
+        //        {
+        //            Duty duty = new Duty();
 
-        protected void dListDepartment_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //bind employees dropdownlist 
-            //when the selected index is changed.
-            BindEmployees();
-        }
+        //            if(ctrl is TextBox)
+        //            {
+        //                duty.DutyID = null;
+        //                duty.DutyDescription = ((TextBox)ctrl).Text;
 
-        
+        //                responsibility.LstDuties.Add(duty);
+        //            }
+        //        }
+
+        //        //if (responsiblityLogic.AddResponsibility(responsibility))
+        //        //    Response.Write("Responsiblity successfully added!");
+        //    }
+
+        //    protected void dListDepartment_SelectedIndexChanged(object sender, EventArgs e)
+        //    {
+        //        //bind employees dropdownlist 
+        //        //when the selected index is changed.
+        //        BindEmployees();
+        //    }
+
+
+        //}
     }
 }

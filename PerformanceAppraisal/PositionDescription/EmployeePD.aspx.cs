@@ -15,6 +15,21 @@ namespace PerformanceAppraisal.PositionDescription
             if(!Page.IsPostBack)
             {
                 this.Master.PageHeading = "Position Description";
+
+                frmViewPd.DefaultMode = FormViewMode.ReadOnly;
+            }
+        }
+
+        protected void sqlPdDataSource_Selected(object sender, SqlDataSourceStatusEventArgs e)
+        {
+            frmViewPd.DefaultMode = FormViewMode.Insert;
+        }
+
+        protected void frmViewPd_DataBound(object sender, EventArgs e)
+        {
+            if(frmViewPd.PageCount==0)
+            {
+                frmViewPd.ChangeMode(FormViewMode.Insert);
             }
         }
     }
