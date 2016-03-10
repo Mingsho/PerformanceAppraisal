@@ -26,7 +26,7 @@ namespace PerformanceAppraisal
                 e.Authenticated = true;
             else
             {
-                //ClientScript.RegisterClientScriptBlock(this.GetType(),
+                //ClientScript.RegisterStartupScript(this.GetType(),
                 //    "ShowErrorDiv", "$('#errorDiv').show();", true);
 
 

@@ -17,7 +17,7 @@ namespace PerformanceAppraisal.PositionDescription
         //    EmployeeBLL empLogic = new EmployeeBLL();
         //    ResponsibilityBLL responsiblityLogic = new ResponsibilityBLL();
 
-        //    private void CreateControl(string strId, int nIndex)
+        //    private void CreateResponsibility(string strId, int nIndex)
         //    {
         //        Label lblTemp = new Label();
         //        lblTemp.ID="lblDuty"+ nIndex;
@@ -76,7 +76,7 @@ namespace PerformanceAppraisal.PositionDescription
 
         //        foreach(string key in keys)
         //        {
-        //            this.CreateControl("txtDuty", i);
+        //            this.CreateResponsibility("txtDuty", i);
         //            i++;
         //        }
 
@@ -97,7 +97,7 @@ namespace PerformanceAppraisal.PositionDescription
         //    {
         //        //get the count of textbox in the pnlduties control.
         //        int nIndex = pnlDuties.Controls.OfType<TextBox>().ToList().Count + 1;
-        //        this.CreateControl("txtDuty", nIndex);
+        //        this.CreateResponsibility("txtDuty", nIndex);
         //    }
 
         //    protected void btnAdd_Click(object sender, EventArgs e)

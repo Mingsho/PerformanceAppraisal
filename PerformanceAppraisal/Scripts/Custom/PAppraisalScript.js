@@ -27,20 +27,15 @@
 
     });
 
+    $('#errorDiv').hide();
 
-    //$('#errorDiv').hide();
+    $('[id$="LoginButton"]').click(function () {
 
-    //var loginForm = $('#form1');
+        
+        $('#errorDiv').show();
+        
+    });
 
-    //loginForm.submit(function () {
-
-    //    if ($(this).valid()) {
-
-    //        alert('Form is valid');
-    //    }
-    //    else
-    //    {
-    //        alert('form is not valid');
-    //    }
-    //});
+    
 });
+

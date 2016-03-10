@@ -6,6 +6,19 @@
 
 <asp:Content ID="childMainContent" ContentPlaceHolderID="mainContent" runat="server">
 
+    <asp:SqlDataSource ID="sqlEmpDataSource"
+        runat="server"
+        ConnectionString="<%$ ConnectionStrings:performanceDbConnectionString %>"
+        SelectCommand="SELECT E.Firstname, E.Lastname, E.EmployeeType,T.JobTitle 
+                       FROM tbl_Employee AS E INNER JOIN tbl_Title AS T ON 
+                       E.TitleID=T.TitleID WHERE E.EmpID=@EmpID">
+
+        <SelectParameters>
+            <asp:QueryStringParameter Name="EmpID" DbType="Int32" QueryStringField="EmpID" />
+        </SelectParameters>
+
+    </asp:SqlDataSource>
+
     <asp:SqlDataSource ID="sqlPdDataSource"
         runat="server"
         ConnectionString="<%$ ConnectionStrings:performanceDbConnectionString %>"
@@ -41,7 +54,23 @@
                 </div>
                 <div class="panel-body">
                     <div class="form-group">
-                        Test: Mingsho Nembang
+                        <asp:FormView ID="frmEmpDesc"
+                            runat="server"
+                            DataSourceID="sqlEmpDataSource">
+
+                            <ItemTemplate>
+                                <asp:Label ID="lblfname"
+                                    runat="server"
+                                    Text='<%# Eval("Firstname") %>'></asp:Label><br />
+                                <asp:Label ID="lblJbTitle"
+                                    runat="server"
+                                    Text='<%# Eval("JobTitle") %>'></asp:Label><br />
+                                <asp:Label ID="EmployeeType"
+                                    runat="server"
+                                    Text='<%# Eval("EmployeeType") %>'></asp:Label>
+                            </ItemTemplate>
+
+                        </asp:FormView>
                     </div>
                 </div>
             </div>
@@ -68,17 +97,20 @@
                                     runat="server"
                                     Text=""></asp:TextBox>
                             </div>
-                            <div class="form-group">
-                                <asp:Button ID="btnAddResponsibility"
-                                    runat="server"
-                                    Text="Add Responsibility"
-                                    CssClass="btn btn-primary" />
-                            </div>
+                            
                             <div class="form-group">
                                 <asp:PlaceHolder ID="pholderResponsibilities"
                                     runat="server">
 
                                 </asp:PlaceHolder>
+                            </div>
+
+                            <div class="form-group">
+                                <asp:Button ID="btnAddResponsibility"
+                                    runat="server"
+                                    Text="Add Responsibility"
+                                    CssClass="btn btn-primary"
+                                    OnClick="btnAddResponsibility_Click" />
                             </div>
 
                         </div>

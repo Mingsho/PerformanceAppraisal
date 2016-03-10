@@ -6,6 +6,7 @@
 <head runat="server">
     <title></title>
     <%: System.Web.Optimization.Styles.Render("CoreStyles") %>
+    <%: System.Web.Optimization.Scripts.Render("CoreScripts") %>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -85,16 +86,16 @@
                                 </div>
                             </div>
 
-                            <asp:Label ID="FailureText" 
+                            <%--<asp:Label ID="FailureText" 
                                 runat="server">
-                            </asp:Label>
+                            </asp:Label>--%>
 
-                            <%--<div id="errorDiv" class="alert alert-danger fade in" role="alert">
+                            <div id="errorDiv" class="alert alert-danger fade in" role="alert">
                                 <a href="#" class="close" data-dismiss="alert">&times;</a>
                                 <!--The literal displays the error text.-->
                                 <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
                                 <asp:Literal ID="FailureText" runat="server"></asp:Literal>
-                            </div>--%>
+                            </div>
 
                         </div> <!--end col-md-4-->
 
@@ -107,8 +108,6 @@
 
     </div>
     </form>
-
-    <%: System.Web.Optimization.Scripts.Render("CoreScripts") %>
 
     <script src="Scripts/Custom/PAppraisalScript.js"></script>
 
