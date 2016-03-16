@@ -95,7 +95,7 @@
                                     AssociatedControlID="txtPurpose"></asp:Label>
                                 <asp:TextBox ID="txtPurpose"
                                     runat="server"
-                                    Text=""></asp:TextBox>
+                                    TextMode="MultiLine"></asp:TextBox>
                             </div>
                             
                             <div class="form-group">

@@ -10,6 +10,20 @@ namespace PerformanceAppraisal.PositionDescription
 {
     public partial class EmployeePD : ThemedPage
     {
+
+        private int NumberOfControls
+        {
+            get
+            {
+                return (int)ViewState["controlCount"];
+            }
+            set
+            {
+                ViewState["controlCount"] = value;
+            }
+        }
+
+
         private void CreateResponsibility(string strId, int nIndex)
         {
             Label lblTemp = new Label();
@@ -17,50 +31,50 @@ namespace PerformanceAppraisal.PositionDescription
             lblTemp.Text = "Responsibility" + nIndex;
             lblTemp.AssociatedControlID = strId + nIndex;
 
-            PlaceHolder pHolderTemp = (PlaceHolder)frmViewPd.FindControl("pholderResponsibilities");
-            pHolderTemp.Controls.Add(lblTemp);
-
             TextBox textBoxTemp = new TextBox();
             textBoxTemp.ID = strId + nIndex;
             textBoxTemp.TextMode = TextBoxMode.MultiLine;
-            
 
+
+            PlaceHolder pHolderTemp = (PlaceHolder)frmViewPd.FindControl("pholderResponsibilities");
+
+            if (pHolderTemp == null)
+                pHolderTemp = (PlaceHolder)Session["pHolder"];
+            
+            pHolderTemp.Controls.Add(lblTemp);
             pHolderTemp.Controls.Add(textBoxTemp);
+
+            this.NumberOfControls++;
+
         }
 
-        /// <summary>
-        /// recreating the controls that are created dynamically
-        /// All controls with the matching key is retrieved from the Request.Forms Collection
-        /// foreach of these keys, the CreateResponsibility method is called
-        /// </summary>
-        /// <param name="e"></param>
-        protected override void OnPreInit(EventArgs e)
+
+        protected void RecreateControls()
         {
-            //Child controls init event is fired before that of the parents.
-            //this method is called to prevent that.
             this.PrepareChildControlsDuringPreint();
 
             List<string> keys = Request.Form.AllKeys.Where(key => key.Contains("txtResponsibility")).ToList();
 
             int i = 1;
 
-            foreach(string key in keys)
+            foreach (string key in keys)
             {
                 this.CreateResponsibility("txtResponsibility", i);
                 i++;
             }
-
-            base.OnPreInit(e);
         }
 
+        
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!Page.IsPostBack)
+            if (!Page.IsPostBack)
             {
                 this.Master.PageHeading = "Position Description";
-
-                //frmViewPd.DefaultMode = FormViewMode.ReadOnly;
+                this.NumberOfControls = 0;
             }
+            else
+                RecreateControls();
+
         }
 
         protected void sqlPdDataSource_Selected(object sender, SqlDataSourceStatusEventArgs e)
@@ -78,10 +92,8 @@ namespace PerformanceAppraisal.PositionDescription
 
         protected void btnAddResponsibility_Click(object sender, EventArgs e)
         {
-            PlaceHolder pHolderTemp = frmViewPd.FindControl("pholderResponsibilities") as PlaceHolder;
-
-            int nIndex = pHolderTemp.Controls.OfType<TextBox>().ToList().Count + 1;
-            this.CreateResponsibility("txtResponsibility", nIndex);
+            
+            this.CreateResponsibility("txtResponsibility", this.NumberOfControls);
         }
     }
 }
