@@ -7,39 +7,45 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PerformanceAppraisal.PositionDescription {
+namespace PerformanceAppraisal.Controls {
     
     
-    public partial class EmployeePD {
+    public partial class EmployeePositionDescription {
         
         /// <summary>
-        /// sqlPdDataSource control.
+        /// lblPosPurpose control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource sqlPdDataSource;
+        protected global::System.Web.UI.WebControls.Label lblPosPurpose;
         
         /// <summary>
-        /// frmViewPd control.
+        /// txtPosPurpose control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FormView frmViewPd;
+        protected global::System.Web.UI.WebControls.TextBox txtPosPurpose;
         
         /// <summary>
-        /// Master property.
+        /// btnAddResponsibility control.
         /// </summary>
         /// <remarks>
-        /// Auto-generated property.
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        public new PerformanceAppraisal.MasterPages.MainLayout Master {
-            get {
-                return ((PerformanceAppraisal.MasterPages.MainLayout)(base.Master));
-            }
-        }
+        protected global::System.Web.UI.WebControls.Button btnAddResponsibility;
+        
+        /// <summary>
+        /// pHolderResponsibilities control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder pHolderResponsibilities;
     }
 }

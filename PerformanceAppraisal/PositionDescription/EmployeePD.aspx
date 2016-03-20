@@ -2,11 +2,18 @@
 <%@ MasterType VirtualPath="~/MasterPages/MainLayout.Master" %>
 
 <asp:Content ID="childHeadContent" ContentPlaceHolderID="headContent" runat="server">
+    <style type="text/css">
+        .no-border {
+
+            border: 0;
+            box-shadow: none;
+        }
+    </style>
 </asp:Content>
 
 <asp:Content ID="childMainContent" ContentPlaceHolderID="mainContent" runat="server">
 
-    <asp:SqlDataSource ID="sqlEmpDataSource"
+    <%--<asp:SqlDataSource ID="sqlEmpDataSource"
         runat="server"
         ConnectionString="<%$ ConnectionStrings:performanceDbConnectionString %>"
         SelectCommand="SELECT E.Firstname, E.Lastname, E.EmployeeType,T.JobTitle 
@@ -17,24 +24,17 @@
             <asp:QueryStringParameter Name="EmpID" DbType="Int32" QueryStringField="EmpID" />
         </SelectParameters>
 
-    </asp:SqlDataSource>
+    </asp:SqlDataSource>--%>
 
     <asp:SqlDataSource ID="sqlPdDataSource"
         runat="server"
         ConnectionString="<%$ ConnectionStrings:performanceDbConnectionString %>"
         SelectCommand="SELECT * FROM [tbl_PositionDescription]
-                       WHERE EmpID=@EmpID"
-        InsertCommand="INSERT INTO tbl_PositionDescription
-                       VALUES(@EmpID,@PosPurpose)"
-        OnSelected="sqlPdDataSource_Selected">
+                       WHERE EmpID=@EmpID">
 
         <SelectParameters>
             <asp:QueryStringParameter Name="EmpID" DbType="Int32" QueryStringField="EmpID" />
         </SelectParameters>
-
-        <InsertParameters>
-
-        </InsertParameters>
 
     </asp:SqlDataSource>
     
@@ -46,7 +46,7 @@
 
         <div class="panel-body">
 
-            <div class="panel panel-primary">
+            <%--<div class="panel panel-primary">
                 <div class="panel-heading">
                     <h3 class="panel-title">
                         Position Description
@@ -56,35 +56,59 @@
                     <div class="form-group">
                         <asp:FormView ID="frmEmpDesc"
                             runat="server"
-                            DataSourceID="sqlEmpDataSource">
+                            DataSourceID="sqlPdDataSource">
 
                             <ItemTemplate>
-                                <asp:Label ID="lblfname"
-                                    runat="server"
-                                    Text='<%# Eval("Firstname") %>'></asp:Label><br />
-                                <asp:Label ID="lblJbTitle"
-                                    runat="server"
-                                    Text='<%# Eval("JobTitle") %>'></asp:Label><br />
-                                <asp:Label ID="EmployeeType"
-                                    runat="server"
-                                    Text='<%# Eval("EmployeeType") %>'></asp:Label>
+                                <div class="form-control no-border">
+                                    <label>Employee Name:</label>
+                                    <asp:Label ID="lblfname"
+                                        runat="server"
+                                        Text='<%# Eval("Firstname")+ " "+ Eval("Lastname") %>'></asp:Label>
+                                </div>
+
+                                <div class="form-control no-border">
+                                    <label>Job Title:</label>
+                                    <asp:Label ID="lblJbTitle"
+                                        runat="server"
+                                        Text='<%# Eval("JobTitle") %>'></asp:Label>
+
+                                </div>
+
+                                <div class="form-control no-border">
+                                    <label>Employee Type:</label>
+                                    <asp:Label ID="EmployeeType"
+                                        runat="server"
+                                        Text='<%# Eval("EmployeeType") %>'></asp:Label>
+                                </div>
                             </ItemTemplate>
 
                         </asp:FormView>
                     </div>
                 </div>
-            </div>
+            </div>--%>
 
             <div class="row">
 
                 <asp:FormView ID="frmViewPd"
                     runat="server"
                     RenderOuterTable="false"
-                    DataSourceID="sqlPdDataSource"
-                    DefaultMode="Insert"
-                    OnDataBound="frmViewPd_DataBound">
+                    DataSourceID="sqlPdDataSource">
 
-                  
+                    <EmptyDataTemplate>
+
+                        <div class="col-lg-6">
+                            <div class="alert alert-warning" role="alert">
+                                Position Description for the employee does not exist.
+                                Would you like to create one?
+                            </div>
+                            <asp:Button ID="btnCreatePD"
+                                runat="server"
+                                Text="Create Employee PD"
+                                OnClick="btnCreatePD_Click"
+                                class="btn btn-success" />
+                        </div>
+                        
+                    </EmptyDataTemplate>
 
                     <InsertItemTemplate>
                         <div class="col-lg-6">

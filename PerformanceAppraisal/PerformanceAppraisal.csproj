@@ -101,6 +101,7 @@
     <Content Include="Content\metisMenu.min.css" />
     <Content Include="Administration\AddDepartment.aspx" />
     <Content Include="Administration\AdminIndex.aspx" />
+    <Content Include="Controls\EmployeePositionDescription.ascx" />
     <Content Include="Controls\UserRolesControl.ascx" />
     <Content Include="images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="images\ui-bg_flat_55_fbec88_40x100.png" />
@@ -220,6 +221,13 @@
     </Compile>
     <Compile Include="Appraisal\SelfAssessment.aspx.designer.cs">
       <DependentUpon>SelfAssessment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\EmployeePositionDescription.ascx.cs">
+      <DependentUpon>EmployeePositionDescription.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\EmployeePositionDescription.ascx.designer.cs">
+      <DependentUpon>EmployeePositionDescription.ascx</DependentUpon>
     </Compile>
     <Compile Include="Controls\UserRolesControl.ascx.cs">
       <DependentUpon>UserRolesControl.ascx</DependentUpon>

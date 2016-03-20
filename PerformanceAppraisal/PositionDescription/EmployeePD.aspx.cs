@@ -23,7 +23,11 @@ namespace PerformanceAppraisal.PositionDescription
             }
         }
 
-
+        /// <summary>
+        /// Method to recreate the individual controls
+        /// </summary>
+        /// <param name="strId"></param>
+        /// <param name="nIndex"></param>
         private void CreateResponsibility(string strId, int nIndex)
         {
             Label lblTemp = new Label();
@@ -44,11 +48,11 @@ namespace PerformanceAppraisal.PositionDescription
             pHolderTemp.Controls.Add(lblTemp);
             pHolderTemp.Controls.Add(textBoxTemp);
 
-            this.NumberOfControls++;
-
         }
 
-
+        /// <summary>
+        /// Method to recreate the controls after a postback.
+        /// </summary>
         protected void RecreateControls()
         {
             this.PrepareChildControlsDuringPreint();
@@ -70,7 +74,7 @@ namespace PerformanceAppraisal.PositionDescription
             if (!Page.IsPostBack)
             {
                 this.Master.PageHeading = "Position Description";
-                this.NumberOfControls = 0;
+                this.NumberOfControls = 1;
             }
             else
                 RecreateControls();
@@ -82,18 +86,32 @@ namespace PerformanceAppraisal.PositionDescription
             frmViewPd.DefaultMode = FormViewMode.Insert;
         }
 
-        protected void frmViewPd_DataBound(object sender, EventArgs e)
-        {
-            if(frmViewPd.PageCount==0)
-            {
-                frmViewPd.ChangeMode(FormViewMode.Insert);
-            }
-        }
+        //protected void frmViewPd_DataBound(object sender, EventArgs e)
+        //{
+        //    if(frmViewPd.PageCount==0)
+        //    {
+        //        frmViewPd.ChangeMode(FormViewMode.Insert);
+        //    }
+        //}
 
         protected void btnAddResponsibility_Click(object sender, EventArgs e)
         {
             
             this.CreateResponsibility("txtResponsibility", this.NumberOfControls);
+            this.NumberOfControls++;
+        }
+
+        protected void btnCreatePD_Click(object sender, EventArgs e)
+        {
+
+            if(Request.QueryString["EmpID"]!=null)
+            {
+                int nEmployeeID = 0;
+                nEmployeeID = int.Parse(Request.QueryString["EmpID"].ToString());
+
+                Response.Redirect("~/PositionDescription/Test.aspx?EmpID=" + nEmployeeID);
+            }
+
         }
     }
 }
