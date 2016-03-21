@@ -109,7 +109,7 @@ namespace PerformanceAppraisal.PositionDescription
                 int nEmployeeID = 0;
                 nEmployeeID = int.Parse(Request.QueryString["EmpID"].ToString());
 
-                Response.Redirect("~/PositionDescription/Test.aspx?EmpID=" + nEmployeeID);
+                Response.Redirect("~/PositionDescription/PositionDescription.aspx?EmpID=" + nEmployeeID);
             }
 
         }
