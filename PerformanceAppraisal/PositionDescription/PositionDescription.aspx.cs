@@ -12,98 +12,57 @@ namespace PerformanceAppraisal.PositionDescription
 {
     public partial class PositionDescription : ThemedPage
     {
-        PositionDescriptionBLL pdLogic = new PositionDescriptionBLL();
+        protected enum PositionDescriptionStage
+        {
+            Responsibility,
+            Duties,
+            WorkStandards
+        };
 
-        public int NumberOfControls
+        protected int EmployeeID
         {
             get
             {
-                return (int)ViewState["countOfControls"];
-            }
-            set
-            {
-                ViewState["countOfControls"] = value;
+                //if (Request.QueryString["EmpID"] != null)
+                return Convert.ToInt32(Request.QueryString["EmpID"]);
             }
         }
-
-        /// <summary>
-        /// Method to create the actual controls for adding responsibility details
-        /// </summary>
-        /// <param name="strKey"></param>
-        /// <param name="nCount"></param>
-        protected void CreateResponsibilityControls(string strKey, int nCount)
-        {
-            Label lblTemp = new Label();
-            lblTemp.Text = "Responsibility" + nCount;
-            lblTemp.ID = "lblResponsibility" + nCount;
-            lblTemp.AssociatedControlID = "txtResponsibility" + nCount;
-
-            TextBox txtBoxTemp = new TextBox();
-            txtBoxTemp.ID = "txtResponsibility" + nCount;
-            txtBoxTemp.TextMode = TextBoxMode.MultiLine;
-
-            PlaceHolder pHolderTemp = (PlaceHolder)pHolderResponsibilities;
-
-            pHolderTemp.Controls.Add(lblTemp);
-            pHolderTemp.Controls.Add(txtBoxTemp);
-            
-        }
-
-        /// <summary>
-        /// Method to recreate the controls after postback
-        /// </summary>
-        protected void RecreateControls()
-        {
-            this.PrepareChildControlsDuringPreint();
-
-            //get a list of keys from the Name value collection
-            List<string> keys = Request.Form.AllKeys.Where(key => key.Contains("txtResponsibility")).ToList();
-
-            int i = 1;
-
-            foreach(string key in keys)
-            {
-                this.CreateResponsibilityControls("txtResponsibility", i);
-                i++;
-            }
-        }
-
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
             {
                 this.Master.PageHeading = "Employee Position Description";
-                this.NumberOfControls = 1;
+                ViewState["pdStage"] = PositionDescriptionStage.Responsibility;
+
+                LoadControl((PositionDescriptionStage)ViewState["pdStage"]);
+
             }
-            else
-                RecreateControls();
-
         }
 
-        protected void lnkBtnCreateResponsibility_Click(object sender, EventArgs e)
+        protected void LoadControl(PositionDescriptionStage pdStage)
         {
-            this.CreateResponsibilityControls("txtResponsibility", this.NumberOfControls);
-            this.NumberOfControls++;
-        }
-
-        protected void btnAddResponsibility_Click(object sender, EventArgs e)
-        {
-            PA.BLL.DTO.PositionDescription pDescription = new PA.BLL.DTO.PositionDescription();
-            PA.BLL.DTO.Responsibility responsibiliy = new Responsibility();
-
-            pDescription.PositionPurpose=txtPosPurpose.Text;
-
-            
-            foreach(Control cnt in pHolderResponsibilities.Controls)
+            switch(pdStage)
             {
-                if(cnt is TextBox)
-                {
-                    TextBox txtTemp = (TextBox)cnt;
-                    responsibiliy.ResponsibilityDesc = txtTemp.Text;
+                case PositionDescriptionStage.Responsibility:
+                    {
+                        Control ctrl = Page.LoadControl("~/Controls/UserResponsibilities.ascx");
+                        pHolderUserControls.Controls.Clear();
+                        pHolderUserControls.Controls.Add(ctrl);
+                        break;
+                    }
+
+                case PositionDescriptionStage.Duties:
+                    {
+                        break;
+                    }
+
+                case PositionDescriptionStage.WorkStandards:
+                    {
+                        break;
                 }
             }
         }
 
-        
     }
 }

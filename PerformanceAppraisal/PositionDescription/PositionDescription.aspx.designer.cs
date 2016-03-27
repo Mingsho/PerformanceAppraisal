@@ -13,49 +13,13 @@ namespace PerformanceAppraisal.PositionDescription {
     public partial class PositionDescription {
         
         /// <summary>
-        /// lblPosPurpose control.
+        /// pHolderUserControls control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPosPurpose;
-        
-        /// <summary>
-        /// txtPosPurpose control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPosPurpose;
-        
-        /// <summary>
-        /// pHolderResponsibilities control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder pHolderResponsibilities;
-        
-        /// <summary>
-        /// lnkBtnCreateResponsibility control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnkBtnCreateResponsibility;
-        
-        /// <summary>
-        /// btnAddResponsibility control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddResponsibility;
+        protected global::System.Web.UI.WebControls.PlaceHolder pHolderUserControls;
         
         /// <summary>
         /// Master property.

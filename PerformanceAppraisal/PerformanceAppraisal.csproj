@@ -130,7 +130,6 @@
     <Content Include="Scripts\sb-admin-2.js" />
     <Content Include="Scripts\Validation\departmentValidation.js" />
     <Content Include="Scripts\Validation\jquery.validate.min.js" />
-    <Content Include="UserControlTestPage.aspx" />
     <Content Include="Administration\CreateEmployee.aspx" />
     <Content Include="Administration\CreateTitle.aspx" />
     <Content Include="Administration\CreateUserAccount.aspx" />
@@ -285,13 +284,6 @@
     </Compile>
     <Compile Include="PositionDescription\PositionDescription.aspx.designer.cs">
       <DependentUpon>PositionDescription.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="UserControlTestPage.aspx.cs">
-      <DependentUpon>UserControlTestPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UserControlTestPage.aspx.designer.cs">
-      <DependentUpon>UserControlTestPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Administration\CreateEmployee.aspx.cs">
       <DependentUpon>CreateEmployee.aspx</DependentUpon>
