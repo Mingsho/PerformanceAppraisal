@@ -12,6 +12,7 @@ namespace PerformanceAppraisal.PositionDescription
 {
     public partial class PositionDescription : ThemedPage
     {
+        PositionDescriptionBLL pdLogic = new PositionDescriptionBLL();
 
         public int NumberOfControls
         {
@@ -25,7 +26,11 @@ namespace PerformanceAppraisal.PositionDescription
             }
         }
 
-
+        /// <summary>
+        /// Method to create the actual controls for adding responsibility details
+        /// </summary>
+        /// <param name="strKey"></param>
+        /// <param name="nCount"></param>
         protected void CreateResponsibilityControls(string strKey, int nCount)
         {
             Label lblTemp = new Label();
@@ -44,10 +49,14 @@ namespace PerformanceAppraisal.PositionDescription
             
         }
 
+        /// <summary>
+        /// Method to recreate the controls after postback
+        /// </summary>
         protected void RecreateControls()
         {
             this.PrepareChildControlsDuringPreint();
 
+            //get a list of keys from the Name value collection
             List<string> keys = Request.Form.AllKeys.Where(key => key.Contains("txtResponsibility")).ToList();
 
             int i = 1;
@@ -71,11 +80,30 @@ namespace PerformanceAppraisal.PositionDescription
 
         }
 
-
-        protected void btnAddResponsibility_Click(object sender, EventArgs e)
+        protected void lnkBtnCreateResponsibility_Click(object sender, EventArgs e)
         {
             this.CreateResponsibilityControls("txtResponsibility", this.NumberOfControls);
             this.NumberOfControls++;
         }
+
+        protected void btnAddResponsibility_Click(object sender, EventArgs e)
+        {
+            PA.BLL.DTO.PositionDescription pDescription = new PA.BLL.DTO.PositionDescription();
+            PA.BLL.DTO.Responsibility responsibiliy = new Responsibility();
+
+            pDescription.PositionPurpose=txtPosPurpose.Text;
+
+            
+            foreach(Control cnt in pHolderResponsibilities.Controls)
+            {
+                if(cnt is TextBox)
+                {
+                    TextBox txtTemp = (TextBox)cnt;
+                    responsibiliy.ResponsibilityDesc = txtTemp.Text;
+                }
+            }
+        }
+
+        
     }
 }

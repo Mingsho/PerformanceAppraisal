@@ -28,10 +28,26 @@
                            </asp:PlaceHolder>
                        </div>
 
-                       <asp:Button ID="btnAddResponsibility"
-                           runat="server"
-                           Text="Add Responsibility"
-                           OnClick="btnAddResponsibility_Click" />
+                       <div class="form-group">
+
+                           <asp:LinkButton ID="lnkBtnCreateResponsibility"
+                               runat="server"
+                               data-toggle="tooltip"
+                               data-placement="top"
+                               title="Add responsibilities"
+                               OnClick="lnkBtnCreateResponsibility_Click">
+
+                               <i class="fa fa-plus-circle fa-3x"></i>
+
+                           </asp:LinkButton>
+
+                           <asp:Button ID="btnAddResponsibility"
+                               runat="server"
+                               Enabled="false"
+                               Text="Add Responsibility(ies)"
+                               OnClick="btnAddResponsibility_Click" />
+
+                       </div>
 
                    </div>
                </div>

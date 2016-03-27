@@ -72,8 +72,6 @@
                             CssClass="table-condensed"
                             OnRowCommand="grdUserList_RowCommand">
 
-                            
-
                             <Columns>
                                 <asp:BoundField HeaderText="Employee ID"
                                     DataField="EmpID"
@@ -88,7 +86,6 @@
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                     
-                                
                                 <asp:TemplateField HeaderText="Firstname"
                                     SortExpression="Firstname">
                                     <ItemTemplate>
@@ -127,14 +124,11 @@
 
                         </asp:GridView>
                             
-
                     </div>
 
                 </div>
 
             </div>
-
-            
 
         </div>
     </div>

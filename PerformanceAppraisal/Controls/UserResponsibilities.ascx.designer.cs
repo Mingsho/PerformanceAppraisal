@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PerformanceAppraisal.PositionDescription {
+namespace PerformanceAppraisal.Controls {
     
     
-    public partial class PositionDescription {
+    public partial class UserResponsibilities {
         
         /// <summary>
         /// lblPosPurpose control.
@@ -56,17 +56,5 @@ namespace PerformanceAppraisal.PositionDescription {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAddResponsibility;
-        
-        /// <summary>
-        /// Master property.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated property.
-        /// </remarks>
-        public new PerformanceAppraisal.MasterPages.MainLayout Master {
-            get {
-                return ((PerformanceAppraisal.MasterPages.MainLayout)(base.Master));
-            }
-        }
     }
 }

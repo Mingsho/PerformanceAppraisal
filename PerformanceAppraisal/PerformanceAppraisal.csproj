@@ -101,6 +101,8 @@
     <Content Include="Content\metisMenu.min.css" />
     <Content Include="Administration\AddDepartment.aspx" />
     <Content Include="Administration\AdminIndex.aspx" />
+    <Content Include="Controls\UserDuties.ascx" />
+    <Content Include="Controls\UserResponsibilities.ascx" />
     <Content Include="Controls\UserRolesControl.ascx" />
     <Content Include="images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="images\ui-bg_flat_55_fbec88_40x100.png" />
@@ -220,6 +222,20 @@
     </Compile>
     <Compile Include="Appraisal\SelfAssessment.aspx.designer.cs">
       <DependentUpon>SelfAssessment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserDuties.ascx.cs">
+      <DependentUpon>UserDuties.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\UserDuties.ascx.designer.cs">
+      <DependentUpon>UserDuties.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserResponsibilities.ascx.cs">
+      <DependentUpon>UserResponsibilities.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\UserResponsibilities.ascx.designer.cs">
+      <DependentUpon>UserResponsibilities.ascx</DependentUpon>
     </Compile>
     <Compile Include="Controls\UserRolesControl.ascx.cs">
       <DependentUpon>UserRolesControl.ascx</DependentUpon>

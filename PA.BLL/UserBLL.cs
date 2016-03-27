@@ -11,6 +11,7 @@ namespace PA.BLL
 {
     class UserBLL
     {
+ 
         private UsersTableAdapter userAdapter = null;
 
         protected UsersTableAdapter Adapter
