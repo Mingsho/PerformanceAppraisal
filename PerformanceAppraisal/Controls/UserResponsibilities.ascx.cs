@@ -4,11 +4,27 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using PA.BLL;
+using PA.BLL.DTO;
 
 namespace PerformanceAppraisal.Controls
 {
     public partial class UserResponsibilities : System.Web.UI.UserControl
     {
+        int nEmployeeID = 0;
+
+        public int EmployeeID
+        {
+            get
+            {
+                return nEmployeeID;
+            }
+            set
+            {
+                nEmployeeID = value;
+            }
+        }
+
         protected int NumberOfControls
         {
 
@@ -52,6 +68,9 @@ namespace PerformanceAppraisal.Controls
 
             pHolder.Controls.Add(lblTemp);
             pHolder.Controls.Add(txtTemp);
+
+            if (btnAddResponsibility.Enabled == false)
+                btnAddResponsibility.Enabled = true;
         }
 
 
@@ -79,7 +98,30 @@ namespace PerformanceAppraisal.Controls
 
         protected void btnAddResponsibility_Click(object sender, EventArgs e)
         {
+            PositionDescriptionBLL pdLogic = new PositionDescriptionBLL();
+            PerformanceAppraisal.PositionDescription.PositionDescription pg = this.Parent as 
+                PerformanceAppraisal.PositionDescription.PositionDescription;
 
+            PA.BLL.DTO.PositionDescription pdBO = new PA.BLL.DTO.PositionDescription();
+
+            pdBO.EmpID = this.EmployeeID;
+
+            pdBO.PositionPurpose = txtPosPurpose.Text;
+
+            foreach(Control cnt in pHolderResponsibilities.Controls)
+            {
+                Responsibility responsibilityBO = new Responsibility();
+
+                if(cnt is TextBox)
+                {
+                    responsibilityBO.ResponsibilityDesc = ((TextBox)cnt).Text;
+                    pdBO.Responsibilities.Add(responsibilityBO);
+                }
+
+            }
+
+            ViewState["pdStage"] = PerformanceAppraisal.PositionDescription.PositionDescription.PositionDescriptionStage.Duties;
+            
         }
     }
 }

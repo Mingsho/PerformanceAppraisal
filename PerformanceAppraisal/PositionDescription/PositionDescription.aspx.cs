@@ -12,19 +12,21 @@ namespace PerformanceAppraisal.PositionDescription
 {
     public partial class PositionDescription : ThemedPage
     {
-        protected enum PositionDescriptionStage
+        public enum PositionDescriptionStage
         {
             Responsibility,
             Duties,
             WorkStandards
         };
 
-        protected int EmployeeID
+        public int EmployeeID
         {
             get
             {
-                //if (Request.QueryString["EmpID"] != null)
-                return Convert.ToInt32(Request.QueryString["EmpID"]);
+                if (Request.QueryString["EmpID"] != null)
+                    return Convert.ToInt32(Request.QueryString["EmpID"]);
+                else
+                    return 0;
             }
         }
         
@@ -38,6 +40,9 @@ namespace PerformanceAppraisal.PositionDescription
                 LoadControl((PositionDescriptionStage)ViewState["pdStage"]);
 
             }
+            else //if page is not a postback, reload the control based on the positiondescription stage
+                LoadControl((PositionDescriptionStage)ViewState["pdStage"]);
+            
         }
 
         protected void LoadControl(PositionDescriptionStage pdStage)
@@ -47,6 +52,7 @@ namespace PerformanceAppraisal.PositionDescription
                 case PositionDescriptionStage.Responsibility:
                     {
                         Control ctrl = Page.LoadControl("~/Controls/UserResponsibilities.ascx");
+                        ((PerformanceAppraisal.Controls.UserResponsibilities)ctrl).EmployeeID = this.EmployeeID;
                         pHolderUserControls.Controls.Clear();
                         pHolderUserControls.Controls.Add(ctrl);
                         break;

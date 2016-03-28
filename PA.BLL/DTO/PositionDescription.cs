@@ -20,6 +20,8 @@ namespace PA.BLL.DTO
         {
             get
             {
+                if (lstResponsibility == null)
+                    lstResponsibility = new List<Responsibility>();
                 return lstResponsibility;
             }
             set
