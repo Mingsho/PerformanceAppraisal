@@ -11,6 +11,10 @@ namespace PerformanceAppraisal.Controls
 {
     public partial class UserResponsibilities : System.Web.UI.UserControl
     {
+
+        public delegate void onAddResponsibilityClickEventHandler(object sender, EventArgs e);
+        public event onAddResponsibilityClickEventHandler onAddResponsibilityClickEvent;
+
         int nEmployeeID = 0;
 
         public int EmployeeID
@@ -120,7 +124,11 @@ namespace PerformanceAppraisal.Controls
 
             }
 
-            ViewState["pdStage"] = PerformanceAppraisal.PositionDescription.PositionDescription.PositionDescriptionStage.Duties;
+            //ViewState["pdStage"] = PerformanceAppraisal.PositionDescription.
+            //    PositionDescription.PositionDescriptionStage.Duties;
+
+            if (onAddResponsibilityClickEvent != null)
+                this.onAddResponsibilityClickEvent(this, new EventArgs());
             
         }
     }
