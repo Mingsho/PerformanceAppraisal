@@ -86,16 +86,11 @@
                                 </div>
                             </div>
 
-                            <%--<asp:Label ID="FailureText" 
-                                runat="server">
-                            </asp:Label>--%>
-
-                            <div id="errorDiv" class="alert alert-danger fade in" role="alert">
-                                <a href="#" class="close" data-dismiss="alert">&times;</a>
-                                <!--The literal displays the error text.-->
-                                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-                                <asp:Literal ID="FailureText" runat="server"></asp:Literal>
-                            </div>
+                            <asp:Label ID="FailureText" 
+                                runat="server"
+                                CssClass="alert alert-danger"
+                                Visible="false">
+                            </asp:Label>
 
                         </div> <!--end col-md-4-->
 

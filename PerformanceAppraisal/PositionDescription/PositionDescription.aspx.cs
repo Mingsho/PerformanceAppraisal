@@ -86,8 +86,6 @@ namespace PerformanceAppraisal.PositionDescription
         {
             pHolderUserControls.Controls.Remove((Control)sender);
 
-
-
             LoadControl(PositionDescriptionStage.Duties);
         }
 

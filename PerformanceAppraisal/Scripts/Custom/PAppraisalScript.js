@@ -27,24 +27,5 @@
 
     });
 
-    $('#errorDiv').hide();
-
-    $('#form1').submit(function (event) {
-
-        $('#errorDiv').show();
-        //event.preventDefault();
-    });
-
-    //$('[id$="LoginButton"]').click(function () {
-
-    //    if (!$('#form1')[0].checkValidity()) {
-    //        console.log("You have reached this part!");
-    //        $('#errorDiv').show();
-    //    }
-        
-        
-    //});
-
-    
 });
 

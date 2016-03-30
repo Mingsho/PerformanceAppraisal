@@ -124,9 +124,9 @@ namespace PerformanceAppraisal.Controls
 
             }
 
-            //ViewState["pdStage"] = PerformanceAppraisal.PositionDescription.
-            //    PositionDescription.PositionDescriptionStage.Duties;
+            Session["PDResponsibility"] = pdBO;
 
+            //Null Checks makes sure the parent/main page is attached to the event.
             if (onAddResponsibilityClickEvent != null)
                 this.onAddResponsibilityClickEvent(this, new EventArgs());
             

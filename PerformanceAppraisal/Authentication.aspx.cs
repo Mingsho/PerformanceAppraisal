@@ -26,10 +26,10 @@ namespace PerformanceAppraisal
                 e.Authenticated = true;
             else
             {
-                //ClientScript.RegisterStartupScript(this.GetType(),
-                //    "ShowErrorDiv", "$('#errorDiv').show();", true);
+                Label lblTemp = lgnUser.FindControl("FailureText") as Label;
+                lblTemp.Visible = true;
 
-
+                
             }
                 
         }

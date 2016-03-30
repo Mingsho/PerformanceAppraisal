@@ -1,7 +1,12 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="UserDuties.ascx.cs" Inherits="PerformanceAppraisal.Controls.UserDuties" %>
 
 
-<div>
+<div class="row">
 
-    <h3>This is the duties user control!!</h3>
+    <div class="col-lg-6">
+
+
+    </div>
+
+
 </div>
