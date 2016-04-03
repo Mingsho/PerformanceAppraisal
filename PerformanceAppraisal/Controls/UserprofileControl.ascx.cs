@@ -23,6 +23,8 @@ namespace PerformanceAppraisal.Controls
             {
                 FormViewBind();
             }
+
+            
         }
 
         /// <summary>

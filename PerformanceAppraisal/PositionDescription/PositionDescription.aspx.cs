@@ -31,12 +31,7 @@ namespace PerformanceAppraisal.PositionDescription
             }
         }
 
-       protected void Page_Init(object sender, EventArgs e)
-       {
-           //LoadControl(viewstate
-        
-       }
-
+       
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -57,27 +52,27 @@ namespace PerformanceAppraisal.PositionDescription
             switch(pdStage)
             {
                 case PositionDescriptionStage.Responsibility:
-                    {
-                        Control ctrl = Page.LoadControl("~/Controls/UserResponsibilities.ascx");
-                        ((PerformanceAppraisal.Controls.UserResponsibilities)ctrl).EmployeeID = this.EmployeeID;
-                        ((PerformanceAppraisal.Controls.UserResponsibilities)ctrl).onAddResponsibilityClickEvent += new PerformanceAppraisal.Controls.
-                            UserResponsibilities.onAddResponsibilityClickEventHandler(catchResponsibilityClickEvent);
-                        pHolderUserControls.Controls.Clear();
-                        pHolderUserControls.Controls.Add(ctrl);
-                        break;
-                    }
+                {
+                    Control ctrl = Page.LoadControl("~/Controls/UserResponsibilities.ascx");
+                    ((PerformanceAppraisal.Controls.UserResponsibilities)ctrl).EmployeeID = this.EmployeeID;
+                    ((PerformanceAppraisal.Controls.UserResponsibilities)ctrl).onAddResponsibilityClickEvent += new PerformanceAppraisal.Controls.
+                        UserResponsibilities.onAddResponsibilityClickEventHandler(catchResponsibilityClickEvent);
+                    pHolderUserControls.Controls.Clear();
+                    pHolderUserControls.Controls.Add(ctrl);
+                    break;
+                }
 
                 case PositionDescriptionStage.Duties:
-                    {
-                        Control ctrl = Page.LoadControl("~/Controls/UserDuties.ascx");
-                        pHolderUserControls.Controls.Clear();
-                        pHolderUserControls.Controls.Add(ctrl);
-                        break;
-                    }
+                {
+                    Control ctrl = Page.LoadControl("~/Controls/UserDuties.ascx");
+                    pHolderUserControls.Controls.Clear();
+                    pHolderUserControls.Controls.Add(ctrl);
+                    break;
+                }
 
                 case PositionDescriptionStage.WorkStandards:
-                    {
-                        break;
+                {
+                    break;
                 }
             }
         }

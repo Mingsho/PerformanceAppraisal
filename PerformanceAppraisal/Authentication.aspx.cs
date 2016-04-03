@@ -29,7 +29,6 @@ namespace PerformanceAppraisal
                 Label lblTemp = lgnUser.FindControl("FailureText") as Label;
                 lblTemp.Visible = true;
 
-                
             }
                 
         }

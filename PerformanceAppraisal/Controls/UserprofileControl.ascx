@@ -22,6 +22,7 @@
                         Height="225px"
                         Width="225px"
                         ImageUrl='<%# "~/Handlers/ImageHandler.ashx?empId="+Eval("EmpID") %>' 
+                        onerror="imgError(this)"
                         BorderStyle="Solid" BorderWidth="1px" />
 
                 </div>
@@ -169,7 +170,8 @@
                     runat="server"
                     Heigh="225px"
                     Width="225px"
-                    ImageUrl='<%# "~/Handlers/ImageHandler.ashx?empId="+Eval("EmpID") %>' 
+                    ImageUrl='<%# "~/Handlers/ImageHandler.ashx?empId="+Eval("EmpID") %>'
+                    onerror="imgError(this)" 
                     BorderStyle="Solid" BorderWidth="1px" />
 
                     &nbsp;
@@ -389,5 +391,13 @@
         </EditItemTemplate>
                 
     </asp:FormView>
+
+    <script type="text/javascript">
+
+        function imgError(objImage) {
+
+            objImage.src = "../images/defaultProfileImage1.png";
+        }
+    </script>
 
 </div>
