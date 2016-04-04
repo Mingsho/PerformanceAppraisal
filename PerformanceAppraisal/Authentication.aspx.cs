@@ -75,10 +75,6 @@ namespace PerformanceAppraisal
             }
             else
                 Response.Redirect(returnUrl);
-            
         }
-
-        
-
     }
 }

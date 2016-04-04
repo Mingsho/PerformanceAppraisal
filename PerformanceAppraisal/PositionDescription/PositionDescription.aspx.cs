@@ -36,7 +36,7 @@ namespace PerformanceAppraisal.PositionDescription
         {
             if (!Page.IsPostBack)
             {
-                this.Master.PageHeading = "Employee Position Description";
+                //this.Master.PageHeading = "Employee Position Description";
                 ViewState["pdStage"] = PositionDescriptionStage.Responsibility;
 
                 LoadControl((PositionDescriptionStage)ViewState["pdStage"]);
@@ -53,6 +53,7 @@ namespace PerformanceAppraisal.PositionDescription
             {
                 case PositionDescriptionStage.Responsibility:
                 {
+                    this.Master.PageHeading = "Add Employee Responsibilities";
                     Control ctrl = Page.LoadControl("~/Controls/UserResponsibilities.ascx");
                     ((PerformanceAppraisal.Controls.UserResponsibilities)ctrl).EmployeeID = this.EmployeeID;
                     ((PerformanceAppraisal.Controls.UserResponsibilities)ctrl).onAddResponsibilityClickEvent += new PerformanceAppraisal.Controls.
@@ -62,18 +63,23 @@ namespace PerformanceAppraisal.PositionDescription
                     break;
                 }
 
+
                 case PositionDescriptionStage.Duties:
                 {
+                    this.Master.PageHeading = "Add Employee Duties";
                     Control ctrl = Page.LoadControl("~/Controls/UserDuties.ascx");
                     pHolderUserControls.Controls.Clear();
                     pHolderUserControls.Controls.Add(ctrl);
                     break;
                 }
 
+
                 case PositionDescriptionStage.WorkStandards:
                 {
+                    this.Master.PageHeading = "Add Work Standards";
                     break;
                 }
+                
             }
         }
 
