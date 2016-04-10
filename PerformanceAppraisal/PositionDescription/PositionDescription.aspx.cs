@@ -31,19 +31,17 @@ namespace PerformanceAppraisal.PositionDescription
             }
         }
 
+        protected override void OnInit(EventArgs e)
+        {
+            base.OnInit(e);
+        }
        
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Page.IsPostBack)
-            {
-                //this.Master.PageHeading = "Employee Position Description";
+            if(!Page.IsPostBack)
                 ViewState["pdStage"] = PositionDescriptionStage.Responsibility;
 
-                LoadControl((PositionDescriptionStage)ViewState["pdStage"]);
-
-            }
-            else //if page is not a postback, reload the control based on the positiondescription stage
-                LoadControl((PositionDescriptionStage)ViewState["pdStage"]);
+            LoadControl((PositionDescriptionStage)ViewState["pdStage"]);
             
         }
 

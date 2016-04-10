@@ -24,6 +24,18 @@ namespace PerformanceAppraisal.Administration
                 this.Master.PageHeading = "Manage Users";
             }
                 
+        }
+
+        private int DepartmentSelectedID
+        {
+            get
+            {
+                return (int)ViewState["DeptSelectedID"];
+            }
+            set
+            {
+                ViewState["DeptSelectedID"] = value;
+            }
 
         }
 
@@ -36,7 +48,7 @@ namespace PerformanceAppraisal.Administration
 
             int nDeptId = int.Parse(dListDepartment.SelectedValue);
 
-            ViewState["deptId"] = nDeptId;
+            this.DepartmentSelectedID = nDeptId;
 
             BindGridView(nDeptId);
         }
@@ -49,9 +61,9 @@ namespace PerformanceAppraisal.Administration
 
         protected void dListDepartment_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int nDepartmentID = int.Parse(dListDepartment.SelectedValue);
+            this.DepartmentSelectedID = int.Parse(dListDepartment.SelectedValue);
 
-            BindGridView(nDepartmentID);
+            BindGridView(this.DepartmentSelectedID);
           
         }
 
@@ -77,15 +89,11 @@ namespace PerformanceAppraisal.Administration
             if(Membership.DeleteUser(strUsername,true))
                 empLogic.DeleteEmployee(nEmpID);
 
-            if(ViewState["deptId"]!=null)
-            {
-                int nDeptId = int.Parse(ViewState["deptId"].ToString());
-                BindGridView(nDeptId);
-            }
+            //display the employee list based on default selected dept id.
+            BindGridView(this.DepartmentSelectedID);
 
 
         }
 
-        
     }
 }

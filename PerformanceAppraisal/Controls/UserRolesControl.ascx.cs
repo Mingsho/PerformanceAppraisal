@@ -12,36 +12,45 @@ namespace PerformanceAppraisal.Controls
 {
     public partial class UserRolesControl : System.Web.UI.UserControl
     {
+
+        private int EmployeeID
+        {
+            get
+            {
+                return (int)ViewState["EmpID"];
+            }
+            set
+            {
+                ViewState["EmpID"] = value;
+            }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            EmployeeBLL empLogic = new EmployeeBLL();
-            DepartmentBLL deptLogic=new DepartmentBLL();
-
-            Employee employee=null;
-            Department department=null;
-
-            int nEmpId = 0;
-
+            
             if(!Page.IsPostBack)
-            {
-                //get employee id from the query string.
-                if(Request.QueryString["Id"]!=null)
-                {
-                    nEmpId = int.Parse(Request.QueryString["Id"]);
-                    ViewState["EmpId"] = nEmpId;
+                this.EmployeeID = int.Parse(Request.QueryString["Id"]);
 
-                }
-            }
+            LoadEmployeeDefaultValues();
+     
+        }
 
-            if (nEmpId == 0)
-                nEmpId = int.Parse(ViewState["EmpId"].ToString());
+        public void LoadEmployeeDefaultValues()
+        {
+            EmployeeBLL empLogic = new EmployeeBLL();
+            DepartmentBLL deptLogic = new DepartmentBLL();
 
-            employee = empLogic.GetEmployee(nEmpId);
+            Employee employee = empLogic.GetEmployee(this.EmployeeID);
 
-            department = deptLogic.GetDepartment(employee.DepartmentID.GetValueOrDefault());
+            Department department = deptLogic.GetDepartment(employee.DepartmentID.GetValueOrDefault());
 
             lblEmpId.Text = employee.EmployeeID.ToString();
-            lblEmpName.Text = employee.Firstname + " " + employee.Lastname;
+
+            if (!string.IsNullOrEmpty(employee.Middlename))
+                lblEmpName.Text = employee.Firstname + " " + employee.Middlename + " " + employee.Lastname;
+            else
+                lblEmpName.Text = employee.Firstname + " " + employee.Lastname;
+
             lblDepartment.Text = department.Departmentname;
 
             MembershipUser user = Membership.GetUser(employee.UserAccountID.GetValueOrDefault());
@@ -52,30 +61,28 @@ namespace PerformanceAppraisal.Controls
 
             int nIndex = 0;
 
-            foreach(string role in arrRoles)
+            foreach (string role in arrRoles)
             {
-                  
+
                 CheckBox chkTemp = new CheckBox();
                 chkTemp.ID = "chkRole" + nIndex;
                 chkTemp.Text = role;
                 chkTemp.AutoPostBack = true;
                 chkTemp.CheckedChanged += chkTemp_CheckedChanged;
 
-                foreach(string userRole in userRoles)
+                foreach (string userRole in userRoles)
                 {
                     if (userRole.Equals(role))
                         chkTemp.Checked = true;
                 }
-                        
-                pnlRoles.Controls.Add(chkTemp);
+
+                pHolderRoles.Controls.Add(chkTemp);
 
                 nIndex++;
             }
-                 
         }
-            
         
-
+        //get the selected roles for the user
         void chkTemp_CheckedChanged(object sender, EventArgs e)
         {
             CheckBox chk = sender as CheckBox;

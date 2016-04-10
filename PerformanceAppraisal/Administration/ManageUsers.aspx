@@ -55,6 +55,7 @@
                                            Text="Delete"
                                            runat="server"
                                            CommandName="Delete"
+                                           OnClientClick="return confirm('Are you sure you want to delete the selected record?');"
                                            CommandArgument='<%# Container.DataItemIndex %>'></asp:LinkButton>|
                                        
                                    </ItemTemplate>
@@ -68,17 +69,10 @@
         </div><!--Panel-body-->
     </div>
 
-    <div id="dialog-confirm" title="Confirm delete?">
-        <p>
-            <span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>
-            All data related to the user will be deleted. Are you sure?
-        </p>
-    </div>
-
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="footerContent" runat="server">
     <%: System.Web.Optimization.Scripts.Render("~/CustomScripts") %>
 
-    <script type="text/javascript" src="../Scripts/Custom/PAppraisalScript.js"></script>
+   
 
 </asp:Content>

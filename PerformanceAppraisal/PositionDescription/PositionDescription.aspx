@@ -1,4 +1,6 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPages/MainLayout.Master" Title="Employee Position Description" AutoEventWireup="true" CodeBehind="PositionDescription.aspx.cs" Inherits="PerformanceAppraisal.PositionDescription.PositionDescription" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPages/MainLayout.Master" Title="Employee Position Description" 
+    AutoEventWireup="true" CodeBehind="PositionDescription.aspx.cs" 
+    Inherits="PerformanceAppraisal.PositionDescription.PositionDescription" %>
 <%@ MasterType VirtualPath="~/MasterPages/MainLayout.Master" %>
 <%@ Register Src="~/Controls/UserResponsibilities.ascx" TagName="userResponsibilities" TagPrefix="usr" %>
 
