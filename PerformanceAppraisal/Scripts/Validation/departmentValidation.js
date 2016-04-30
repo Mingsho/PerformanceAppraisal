@@ -21,7 +21,7 @@
     $('#' + txtDeptName).rules("add", {
 
         required: true,
-        rangelength: [3, 25],
+        rangelength: [3, 50],
         messages: {
 
             required: "Department name cannot be blank!",

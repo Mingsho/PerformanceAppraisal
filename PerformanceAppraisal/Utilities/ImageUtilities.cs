@@ -24,22 +24,22 @@ namespace PerformanceAppraisal.Utilities
 
         public static System.Drawing.Image ConvertByteArrayToImage(byte[] bytArray)
         {
-            MemoryStream ms = new MemoryStream(bytArray);
-            System.Drawing.Image image = System.Drawing.Image.FromStream(ms);
-            return image;
+            
+            try
+            {
+                MemoryStream ms = new MemoryStream(bytArray);
+                System.Drawing.Image image = System.Drawing.Image.FromStream(ms);
+                return image;
+                
+            }
+            catch (ArgumentException ex)
+            {
+                
+                throw ex;
+            }
+
         }
 
-        //public static bool IsByteArrayValid(byte[] bytArr)
-        //{
-        //    if (bytArr == null) return false;
-
-            
-        //    for(int i=0; i<bytArr.Length;i++)
-        //    {
-        //        if (bytArr[i] == 0) return false;   
-        //    }
-            
-        //    return true;
-        //}
+       
     }
 }

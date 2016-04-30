@@ -20,12 +20,12 @@ namespace PerformanceAppraisal.Administration
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
-            //DepartmentBLL deptBll = new DepartmentBLL();
+            DepartmentBLL deptBll = new DepartmentBLL();
 
-            //if (deptBll.AddDepartment(txtDeptName.Text, txtDesc.Text))
-            //    Response.Write("New Department added");
-            //else
-            //    Response.Write("Unable to add new department");
+            if (deptBll.AddDepartment(txtDeptName.Text, txtDesc.Text))
+                Response.Write("New Department added");
+            else
+                Response.Write("Unable to add new department");
         }
     }
 }

@@ -27,10 +27,10 @@ namespace PerformanceAppraisal.Handlers
 
                 if(storedImage!=null)
                 {
-                    
+                   
                     System.Drawing.Image image = ImageUtilities.ConvertByteArrayToImage(storedImage);
 
-                    if(image!=null)
+                    if (image != null)
                     {
                         //get image mime-type
                         ImageFormat format = image.RawFormat;
@@ -39,8 +39,9 @@ namespace PerformanceAppraisal.Handlers
 
                         context.Response.ContentType = mimeType;
                         image.Save(context.Response.OutputStream, format);
-                        
+
                     }
+                    
                 }
                 //clear this session.
                 context.Session.Remove(EmployeeBLL.STORED_IMAGE);

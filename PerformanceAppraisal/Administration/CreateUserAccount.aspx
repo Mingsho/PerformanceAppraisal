@@ -1,27 +1,35 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CreateUserAccount.aspx.cs" Inherits="PerformanceAppraisal.Administration.CreateUserAccount" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MasterPages/MainLayout.Master" CodeBehind="CreateUserAccount.aspx.cs" Inherits="PerformanceAppraisal.Administration.CreateUserAccount" %>
 
-<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-        <asp:createuserwizard ID="createPaUserWizard"
-            runat="server"
-            CompleteSuccessText="User account has been successfully created!"
-            LoginCreatedUser="false"
-            OnCreatedUser="createPaUserWizard_CreatedUser" ContinueDestinationPageUrl="~/Administration/AdminIndex.aspx">
-            <WizardSteps>
-                <asp:CreateUserWizardStep ID="createPaUserWizardStep1" runat="server"/>
-                <asp:CompleteWizardStep ID="CompletePaUserWizardStep1" runat="server"/>
-            </WizardSteps>
-        </asp:createuserwizard>
 
+<asp:Content ID="childMainContent" ContentPlaceHolderID="mainContent" runat="server">
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+
+        </div>
+        <div class="panel-body">
+            <div class="row">
+
+                <div class="col-lg-6">
+
+                    <asp:createuserwizard ID="createPaUserWizard"
+                        runat="server"
+                        CompleteSuccessText="User account has been successfully created!"
+                        LoginCreatedUser="false"
+                        OnCreatedUser="createPaUserWizard_CreatedUser" 
+                        ContinueDestinationPageUrl="~/Administration/AdminIndex.aspx">
+                        
+                        <WizardSteps>
+                            <asp:CreateUserWizardStep ID="createPaUserWizardStep1" runat="server"/>
+                            <asp:CompleteWizardStep ID="CompletePaUserWizardStep1" runat="server"/>
+                        </WizardSteps>
+                    </asp:createuserwizard>
+                </div>
+
+            </div>
+        </div>
     </div>
-    </form>
-</body>
-</html>
+</asp:Content>
+
 
