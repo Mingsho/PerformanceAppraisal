@@ -2,6 +2,7 @@
 <%@ MasterType VirtualPath="~/MasterPages/MainLayout.Master" %>
 
 <asp:Content ID="childMainContent" ContentPlaceHolderID="mainContent" runat="server">
+
     <div class="panel panel-default">
         <div class="panel-heading">Department details</div>
         <div class="panel-body">
@@ -19,10 +20,10 @@
                             placeholder="Department name..."></asp:TextBox>
 
                         <asp:RequiredFieldValidator ID="reqDeptNameVal"
-                            runat="server" ControlToValidate="txtDeptName"
+                            runat="server" 
+                            ControlToValidate="txtDeptName"
                             ErrorMessage="Department name is required"
-                            ToolTip="Department name is required"
-                            EnableClientScript="false">
+                            ToolTip="Department name is required">
                         </asp:RequiredFieldValidator>
 
                     </div>
@@ -59,7 +60,7 @@
     </script>
 
    <%: System.Web.Optimization.Scripts.Render("~/ValidationScripts") %>
-    <script src="../Scripts/Validation/departmentValidation.js"></script>
+    <script src="../Scripts/Validation/coreValidation.js"></script>
 
 </asp:Content>
 

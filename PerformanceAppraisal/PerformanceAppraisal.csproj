@@ -127,7 +127,7 @@
     <Content Include="Scripts\metisMenu.min.js" />
     <Content Include="Scripts\Custom\PAppraisalScript.js" />
     <Content Include="Scripts\sb-admin-2.js" />
-    <Content Include="Scripts\Validation\departmentValidation.js" />
+    <Content Include="Scripts\Validation\coreValidation.js" />
     <Content Include="Scripts\Validation\jquery.validate.min.js" />
     <Content Include="Administration\CreateEmployee.aspx" />
     <Content Include="Administration\CreateTitle.aspx" />

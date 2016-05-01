@@ -16,7 +16,7 @@
                     <asp:createuserwizard ID="createPaUserWizard"
                         runat="server"
                         CompleteSuccessText="User account has been successfully created!"
-                        LoginCreatedUser="false"
+                        LoginCreatedUser="False"
                         OnCreatedUser="createPaUserWizard_CreatedUser" 
                         ContinueDestinationPageUrl="~/Administration/AdminIndex.aspx">
                         
