@@ -20,11 +20,7 @@ namespace PerformanceAppraisal.Controls
         {
             
             if(!Page.IsPostBack)
-            {
                 FormViewBind();
-            }
-
-            
         }
 
         /// <summary>
@@ -38,6 +34,7 @@ namespace PerformanceAppraisal.Controls
             if (userGuid != null)
             {
                 int nUserId = empLogic.GetEmployeeID(userGuid.ToString());
+                Session["currentEmpID"] = nUserId;
                 frmViewUserDetails.DataSource = empLogic.GetEmployeeByID(nUserId);
                 frmViewUserDetails.DataBind();
 
@@ -69,7 +66,29 @@ namespace PerformanceAppraisal.Controls
             TextBox tempTxtPostcode = (TextBox)frmViewUserDetails.FindControl("txtPostCode");
             TextBox tempTxtContactNo = (TextBox)frmViewUserDetails.FindControl("txtContactNo");
             TextBox tempTxtEmail = (TextBox)frmViewUserDetails.FindControl("txtEmail");
-            
+
+            if (Session["currentEmpID"] != null)
+                employee.EmployeeID = int.Parse(Session["currentEmpID"].ToString());
+
+            employee.Firstname = tempTxtFirstname.Text;
+            employee.Middlename = tempTxtMiddlename.Text;
+            employee.Lastname = tempTxtLastname.Text;
+            employee.DateofBirth = DateTime.Parse(tempTxtDob.Text);
+            employee.HouseUnitNo = tempTxtHouseUnitNo.Text;
+            employee.Streetname = tempTxtStreetname.Text;
+            employee.Suburb = tempTxtSuburb.Text;
+            employee.City = tempTxtCity.Text;
+            employee.Postcode = Int32.Parse(tempTxtPostcode.Text);
+            employee.ContactNumber = tempTxtContactNo.Text;
+            employee.Email = tempTxtEmail.Text;
+
+            bool bSuccessfulUpdate = empLogic.UpdateEmployee(employee);
+
+            if (bSuccessfulUpdate)
+            {
+                FormViewBind();
+            }
+
         }
 
         protected void frmViewUserDetails_ItemUpdated(object sender, FormViewUpdatedEventArgs e)

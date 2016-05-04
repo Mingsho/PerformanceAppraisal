@@ -327,6 +327,34 @@ namespace PA.BLL
         {
             bool retVal = false;
 
+            PaDataSet.tbl_EmployeeDataTable empDtTable = GetEmployees();
+
+            if (empDtTable.Count == 0)
+                return false;
+
+            foreach(PaDataSet.tbl_EmployeeRow empRow in empDtTable.Rows)
+            {
+                if(empRow.EmpID == employee.EmployeeID)
+                {
+                    empRow.Firstname = employee.Firstname;
+                    empRow.Middlename = employee.Middlename;
+                    empRow.Lastname = employee.Lastname;
+                    empRow.DateOfBirth = (DateTime)employee.DateofBirth;
+                    empRow.HouseUnitNo = employee.HouseUnitNo;
+                    empRow.Streetname = employee.Streetname;
+                    empRow.Suburb = employee.Suburb;
+                    empRow.City = employee.City;
+                    empRow.Postcode = (int)employee.Postcode;
+                    empRow.ContactNumber = employee.ContactNumber;
+                    empRow.Email = employee.Email;
+
+                    int nRowsAffected= Adapter.Update(empRow);
+
+                    if (nRowsAffected > 0)
+                        retVal = true;
+                }
+            }
+
             return retVal;
         }
         
