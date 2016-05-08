@@ -94,6 +94,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Administration\EditUserRole.aspx" />
+    <Content Include="Administration\ListEmployeeTitles.aspx" />
     <Content Include="Administration\ManageUsers.aspx" />
     <Content Include="Appraisal\BehaviouralCompetency.aspx" />
     <Content Include="Appraisal\SelfAssessment.aspx" />
@@ -199,6 +200,13 @@
     </Compile>
     <Compile Include="Administration\EditUserRole.aspx.designer.cs">
       <DependentUpon>EditUserRole.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\ListEmployeeTitles.aspx.cs">
+      <DependentUpon>ListEmployeeTitles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\ListEmployeeTitles.aspx.designer.cs">
+      <DependentUpon>ListEmployeeTitles.aspx</DependentUpon>
     </Compile>
     <Compile Include="Administration\ManageUsers.aspx.cs">
       <DependentUpon>ManageUsers.aspx</DependentUpon>
