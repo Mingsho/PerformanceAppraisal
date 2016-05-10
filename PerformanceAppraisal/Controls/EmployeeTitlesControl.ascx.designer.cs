@@ -7,19 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PerformanceAppraisal.Administration {
+namespace PerformanceAppraisal.Controls {
     
     
-    public partial class ListEmployeeTitles {
-        
-        /// <summary>
-        /// lnkCreateEmpTitle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnkCreateEmpTitle;
+    public partial class EmployeeTitlesControl {
         
         /// <summary>
         /// sqlDSourceEmpTitles control.
@@ -31,12 +22,12 @@ namespace PerformanceAppraisal.Administration {
         protected global::System.Web.UI.WebControls.SqlDataSource sqlDSourceEmpTitles;
         
         /// <summary>
-        /// grdEmployeeTitles control.
+        /// frmViewEmpTitles control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdEmployeeTitles;
+        protected global::System.Web.UI.WebControls.FormView frmViewEmpTitles;
     }
 }

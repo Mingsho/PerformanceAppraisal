@@ -11,21 +11,35 @@
 
             <div class="row">
 
+                <div class="col-lg-6">
+
+                    <div class="form-group">
+
+                        <asp:LinkButton ID="lnkCreateEmpTitle"
+                            runat="server"
+                            CssClass="btn btn-primary">
+
+                        <i class="fa fa-plus"></i>&nbsp;
+                        Create Employee Title
+                        </asp:LinkButton>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row">
+
                 <div class="col-lg-12">
-
-                    <asp:LinkButton ID="lnkBtnCreateEmployeeTitles"
-                        runat="server"
-                        Text="Create Employee Titles">
-
-                        <i class="fa fa-plus"></i>
-                    </asp:LinkButton>
 
                     <div class="form-group">
 
                         <asp:SqlDataSource ID="sqlDSourceEmpTitles"
                             runat="server"
                             ConnectionString='<%$ ConnectionStrings:performanceDbConnectionString %>'
-                            SelectCommand="SELECT * FROM tbl_Title"></asp:SqlDataSource>
+                            SelectCommand="SELECT * FROM tbl_Title">
+
+                        </asp:SqlDataSource>
 
                         <asp:GridView ID="grdEmployeeTitles"
                             runat="server"
@@ -36,8 +50,10 @@
                             AllowSorting="true"
                             role="grid"
                             DataKeyNames="TitleID"
-                            CssClass="table">
-
+                            CssClass="table table-striped
+                             table-bordered table-hover
+                             dataTable no-footer">
+                            
                             <Columns>
 
                                 <asp:BoundField HeaderText="Title ID"
@@ -52,30 +68,40 @@
                                             runat="server"
                                             Text='<%# Eval("JobTitle") %>'></asp:Label>
                                     </ItemTemplate>
+                                    <EditItemTemplate>
+                                        <asp:TextBox ID="txtTitleName"
+                                            runat="server"
+                                            Text='<%# Eval("JobTitle") %>'
+                                            CssClass="form-control"></asp:TextBox>
+                                    </EditItemTemplate>
                                 </asp:TemplateField>
 
                                 <asp:TemplateField HeaderText="Title Name">
                                     <ItemTemplate>
                                         <asp:Label ID="lblTitlePurpose"
                                             runat="server"
-                                            Text='<%# Eval("TitlePurpose") %>'></asp:Label>
+                                            Text='<%# Eval("TitlePurpose") %>'>
+                                        </asp:Label>
                                     </ItemTemplate>
+                                    <EditItemTemplate>
+                                        <asp:TextBox ID="txtTitlePurpose"
+                                            runat="server"
+                                            Text='<%# Eval("TitlePurpose") %>'
+                                            TextMode="MultiLine"
+                                            CssClass="form-control"></asp:TextBox>
+                                    </EditItemTemplate>
                                 </asp:TemplateField>
 
-                                <asp:ButtonField ButtonType="Button"
-                                    CommandName="Edit"
-                                    HeaderText="Edit Titles" />
+                                <asp:CommandField ShowEditButton="true" />
+                                <asp:CommandField ShowDeleteButton="true" />
 
                                 
                             </Columns>
 
-                            <EmptyDataTemplate>
-                                There are no Employee Titles to display.
-                            </EmptyDataTemplate>
-
                         </asp:GridView>
                     </div>
                 </div>
+
             </div>
 
         </div>

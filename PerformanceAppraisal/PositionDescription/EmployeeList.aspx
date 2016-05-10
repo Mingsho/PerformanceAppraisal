@@ -1,9 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPages/MainLayout.Master" AutoEventWireup="true" CodeBehind="EmployeeList.aspx.cs" Inherits="PerformanceAppraisal.PositionDescription.EmployeeList" %>
 <%@ MasterType VirtualPath="~/MasterPages/MainLayout.Master" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="headContent" runat="server">
+<asp:Content ID="childHeadContent" ContentPlaceHolderID="headContent" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="mainContent" runat="server">
+<asp:Content ID="childMainContent" ContentPlaceHolderID="mainContent" runat="server">
 
     <div class="panel panel-default">
         <div class="panel-heading">Employee List</div>
@@ -69,8 +69,10 @@
                             AllowSorting="true"
                             role="grid"
                             DataKeyNames="EmpID"
-                            CssClass="table-condensed"
-                            OnRowCommand="grdUserList_RowCommand">
+                            OnRowCommand="grdUserList_RowCommand"
+                            CssClass="table table-striped
+                             table-bordered table-hover
+                             dataTable no-footer">
 
                             <Columns>
                                 <asp:BoundField HeaderText="Employee ID"
@@ -134,5 +136,5 @@
     </div>
 
 </asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="footerContent" runat="server">
+<asp:Content ID="childFooterContent" ContentPlaceHolderID="footerContent" runat="server">
 </asp:Content>

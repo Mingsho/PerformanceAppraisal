@@ -102,6 +102,7 @@
     <Content Include="Content\metisMenu.min.css" />
     <Content Include="Administration\AddDepartment.aspx" />
     <Content Include="Administration\AdminIndex.aspx" />
+    <Content Include="Controls\EmployeeTitlesControl.ascx" />
     <Content Include="Controls\UserDuties.ascx" />
     <Content Include="Controls\UserResponsibilities.ascx" />
     <Content Include="Controls\UserRolesControl.ascx" />
@@ -228,6 +229,13 @@
     </Compile>
     <Compile Include="Appraisal\SelfAssessment.aspx.designer.cs">
       <DependentUpon>SelfAssessment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\EmployeeTitlesControl.ascx.cs">
+      <DependentUpon>EmployeeTitlesControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\EmployeeTitlesControl.ascx.designer.cs">
+      <DependentUpon>EmployeeTitlesControl.ascx</DependentUpon>
     </Compile>
     <Compile Include="Controls\UserDuties.ascx.cs">
       <DependentUpon>UserDuties.ascx</DependentUpon>
