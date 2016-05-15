@@ -68,5 +68,29 @@ namespace PA.BLL
                 return false;
             
         }
+
+        public bool UpdateTitle(Title title)
+        {
+            bool retVal = false;
+
+            PaDataSet.tbl_TitleDataTable tDataTable = GetTitles();
+
+            foreach(PaDataSet.tbl_TitleRow tRow in tDataTable)
+            {
+                if(tRow.TitleID==title.TitleID)
+                {
+                    tRow.JobTitle = title.JobTitle;
+                    tRow.TitlePurpose = title.TitlePurpose;
+
+                    int nRowsAffected = Adapter.Update(tRow);
+
+                    if (nRowsAffected > 0)
+                        retVal = true;
+                }
+            }
+
+            return retVal;
+
+        }
     }
 }

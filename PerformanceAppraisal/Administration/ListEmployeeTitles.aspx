@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPages/MainLayout.Master" AutoEventWireup="true" CodeBehind="ListEmployeeTitles.aspx.cs" Inherits="PerformanceAppraisal.Administration.ListEmployeeTitles" %>
-
+<%@ MasterType VirtualPath="~/MasterPages/MainLayout.Master" %>
 
 <asp:Content ID="childHeadContent" ContentPlaceHolderID="headContent" runat="server">
 </asp:Content>
@@ -17,10 +17,11 @@
 
                         <asp:LinkButton ID="lnkCreateEmpTitle"
                             runat="server"
-                            CssClass="btn btn-primary">
+                            CssClass="btn btn-primary"
+                            OnClick="lnkCreateEmpTitle_Click">
 
                         <i class="fa fa-plus"></i>&nbsp;
-                        Create Employee Title
+                        Add Employee Title
                         </asp:LinkButton>
 
                     </div>
@@ -37,7 +38,16 @@
                         <asp:SqlDataSource ID="sqlDSourceEmpTitles"
                             runat="server"
                             ConnectionString='<%$ ConnectionStrings:performanceDbConnectionString %>'
-                            SelectCommand="SELECT * FROM tbl_Title">
+                            SelectCommand="SELECT * FROM tbl_Title"
+                            UpdateCommand="UPDATE tbl_Title SET [JobTitle]=@jobTitle,
+                            [TitlePurpose]=@titlePurpose
+                            WHERE TitleID=@tId">
+
+                            <UpdateParameters>
+                                <asp:Parameter Name="jobTitle" DbType="String" />
+                                <asp:Parameter Name="titlePurpose" DbType="String" />
+                                <asp:Parameter Name="tId" DbType="Int32" />
+                            </UpdateParameters>
 
                         </asp:SqlDataSource>
 
@@ -52,7 +62,10 @@
                             DataKeyNames="TitleID"
                             CssClass="table table-striped
                              table-bordered table-hover
-                             dataTable no-footer">
+                             dataTable no-footer"
+                            OnRowEditing="grdEmployeeTitles_RowEditing"
+                            OnRowCancelingEdit="grdEmployeeTitles_RowCancelingEdit"
+                            OnRowUpdating="grdEmployeeTitles_RowUpdating">
                             
                             <Columns>
 
@@ -92,8 +105,13 @@
                                     </EditItemTemplate>
                                 </asp:TemplateField>
 
-                                <asp:CommandField ShowEditButton="true" />
-                                <asp:CommandField ShowDeleteButton="true" />
+                                <asp:CommandField ButtonType="Button" 
+                                    ShowEditButton="true" 
+                                    ControlStyle-CssClass="btn btn-primary" />
+
+                                <asp:CommandField ButtonType="Button" 
+                                    ShowDeleteButton="true"
+                                    ControlStyle-CssClass="btn btn-primary" />
 
                                 
                             </Columns>

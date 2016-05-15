@@ -10,34 +10,34 @@
 namespace PerformanceAppraisal.Administration {
     
     
-    public partial class ListEmployeeTitles {
+    public partial class ListDepartment {
         
         /// <summary>
-        /// lnkCreateEmpTitle control.
+        /// lnkBtnCreateDepartment control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnkCreateEmpTitle;
+        protected global::System.Web.UI.WebControls.LinkButton lnkBtnCreateDepartment;
         
         /// <summary>
-        /// sqlDSourceEmpTitles control.
+        /// sqlDSourceDepartments control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource sqlDSourceEmpTitles;
+        protected global::System.Web.UI.WebControls.SqlDataSource sqlDSourceDepartments;
         
         /// <summary>
-        /// grdEmployeeTitles control.
+        /// grdDepartment control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdEmployeeTitles;
+        protected global::System.Web.UI.WebControls.GridView grdDepartment;
         
         /// <summary>
         /// Master property.
