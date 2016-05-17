@@ -70,5 +70,32 @@ namespace PA.BLL
             return bRetVal;
             
         }
+
+        public bool UpdateDepartment(Department department)
+        {
+            bool bRetVal = false;
+
+            PaDataSet.tbl_DepartmentDataTable deptDTable = GetDepartments();
+
+            foreach(PaDataSet.tbl_DepartmentRow dRow in deptDTable)
+            {
+                if(dRow.DepartmentID==department.DepartmentID)
+                {
+                    dRow.Departmentname = department.Departmentname;
+                    dRow.Description = department.Description;
+
+                    int nRowsAffected = Adapter.Update(dRow);
+
+                    if (nRowsAffected > 0)
+                    {
+                        bRetVal = true;
+                        break;
+                    }
+                }
+            }
+
+            return bRetVal;
+
+        }
     }
 }

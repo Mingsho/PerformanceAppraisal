@@ -15,6 +15,21 @@
 
                 <div class="col-lg-6">
                     <div class="form-group">
+                        <asp:LinkButton ID="lnkBtnCreateEmployee"
+                            runat="server"
+                            CssClass="btn btn-primary"
+                            OnClick="lnkBtnCreateEmployee_Click">
+                            <i class="fa fa-plus"></i>
+                            Create Employee
+                        </asp:LinkButton>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-lg-6">
+                    <div class="form-group">
                         <asp:Label ID="lblDepartment"
                             runat="server"
                             Text="Select Department: "></asp:Label>
@@ -34,10 +49,10 @@
                             runat="server"
                             AutoGenerateColumns="false"
                             AllowPaging="true"
-                            OnRowCommand="grdEmployees_RowCommand"
-                            OnRowDeleting="grdEmployees_RowDeleting"
                             role="grid"
-                            DataKeyNames="EmpID">
+                            DataKeyNames="EmpID"
+                            OnRowDeleting="grdEmployees_RowDeleting">
+                            
 
                            <Columns>
                                <asp:BoundField HeaderText="Employee ID" DataField="EmpID" />
@@ -47,19 +62,23 @@
 
                                <asp:TemplateField HeaderText="Actions">
                                    <ItemTemplate>
+
                                        <asp:HyperLink ID="hLnkEditRole"
                                            Text="Edit Role"
                                            runat="server"
-                                           NavigateUrl='<%# Eval("EmpID","~/Administration/EditUserRole.aspx?Id={0}") %>'></asp:HyperLink>|
+                                           CssClass="btn btn-primary"
+                                           NavigateUrl='<%# Eval("EmpID","~/Administration/EditUserRole.aspx?Id={0}") %>'></asp:HyperLink>&nbsp;
                                        <asp:LinkButton ID="lnkBtnDelete"
                                            Text="Delete"
                                            runat="server"
+                                           CssClass="btn btn-primary"
                                            CommandName="Delete"
                                            OnClientClick="return confirm('Are you sure you want to delete the selected record?');"
-                                           CommandArgument='<%# Container.DataItemIndex %>'></asp:LinkButton>|
+                                           CommandArgument='<%# Container.DataItemIndex %>'></asp:LinkButton>
                                        
                                    </ItemTemplate>
                                </asp:TemplateField>
+
                            </Columns>
                         </asp:GridView>
                     </div>
@@ -67,7 +86,7 @@
             </div><!--row-->
 
         </div><!--Panel-body-->
-    </div>
+    </>
 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="footerContent" runat="server">

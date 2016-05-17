@@ -37,7 +37,6 @@ namespace PerformanceAppraisal.Administration
 
         protected void grdEmployeeTitles_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
-            Title title = new Title();
 
             GridViewRow grRow = grdEmployeeTitles.Rows[e.RowIndex];
 

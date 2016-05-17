@@ -67,26 +67,13 @@ namespace PerformanceAppraisal.Administration
           
         }
 
-        protected void grdEmployees_RowCommand(object sender, GridViewCommandEventArgs e)
-        {
-
-            if (e.CommandName == "Delete")
-            {
-
-                int nRowindex = Convert.ToInt32(e.CommandArgument);
-
-                string val = (string)this.grdEmployees.DataKeys[nRowindex]["EmpID"].ToString();
-
-            }
-        }
-
         protected void grdEmployees_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             int nEmpID = Convert.ToInt32(grdEmployees.DataKeys[e.RowIndex].Value);
 
             string strUsername = empLogic.GetUsernameByEmployeeId(nEmpID);
 
-            if(Membership.DeleteUser(strUsername,true))
+            if (Membership.DeleteUser(strUsername, true))
                 empLogic.DeleteEmployee(nEmpID);
 
             //display the employee list based on default selected dept id.
@@ -94,6 +81,12 @@ namespace PerformanceAppraisal.Administration
 
 
         }
+
+        protected void lnkBtnCreateEmployee_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("~/Administration/CreateEmployee.aspx");
+        }
+
 
     }
 }

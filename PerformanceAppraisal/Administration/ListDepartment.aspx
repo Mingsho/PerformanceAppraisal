@@ -16,7 +16,7 @@
                             runat="server"
                             CssClass="btn btn-primary"
                             OnClick="lnkBtnCreateDepartment_Click">
-                            <i class="fa fa-plus-"></i>&nbsp;
+                            <i class="fa fa-plus"></i>&nbsp;
                             Add Department
                         </asp:LinkButton>
                     </div>
@@ -30,7 +30,18 @@
                         <asp:SqlDataSource ID="sqlDSourceDepartments"
                             runat="server"
                             ConnectionString='<%$ ConnectionStrings:performanceDbConnectionString %>'
-                            SelectCommand="SELECT * FROM [tbl_Department]"></asp:SqlDataSource>
+                            SelectCommand="SELECT * FROM [tbl_Department]"
+                            UpdateCommand="UPDATE [tbl_Department] SET
+                             [Departmentname]=@deptName,
+                            [Description]=@desc WHERE [DepartmentID]=@dId">
+
+                            <UpdateParameters>
+                                <asp:Parameter Name="deptName" Type="String" />
+                                <asp:Parameter Name="desc" Type="String" />
+                                <asp:Parameter Name="dId" Type="Int32" />
+                            </UpdateParameters>
+
+                        </asp:SqlDataSource>
 
                         <asp:GridView ID="grdDepartment"
                             runat="server"
@@ -43,7 +54,10 @@
                             role="grid"
                             CssClass="table table-striped
                             table-bordered table-hover
-                            dataTable no-footer">
+                            dataTable no-footer"
+                            OnRowEditing="grdDepartment_RowEditing"
+                            OnRowCancelingEdit="grdDepartment_RowCancelingEdit"
+                            OnRowUpdating="grdDepartment_RowUpdating">
 
                             <Columns>
 

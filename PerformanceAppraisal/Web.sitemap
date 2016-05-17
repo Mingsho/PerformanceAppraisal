@@ -12,10 +12,9 @@
       
       <!-- Administration Node-->
       <siteMapNode url="" title="Administration" icon="fa fa-unlock fa-fw" description="Administrative tasks" roles="SuperAdmin">
+        <siteMapNode url="~/Administration/ManageUsers.aspx" title="Manage Employees" description="Manage employees, edit roles and add new employees!"/>
         <siteMapNode url="~/Administration/ListEmployeeTitles.aspx" title="Employee Titles" description="List all employee titles"/>
-        <siteMapNode url="~/Administration/CreateEmployee.aspx" title="Create new employee" description="Create a new employee"/>
         <siteMapNode url="~/Administration/ListDepartment.aspx" title="Department List" description="Create a new department"/>
-        <siteMapNode url="~/Administration/ManageUsers.aspx" title="Manage Users" description="Manage user roles, information and account details!"/>
       </siteMapNode>
       
       <!-- Position Description Node-->
