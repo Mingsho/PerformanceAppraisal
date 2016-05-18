@@ -46,7 +46,10 @@ namespace PerformanceAppraisal.Controls
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
+            {
                 this.NumberOfControls = 1;
+                Page.Form.DefaultFocus = txtPosPurpose.ClientID;
+            }
             else
                 RecreateControls();
         }
