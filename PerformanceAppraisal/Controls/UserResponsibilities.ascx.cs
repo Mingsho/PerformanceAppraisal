@@ -15,6 +15,7 @@ namespace PerformanceAppraisal.Controls
         public delegate void onAddResponsibilityClickEventHandler(object sender, EventArgs e);
         public event onAddResponsibilityClickEventHandler onAddResponsibilityClickEvent;
 
+
         int nEmployeeID = 0;
 
         public int EmployeeID
@@ -131,7 +132,7 @@ namespace PerformanceAppraisal.Controls
 
             //Null Checks makes sure the parent/main page is attached to the event.
             if (onAddResponsibilityClickEvent != null)
-                this.onAddResponsibilityClickEvent(this, new EventArgs());
+                this.onAddResponsibilityClickEvent(this, e);
             
         }
     }

@@ -13,12 +13,26 @@ namespace PerformanceAppraisal.PositionDescription
     public partial class PositionDescription : ThemedPage
     {
 
+        private const string BASE_PATH = "~/Controls/";
+
         public enum PositionDescriptionStage
         {
             Responsibility,
             Duties,
             WorkStandards
         };
+
+        public string LastLoadedControl
+        {
+            get
+            {
+                return ViewState["LastLoadedControl"].ToString();
+            }
+            set
+            {
+                ViewState["LastLoadedControl"] = value;
+            }
+        }
 
         public int EmployeeID
         {
@@ -31,22 +45,37 @@ namespace PerformanceAppraisal.PositionDescription
             }
         }
 
-        protected override void OnInit(EventArgs e)
-        {
-            base.OnInit(e);
-        }
-       
+               
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!Page.IsPostBack)
+            if (!Page.IsPostBack)
                 ViewState["pdStage"] = PositionDescriptionStage.Responsibility;
 
             LoadControl((PositionDescriptionStage)ViewState["pdStage"]);
+
+            //if (!Page.IsPostBack)
+            //    LastLoadedControl = BASE_PATH + "UserResponsibilities.ascx";
+
+            //LoadUserControl();
             
         }
 
+        //protected void LoadUserControl()
+        //{
+        //    string controlPath = LastLoadedControl;
+
+        //    if (!string.IsNullOrEmpty(controlPath))
+        //    {
+        //        pHolderUserControls.Controls.Clear();
+        //        UserControl uControl = (UserControl)LoadControl(controlPath);
+        //        pHolderUserControls.Controls.Add(uControl);
+        //    }
+        //}
+
         protected void LoadControl(PositionDescriptionStage pdStage)
         {
+            //string strControlPath = LastLoadedControl;
+
             switch(pdStage)
             {
                 case PositionDescriptionStage.Responsibility:
@@ -84,6 +113,14 @@ namespace PerformanceAppraisal.PositionDescription
         void catchResponsibilityClickEvent(object sender, EventArgs e)
         {
             pHolderUserControls.Controls.Remove((Control)sender);
+
+            ViewState["pdStage"] = PositionDescriptionStage.Duties;
+
+            //string controlPath = BASE_PATH + "UserDuties.ascx";
+
+            //LastLoadedControl = controlPath;
+            //LoadUserControl();
+
 
             LoadControl(PositionDescriptionStage.Duties);
         }

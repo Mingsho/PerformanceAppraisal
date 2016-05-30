@@ -6,11 +6,35 @@
     <div class="col-lg-6">
 
         <div class="form-group">
-            <asp:Repeater ID="testRepeater"
-                runat="server">
+            <asp:Repeater ID="rptrEmpResponsibilities"
+                runat="server"
+                OnItemCommand="rptrEmpResponsibilities_ItemCommand">
 
                 <ItemTemplate>
-                    <%# Eval("ResponsibilityDesc") %>
+
+                    <asp:Label ID="lblResponsibilityDesc"
+                        runat="server"
+                        Text='<%# Eval("ResponsibilityDesc") %>'>
+                    </asp:Label>&nbsp;
+
+                    <asp:TextBox ID="txtDuties"
+                        runat="server"
+                        CssClass="form-control">
+                    </asp:TextBox>
+
+                    <asp:LinkButton ID="lnkBtnCreateDuties"
+                        runat="server"
+                        data-toggle=""
+                        data-placement="top"
+                        title="Click to add duties"
+                        CommandName="Create">
+
+                    </asp:LinkButton>
+
+                    <asp:PlaceHolder ID="pHolderDuties"
+                        runat="server"></asp:PlaceHolder>
+                    
+                    
                 </ItemTemplate>
             </asp:Repeater>
 

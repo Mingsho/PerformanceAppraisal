@@ -13,13 +13,13 @@ namespace PerformanceAppraisal.Controls {
     public partial class UserDuties {
         
         /// <summary>
-        /// testRepeater control.
+        /// rptrEmpResponsibilities control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater testRepeater;
+        protected global::System.Web.UI.WebControls.Repeater rptrEmpResponsibilities;
         
         /// <summary>
         /// lnkBtnCreateDuties control.
