@@ -74,8 +74,7 @@ namespace PerformanceAppraisal.PositionDescription
 
         protected void LoadControl(PositionDescriptionStage pdStage)
         {
-            //string strControlPath = LastLoadedControl;
-
+            
             switch(pdStage)
             {
                 case PositionDescriptionStage.Responsibility:
