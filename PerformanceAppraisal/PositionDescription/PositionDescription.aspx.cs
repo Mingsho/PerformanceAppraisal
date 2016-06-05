@@ -49,38 +49,21 @@ namespace PerformanceAppraisal.PositionDescription
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
-                ViewState["pdStage"] = PositionDescriptionStage.Responsibility;
+                this.LastLoadedControl = "UserResponsibilities.ascx";
 
-            LoadControl((PositionDescriptionStage)ViewState["pdStage"]);
-
-            //if (!Page.IsPostBack)
-            //    LastLoadedControl = BASE_PATH + "UserResponsibilities.ascx";
-
-            //LoadUserControl();
+            LoadControl();
             
         }
 
-        //protected void LoadUserControl()
-        //{
-        //    string controlPath = LastLoadedControl;
-
-        //    if (!string.IsNullOrEmpty(controlPath))
-        //    {
-        //        pHolderUserControls.Controls.Clear();
-        //        UserControl uControl = (UserControl)LoadControl(controlPath);
-        //        pHolderUserControls.Controls.Add(uControl);
-        //    }
-        //}
-
-        protected void LoadControl(PositionDescriptionStage pdStage)
+        protected void LoadControl()
         {
             
-            switch(pdStage)
+            switch(this.LastLoadedControl)
             {
-                case PositionDescriptionStage.Responsibility:
+                case "UserResponsibilities.ascx":
                 {
                     this.Master.PageHeading = "Add Employee Responsibilities";
-                    Control ctrl = Page.LoadControl("~/Controls/UserResponsibilities.ascx");
+                    Control ctrl = Page.LoadControl(BASE_PATH + LastLoadedControl);
                     ((PerformanceAppraisal.Controls.UserResponsibilities)ctrl).EmployeeID = this.EmployeeID;
                     ((PerformanceAppraisal.Controls.UserResponsibilities)ctrl).onAddResponsibilityClickEvent += new PerformanceAppraisal.Controls.
                         UserResponsibilities.onAddResponsibilityClickEventHandler(catchResponsibilityClickEvent);
@@ -90,17 +73,17 @@ namespace PerformanceAppraisal.PositionDescription
                 }
 
 
-                case PositionDescriptionStage.Duties:
+                case "UserDuties.ascx":
                 {
                     this.Master.PageHeading = "Add Employee Duties";
-                    Control ctrl = Page.LoadControl("~/Controls/UserDuties.ascx");
+                    Control ctrl = Page.LoadControl(BASE_PATH + LastLoadedControl);
                     pHolderUserControls.Controls.Clear();
                     pHolderUserControls.Controls.Add(ctrl);
                     break;
                 }
 
 
-                case PositionDescriptionStage.WorkStandards:
+                case "UserKpis.ascx":
                 {
                     this.Master.PageHeading = "Add Work Standards";
                     break;
@@ -113,15 +96,9 @@ namespace PerformanceAppraisal.PositionDescription
         {
             pHolderUserControls.Controls.Remove((Control)sender);
 
-            ViewState["pdStage"] = PositionDescriptionStage.Duties;
+            this.LastLoadedControl = "UserDuties.ascx";
 
-            //string controlPath = BASE_PATH + "UserDuties.ascx";
-
-            //LastLoadedControl = controlPath;
-            //LoadUserControl();
-
-
-            LoadControl(PositionDescriptionStage.Duties);
+            LoadControl();
         }
 
     }

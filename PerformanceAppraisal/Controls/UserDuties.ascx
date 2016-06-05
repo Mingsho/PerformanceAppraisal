@@ -24,10 +24,13 @@
 
                     <asp:LinkButton ID="lnkBtnCreateDuties"
                         runat="server"
-                        data-toggle=""
+                        data-toggle="tooltip"
                         data-placement="top"
                         title="Click to add duties"
-                        CommandName="Create">
+                        CommandName="Create"
+                        OnClick="lnkBtnCreateDuties_Click">
+
+                        <i class="fa fa-plus-circle fa-3x"></i>
 
                     </asp:LinkButton>
 
@@ -38,17 +41,6 @@
                 </ItemTemplate>
             </asp:Repeater>
 
-        </div>
-        <div class="form-group">
-            <asp:LinkButton ID="lnkBtnCreateDuties"
-                runat="server"
-                data-toggle="tooltip"
-                data-placement="top"
-                title="Add duties to responsibility"
-                OnClick="lnkBtnCreateDuties_Click">
-
-                <i class="fa fa-plus-circle fa-3x"></i>
-            </asp:LinkButton>
         </div>
 
     </div>
