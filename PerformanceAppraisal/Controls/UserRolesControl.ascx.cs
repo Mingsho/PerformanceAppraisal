@@ -25,6 +25,42 @@ namespace PerformanceAppraisal.Controls
             }
         }
 
+        private Employee Employee
+        {
+            get
+            {
+                return (Employee)ViewState["Employee"];
+            }
+            set
+            {
+                ViewState["Employee"] = value;
+            }
+        }
+
+        private MembershipUser User
+        {
+            get
+            {
+                return (MembershipUser)ViewState["User"];
+            }
+            set
+            {
+                ViewState["User"] = value;
+            }
+        }
+
+        private List<string> UserRoles
+        {
+            get
+            {
+                return (List<string>)ViewState["UserRoles"];
+            }
+            set
+            {
+                ViewState["UserRoles"] = value;
+            }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             
@@ -40,24 +76,24 @@ namespace PerformanceAppraisal.Controls
             EmployeeBLL empLogic = new EmployeeBLL();
             DepartmentBLL deptLogic = new DepartmentBLL();
 
-            Employee employee = empLogic.GetEmployee(this.EmployeeID);
+            this.Employee = empLogic.GetEmployee(this.EmployeeID);
 
-            Department department = deptLogic.GetDepartment(employee.DepartmentID.GetValueOrDefault());
+            Department department = deptLogic.GetDepartment(this.Employee.DepartmentID.GetValueOrDefault());
 
-            lblEmpId.Text = employee.EmployeeID.ToString();
+            lblEmpId.Text = Employee.EmployeeID.ToString();
 
-            if (!string.IsNullOrEmpty(employee.Middlename))
-                lblEmpName.Text = employee.Firstname + " " + employee.Middlename + " " + employee.Lastname;
+            if (!string.IsNullOrEmpty(Employee.Middlename))
+                lblEmpName.Text = Employee.Firstname + " " + Employee.Middlename + " " + Employee.Lastname;
             else
-                lblEmpName.Text = employee.Firstname + " " + employee.Lastname;
+                lblEmpName.Text = Employee.Firstname + " " + Employee.Lastname;
 
             lblDepartment.Text = department.Departmentname;
 
-            MembershipUser user = Membership.GetUser(employee.UserAccountID.GetValueOrDefault());
+            this.User = Membership.GetUser(Employee.UserAccountID.GetValueOrDefault());
 
-            string[] userRoles = Roles.GetRolesForUser(user.UserName);
+            string[] userRoles = Roles.GetRolesForUser(User.UserName);//get roles that user already is in
 
-            string[] arrRoles = Roles.GetAllRoles();
+            string[] arrRoles = Roles.GetAllRoles();//get all roles
 
             int nIndex = 0;
 
@@ -85,12 +121,54 @@ namespace PerformanceAppraisal.Controls
         //get the selected roles for the user
         void chkTemp_CheckedChanged(object sender, EventArgs e)
         {
+            
             CheckBox chk = sender as CheckBox;
 
             if (chk.Text.Equals("SuperAdmin"))
-                Response.Write("SuperAdmin");
-            else
-                Response.Write("User");
+            {
+                UserRoles.Add("SuperAdmin");
+            }
+            
+        }
+
+        protected void btnAssignRoles_Click(object sender, EventArgs e)
+        {
+            PlaceHolder pHolderTemp = pHolderRoles.FindControl("pHolderRoles") as PlaceHolder;
+            UserRoles = new List<string>();
+
+            foreach(Control ctrl in pHolderTemp.Controls)
+            {
+                if(ctrl is CheckBox)
+                {
+                    CheckBox chkTemp = (CheckBox)ctrl;
+
+                    if (chkTemp.Checked)
+                        UserRoles.Add(chkTemp.Text);
+
+                    
+                }
+            }
+
+            try
+            {
+                if (!(UserRoles.Count == 0))
+                {
+                    foreach (string str in UserRoles)
+                    {
+                        if (!Roles.IsUserInRole(User.UserName, str))
+                        {
+                            Roles.AddUserToRole(User.UserName, str);
+                        }
+                        else
+                            Response.Write("User is already in the role: " + str);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
         }
 
         

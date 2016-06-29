@@ -41,6 +41,12 @@
                 </ItemTemplate>
             </asp:Repeater>
 
+            <asp:Button ID="btnAddDuties"
+                runat="server"
+                CssClass="btn btn-primary"
+                Text="Add Duty(ies)"
+                Enabled="false" />
+
         </div>
 
     </div>

@@ -9,6 +9,8 @@ namespace PA.BLL.DTO
     /// <summary>
     /// A simple Employee Business object
     /// </summary>
+
+    [Serializable]
     public class Employee
     {
 
